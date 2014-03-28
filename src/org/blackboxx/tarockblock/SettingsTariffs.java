@@ -1,7 +1,5 @@
 package org.blackboxx.tarockblock;
 
-import org.blackboxx.tarockblock.persistance.Player;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
