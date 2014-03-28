@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TarockBlock</string>
+    <string name="start_header">Stand letzte Partie</string>
+    <string name="button_last_session_continue">Letzte Partie fortsetzen</string>
+    <string name="button_session_new">Neue Partie</string>
+    <string name="button_session_select">Partie auswählen</string>
+
+    <string name="action_sync">Sync</string>
+    <string name="action_rules">Regelwerk</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_info">Info</string>
+    <string name="action_exit">Beenden</string>
+    
+    <string name="title_session_select">Partie auswählen</string>
+
+    <string name="title_session_old">Partie</string>
+    <string name="button_session_continue">Partie fortsetzen</string>
+    <string name="button_games_sofar">Bisherige Spiele</string>
+    
+    <string name="title_session_new">Neue Partie</string>
+    <string name="button_start">Los</string>
+    <string name="dealer_first">1. Geber</string>
+    <string name="forehand_first">1. Vorhand</string>
+    <string name="player_3">Spieler 3</string>
+    <string name="player_4">Spieler 4</string>
+    <string name="player_5">Spieler 5</string>
+    
+    <string name="title_session_active">Aktuelle Partie</string>
+    <string name="button_game_edit_last">Letztes Spiel bearbeiten</string>
+    <string name="button_game_new">Neues Spiel</string>
+
+    <string name="title_game_edit_last">Letztes Spiel</string>
+
+    <string name="title_games_sofar">Bisherige Spiele</string>
+
+    <string name="title_game_details">Spieldetails</string>
+
+    <string name="title_game_call">Spielansage</string>
+
+    <string name="title_game_trischaken">Trischaken</string>
+
+    <string name="title_game_regular">Abrechnung Regulär</string>
+    <string name="button_premiums_called">Angesagte Prämien</string>
+    <string name="button_kontra">Kontrierungen</string>
+    <string name="button_premiums_silent">Stille Prämien</string>
+    <string name="button_save">Speichern</string>
+    <string name="button_delete">Löschen</string>
+
+    <string name="title_game_player">Spieler</string>
+    
+    <string name="title_game_negative">Abrechnung Negativ</string>
+    <string name="button_game_bei">Spiel Bei</string>
+
+    <string name="title_game_negative_bei">Spiel Bei</string>
+
+	<string name="game_premiums_silent">Stille Prämien</string>
+
+    <string name="game_premiums_called">Angesagte Prämien</string>
+
+    <string name="game_kontra">Kontrierungen</string>
+
+    <string name="title_settings">Einstellungen</string>
+    <string name="button_player">Spieler</string>
+    <string name="button_tariffs">Tarife</string>
+    <string name="button_imexport">Import/Export</string>
+    <string name="button_sync">Synchronisieren</string>
+    <string name="button_theme">Theme</string>
+    
+    <string name="title_settings_player">Spieler</string>
+    <string name="button_player_new">Neuer Spieler</string>
+
+    <string name="title_settings_player_new">Neuer Spieler</string>
+    
+    <string name="title_settings_tariffs">Tarife</string>
+    <string name="button_tariff_new">Neuer Tarif</string>
+    
+    <string name="title_settings_tariff">Tarif</string>
+    
+    <string name="title_settings_tariff_new">Neuer Tarif</string>
+    <string name="button_tariff_new_trischaken">Regeln Trischaken</string>
+    <string name="button_tariff_new_bei">Regeln Negativspiel Bei</string>
+    
+    <string name="title_settings_tariff_new_trischaken">Regeln Trischaken</string>
+
+    <string name="title_settings_tariff_new_bei">Regeln Negativspiel Bei</string>
+    <string name="text_settings_tariff_new_bei_1">Keine Negativspiele Bei erlaubt</string>
+    <string name="text_settings_tariff_new_bei_2">Nur Piccolo/Zwiccolo Bei erlaubt</string>
+    <string name="text_settings_tariff_new_bei_3">Nur Bettler Bei erlaubt</string>
+    <string name="text_settings_tariff_new_bei_4">Nur gleichwertige Spiele Bei erlaubt</string>
+    <string name="text_settings_tariff_new_bei_5">Alle Negativspiele Bei möglich</string>
+
+    <string name="title_settings_tariff_new_kontra">Höchste Kontrierung</string>
+    <string name="text_settings_tariff_new_kontra_1">Kontra (2x)</string>
+    <string name="text_settings_tariff_new_kontra_2">Rekontra (4x)</string>
+    <string name="text_settings_tariff_new_kontra_3">Subkontra (8x)</string>
+    <string name="text_settings_tariff_new_kontra_4">Subrekontra (16x)</string>
+
+    <string name="title_settings_imexport">Import/Export</string>
+    <string name="button_import">Import</string>
+    <string name="button_export">Export</string>
+    
+    <string name="title_settings_sync">Synchronisieren</string>
+    
+    <string name="title_info">Info</string>
+    <string name="title_rules">Regelwerk</string>
+    <string name="title_exit">Beenden</string>
+
+	<string name="settings_theme_default_name">Holo Hell</string>
+	<string name="title_settings_theme">Theme auswählen</string>
+	<string name="settings_theme_default">0</string>
+	<string name="preference_file">prefs</string>
+	<string name="preference_theme_var">pref_theme</string>
+  
+    
+    <string name="session_name">Partie Name</string>
+    <string name="player">Spieler</string>
+
+</resources>

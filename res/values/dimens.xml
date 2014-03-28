@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="padding_side">16dp</dimen>
+    <dimen name="list_padding_topbottom">4dp</dimen>
+    <dimen name="button_wonlost_size">32dp</dimen>
+    <dimen name="divider_height">1dip</dimen>
+    <dimen name="divider_dialog_height">2dip</dimen>
+    <dimen name="row_spacer_height">24dp</dimen>
+
+    <dimen name="activity_2_margin">2dp</dimen>
+    <dimen name="activity_4_margin">4dp</dimen>
+    <dimen name="activity_6_margin">6dp</dimen>
+    <dimen name="activity_8_margin">8dp</dimen>
+    <dimen name="activity_10_margin">10dp</dimen>
+    <dimen name="activity_12_margin">12dp</dimen>
+    <dimen name="activity_14_margin">14dp</dimen>
+    <dimen name="activity_16_margin">16dp</dimen>
+    <dimen name="activity_18_margin">18dp</dimen>
+    <dimen name="activity_20_margin">20dp</dimen>
+    <dimen name="activity_22_margin">22dp</dimen>
+    <dimen name="activity_24_margin">24dp</dimen>
+    <dimen name="activity_26_margin">26dp</dimen>
+    <dimen name="activity_27_margin">28dp</dimen>
+    <dimen name="activity_30_margin">30dp</dimen>
+    <dimen name="activity_32_margin">32dp</dimen>
+    <dimen name="activity_34_margin">34dp</dimen>
+    <dimen name="activity_36_margin">36dp</dimen>
+    <dimen name="activity_38_margin">38dp</dimen>
+    <dimen name="activity_40_margin">40dp</dimen>
+    <dimen name="activity_42_margin">42dp</dimen>
+    <dimen name="activity_44_margin">44dp</dimen>
+    <dimen name="activity_46_margin">46dp</dimen>
+    <dimen name="activity_48_margin">48dp</dimen>
+    <dimen name="activity_200_margin">200dp</dimen>
+
+</resources>

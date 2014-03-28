@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.blackboxx.tarockblock"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="org.blackboxx.tarockblock.Main"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameCall"
+            android:label="@string/title_game_call"
+            android:parentActivityName="org.blackboxx.tarockblock.SessionActive" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SessionNew"
+            android:label="@string/title_session_new"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SessionSelect"
+            android:label="@string/title_session_select"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SessionOld"
+            android:label="@string/title_session_old"
+            android:parentActivityName="org.blackboxx.tarockblock.SessionSelect" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SessionActive"
+            android:label="@string/title_session_active"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GamesSoFar"
+            android:label="@string/title_games_sofar"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameDetail"
+            android:label="@string/title_game_details"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameEditLast"
+            android:label="@string/title_game_edit_last"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameTrischaken"
+            android:label="@string/title_game_trischaken"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GamePlayer"
+            android:label="@string/title_game_player"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameNegative"
+            android:label="@string/title_game_negative"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameRegular"
+            android:label="@string/title_game_regular"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        
+        <activity
+            android:name="org.blackboxx.tarockblock.Settings"
+            android:label="@string/title_settings"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsPlayer"
+            android:label="@string/title_settings_player"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffs"
+            android:label="@string/title_settings_tariffs"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariff"
+            android:label="@string/title_settings_tariff"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffNew"
+            android:label="@string/title_settings_tariff_new"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffNewBei"
+            android:label="@string/title_settings_tariff_new_bei"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffNewTrischaken"
+            android:label="@string/title_settings_tariff_new_trischaken"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsImExport"
+            android:label="@string/title_settings_imexport"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsSync"
+            android:label="@string/title_settings_sync"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.Info"
+            android:label="@string/title_info"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        </application>
+
+</manifest>

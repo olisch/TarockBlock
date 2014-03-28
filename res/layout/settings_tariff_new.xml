@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+
+    <View style="@style/Vertical_Spacer" />
+    
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_tariff_new_trischaken"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_tariff_new_trischaken"
+        android:onClick="goto_settings_tariff_new_trischaken" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_tariff_new_bei"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_tariff_new_bei"
+        android:onClick="goto_settings_tariff_new_bei" />
+
+    <View style="@style/Divider" />
+
+    <!-- Row Spacer --> <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
+    
+
+
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_tariffs_new_button_save"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_save"
+        android:onClick="goto_settings_tariffs"
+        android:textStyle="bold" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>

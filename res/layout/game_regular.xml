@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+    <ToggleButton android:id="@+id/toggleButton1" style="@style/ButtonWonLost" />
+
+    <View style="@style/Vertical_Spacer" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/game_premiums_called"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/game_premiums_called" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/game_premiums_silent"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/game_premiums_silent" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/game_kontra"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/game_kontra" />
+
+    <View style="@style/Divider" />
+
+    <!-- Row Spacer --> <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/game_save"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/button_save"
+        android:textStyle="bold" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>

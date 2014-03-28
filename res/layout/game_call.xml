@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+
+    <View style="@style/Divider" />
+    <Button
+        android:id="@+id/game_1"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Trischaken"
+        android:onClick="goto_game_trischaken" />
+	<View style="@style/Divider" />
+    
+    <Button
+        android:id="@+id/game_2"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Piccolo"
+        android:onClick="goto_game_negative" />
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/game_3"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Besserrufer"
+        android:onClick="goto_game_regular" />
+    <View style="@style/Divider" />
+    
+    <Button
+        android:id="@+id/game_4"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Dreier"
+        android:onClick="goto_game_regular" />
+    <View style="@style/Divider" />
+    
+</LinearLayout>

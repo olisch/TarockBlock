@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+
+	<View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_button_player"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:onClick="goto_settings_player"
+        android:text="@string/button_player" />
+
+   <View style="@style/Divider" />
+
+   <Button
+        android:id="@+id/settings_button_tariffs"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="@string/button_tariffs"
+        android:onClick="goto_settings_tariffs" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_button_imexport"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="@string/button_imexport"
+        android:onClick="goto_settings_imexport" />
+
+    <View style="@style/Divider" />
+<!-- 
+    <Button
+        android:id="@+id/settings_button_sync"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:text="@string/button_sync"
+        android:onClick="goto_settings_sync" />
+
+    <View style="@style/Divider" />
+ -->
+	<RelativeLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
+
+	    <Button
+	        android:id="@+id/settings_button_theme"
+	        style="?android:attr/borderlessButtonStyle"
+	        android:layout_width="match_parent"
+	        android:layout_height="64dp"
+	        android:gravity="left|top"
+	        android:paddingTop="10dp"
+	        android:text="@string/button_theme" />
+	
+	    <TextView
+	        android:id="@+id/settings_text_theme"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:paddingLeft="8dp"
+	        android:paddingTop="24dp"
+	        android:text="@string/settings_theme_default_name"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
+    <View style="@style/Divider" />
+    
+</LinearLayout>

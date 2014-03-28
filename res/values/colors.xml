@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey_light">#eee</color>
+    <color name="grey_middle">#ccc</color>
+    <color name="grey_dark">#666</color>
+    <color name="blue">#7994af</color>
+    <color name="red">#af7979</color>
+    <color name="brown">#b0876b</color>
+    <color name="green">#94af79</color>
+    <color name="activebar_green">#008800</color>
+
+</resources>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<LinearLayout
+		android:id="@+id/buttons"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/padding_side"
+		android:orientation="vertical"
+		android:gravity="center|bottom"
+		android:layout_alignParentBottom="true" >
+	    
+	    <View style="@style/Divider" />
+	
+	    <Button
+	        android:id="@+id/start_button_session_select"
+	    	style="?android:attr/borderlessButtonStyle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_session_select"
+	        android:onClick="goto_session_select" />
+	
+	    <View style="@style/Divider" />
+	
+	    <Button
+	        android:id="@+id/start_button_session_new"
+	    	style="?android:attr/borderlessButtonStyle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_session_new"
+	        android:onClick="goto_session_new" />
+	
+	    <View style="@style/Divider" />
+	
+	</LinearLayout>
+
+
+<!-- Content Layout Put as you like -->
+<ScrollView
+       android:layout_above="@id/buttons"
+		android:padding="@dimen/padding_side"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:fillViewport="true" 
+       android:layout_alignParentTop="true" >
+          <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_margin="3dp">
+
+                  <TextView
+                       android:id="@+id/tv_1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	            android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+                    <TextView
+                       android:id="@+id/tv_2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textStyle="bold"
+	       			     android:textAppearance="?android:attr/textAppearanceLarge" 
+	                android:paddingBottom="@dimen/activity_48_margin"
+                       android:text="start! 1111111111...." />
+
+
+
+         </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>
+
+
+
+
+<!-- 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+    <View style="@style/Vertical_Spacer" />
+
+
+	<View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_last_session_continue"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_last_session_continue"
+        android:onClick="goto_game_call" />
+
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_session_select"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_session_select"
+        android:onClick="goto_session_select" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_session_new"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_session_new"
+        android:onClick="goto_session_new" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout> -->

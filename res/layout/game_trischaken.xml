@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:baselineAligned="false"
+	    android:padding="2dp" >
+	    
+	    <LinearLayout
+			android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:padding="2dp" >
+		    <View style="@style/Horizontal_Spacer" />
+	    </LinearLayout>
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:padding="2dp" >
+
+	        <TextView
+	            android:id="@+id/start_player1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Spieler 1"
+	            android:textAlignment="textEnd"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        <TextView
+	            android:id="@+id/start_player2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Spieler 2"
+		        android:textAlignment="textEnd"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	        <TextView
+	            android:id="@+id/start_player3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Spieler 3"
+		        android:textAlignment="textEnd"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	        <TextView
+	            android:id="@+id/start_player4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Spieler 4"
+		        android:textAlignment="textEnd"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+	    <LinearLayout
+            android:layout_width="@dimen/activity_48_margin"
+	        android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:padding="2dp" >
+		    <View style="@style/Horizontal_Spacer" />
+	    </LinearLayout>
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:padding="2dp" >
+	        <TextView
+	            android:id="@+id/start_player1_points"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:text="240"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	        <TextView
+	            android:id="@+id/start_player2_points"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:text="30"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	        <TextView
+	            android:id="@+id/start_player3_points"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:text="-300"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	        <TextView
+	            android:id="@+id/start_player4_points"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:text="30"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+	    <LinearLayout
+			android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:padding="2dp" >
+		    <View style="@style/Horizontal_Spacer" />
+	    </LinearLayout>
+	    	    	    	    
+    </LinearLayout>
+
+    <View style="@style/Vertical_Spacer" />
+    
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/trischaken_button_save"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/button_save"
+        android:textStyle="bold" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>

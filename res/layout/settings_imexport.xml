@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_button_import"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/button_import" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_button_export"
+    	style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/button_export" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>

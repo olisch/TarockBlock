@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+    
+
+    
+
+    <ListView
+        android:id="@+id/list_players"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </ListView>
+    <View style="@style/Vertical_Spacer" /><View style="@style/Divider" />
+    
+
+    <Button
+        android:id="@+id/settings_button_player_new"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_player_new" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>
