@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_trischaken"
+        android:title="@string/action_trischaken">
+    </item>
+    <item
+        android:id="@+id/action_bei"
+        android:title="@string/action_bei">
+    </item>
+    <item
+        android:id="@+id/action_kontra"
+        android:title="@string/action_kontra">
+    </item>
+
+</menu>

@@ -10,7 +10,8 @@
         android:id="@+id/buttons"
         style="@style/BasicButtonLayout" >
 
-        <View style="@style/Divider" />
+<!--
+         <View style="@style/Divider" />
 
         <Button
             android:id="@+id/start_button_tariff_new_trischaken"
@@ -44,7 +45,20 @@
             android:text="@string/button_tariff_new_kontra" />
 
         <View style="@style/Divider" />
+ -->
 
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/button_tariff_new_entry"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariff_new_entry"
+            android:text="@string/button_tariff_new_entry" />
+
+        <View style="@style/Divider" />
         <!-- Row Spacer -->
 
         <View

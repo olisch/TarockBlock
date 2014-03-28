@@ -109,6 +109,11 @@
             android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
         </activity>
         <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffNewEntry"
+            android:label="@string/title_settings_tariff_new_entry"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+        </activity>
+        <activity
             android:name="org.blackboxx.tarockblock.SettingsTariffNewBei"
             android:label="@string/title_settings_tariff_new_bei"
             android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
