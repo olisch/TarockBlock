@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/BasicLayout" >
-    
+    android:id="@+id/root"
+    style="@style/BasicRelativeLayout" >
 
+    <!-- Buttons @Bottom -->
 
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/BasicButtonLayout" >
 
-    
-</LinearLayout>
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/settings_tariffs_new_button_save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariffs"
+            android:text="@string/button_save"
+            android:textStyle="bold" />
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <!-- Scrollable Content above Buttons -->
+
+    <ScrollView style="@style/BasicScrollViewLayout" >
+
+        <LinearLayout style="@style/BasicContentLinearLayout" >
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

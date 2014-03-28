@@ -1,25 +1,13 @@
 package org.blackboxx.tarockblock;
 
-import java.sql.SQLException;
-import java.util.List;
-
-import org.blackboxx.tarockblock.dao.DatabaseHelper;
-import org.blackboxx.tarockblock.persistance.Player;
-
-import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
 import android.support.v4.app.NavUtils;
 
-public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
-
-	private List<Player> players;
-	private ListView playersList;
-	private ArrayAdapter<Player> playersAdapter;
+public class SettingsTariffNewKontra extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,36 +19,17 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
 
-		setContentView(R.layout.game_player);
+		setContentView(R.layout.settings_tariff_new_kontra);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
-		showPlayersList();
 	}
 
-	private void showPlayersList() {
-		try {
-			players = getHelper().getPlayerDao().queryForAll();
-		} catch (SQLException e) {
-			// TODO errorhandling
-			e.printStackTrace();
-		}
 
-		playersList = (ListView) findViewById(R.id.list_gameplayers);
-		playersAdapter = new ArrayAdapter<Player>(this,
-				R.layout.list_item_player, R.id.list_players_item, players);
-		playersList.setAdapter(playersAdapter);
-		registerForContextMenu(playersList);
-
-	}
-
-	/**
+    /**
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
-
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-
 	}
 
 	@Override
@@ -80,5 +49,10 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void goto_settings_tariff_new(View view) {
+	    // Do something in response to button
+		Intent intent = new Intent(this, SettingsTariffNew.class);
+	    startActivity(intent);
+	}    
 
 }

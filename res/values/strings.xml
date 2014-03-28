@@ -81,6 +81,7 @@
     <string name="title_settings_tariff_new">Neuer Tarif</string>
     <string name="button_tariff_new_trischaken">Regeln Trischaken</string>
     <string name="button_tariff_new_bei">Regeln Negativspiel Bei</string>
+    <string name="button_tariff_new_kontra">Höchste Kontrierung</string>
     
     <string name="title_settings_tariff_new_trischaken">Regeln Trischaken</string>
 
@@ -102,7 +103,8 @@
     <string name="button_export">Export</string>
     
     <string name="title_settings_sync">Synchronisieren</string>
-    
+    <string name="button_sync_now">Synchronisieren</string>
+
     <string name="title_info">Info</string>
     <string name="title_rules">Regelwerk</string>
     <string name="title_exit">Beenden</string>

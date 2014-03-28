@@ -1,4 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    style="@style/BasicRelativeLayout" >
+
+    <!-- Buttons @Bottom -->
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/BasicButtonLayout" >
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/start_button_tariff_new_trischaken"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariff_new_trischaken"
+            android:text="@string/button_tariff_new_trischaken" />
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/start_button_tariff_new_bei"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariff_new_bei"
+            android:text="@string/button_tariff_new_bei" />
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/start_button_tariff_new_kontra"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariff_new_kontra"
+            android:text="@string/button_tariff_new_kontra" />
+
+        <View style="@style/Divider" />
+
+        <!-- Row Spacer -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_spacer_height" />
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/settings_tariffs_new_button_save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariffs"
+            android:text="@string/button_save"
+            android:textStyle="bold" />
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <!-- Scrollable Content above Buttons -->
+
+    <ScrollView style="@style/BasicScrollViewLayout" >
+
+        <LinearLayout style="@style/BasicContentLinearLayout" >
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/BasicLayout" >
@@ -30,7 +108,7 @@
 
     <View style="@style/Divider" />
 
-    <!-- Row Spacer --> <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
+    Row Spacer <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
     
 
 
@@ -50,3 +128,4 @@
     <View style="@style/Divider" />
 
 </LinearLayout>
+-->

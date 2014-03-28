@@ -3,63 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-     >
-<!--     android:theme="@android:style/Theme.Dialog" -->
-<!--     android:excludeFromRecents="true" -->
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/game_player_title"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:gravity="left|center_vertical"
+        android:paddingLeft="4dp"
         android:text="Spieler"
-	    android:paddingLeft="4dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <View style="@style/Divider_Dialog" />
-
-    <Button
-        android:id="@+id/game_player_1"
-        style="?android:attr/borderlessButtonStyle"
+    <ListView
+        android:id="@+id/list_gameplayers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:text="Spieler 1"
-        android:onClick="goto_game_negative" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/game_player_2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:text="Spieler 2"
-        android:onClick="goto_game_negative" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/game_player_3"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:text="Spieler 3"
-        android:onClick="goto_game_negative" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/game_player_4"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:text="Spieler 4"
-        android:onClick="goto_game_negative" />
-
+        android:layout_weight="1" >
+    </ListView>
 
 </LinearLayout>

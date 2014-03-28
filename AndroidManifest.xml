@@ -111,12 +111,17 @@
         <activity
             android:name="org.blackboxx.tarockblock.SettingsTariffNewBei"
             android:label="@string/title_settings_tariff_new_bei"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SettingsTariffNewTrischaken"
             android:label="@string/title_settings_tariff_new_trischaken"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffNewKontra"
+            android:label="@string/title_settings_tariff_new_kontra"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SettingsImExport"

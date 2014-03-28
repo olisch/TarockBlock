@@ -3,6 +3,7 @@
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="padding_side">16dp</dimen>
+    <dimen name="margin_content">3dp</dimen>
     <dimen name="list_padding_topbottom">4dp</dimen>
     <dimen name="button_wonlost_size">32dp</dimen>
     <dimen name="divider_height">1dip</dimen>

@@ -1,4 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    style="@style/BasicRelativeLayout" >
+
+    <!-- Buttons @Bottom -->
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/BasicButtonLayout" >
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/settings_tariff_new_bei_button_save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariff_new"
+            android:text="@string/button_save"
+            android:textStyle="bold" />
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <!-- Scrollable Content above Buttons -->
+
+    <ScrollView style="@style/BasicScrollViewLayout" >
+
+        <LinearLayout style="@style/BasicContentLinearLayout" >
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/settings_tariff_new_bei_4"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/settings_tariff_new_kontra_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_settings_tariff_new_kontra_1" />
+
+                <RadioButton
+                    android:id="@+id/settings_tariff_new_kontra_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_settings_tariff_new_kontra_2" />
+
+                <RadioButton
+                    android:id="@+id/settings_tariff_new_kontra_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_settings_tariff_new_kontra_3" />
+
+                <RadioButton
+                    android:id="@+id/settings_tariff_new_kontra_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_settings_tariff_new_kontra_4" />
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/BasicLayout" >
@@ -51,3 +119,4 @@
     <View style="@style/Divider" />
 
 </LinearLayout>
+-->

@@ -18,6 +18,38 @@
     </style>
 
 
+	<style name="BasicRelativeLayout">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">match_parent</item>
+	    <item name="android:orientation">vertical</item>
+	</style>
+
+	<style name="BasicButtonLayout">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:padding">@dimen/padding_side</item>
+	    <item name="android:orientation">vertical</item>
+	    <item name="android:gravity">center|bottom</item>
+  	    <item name="android:layout_alignParentBottom">true</item>
+	</style>
+
+	<style name="BasicScrollViewLayout">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:padding">@dimen/padding_side</item>
+	    <item name="android:fillViewport">true</item>
+	    <item name="android:layout_alignParentTop">true</item>
+  	    <item name="android:layout_above">@id/buttons</item>
+	</style>
+
+	<style name="BasicContentLinearLayout">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:orientation">vertical</item>
+	    <item name="android:layout_margin">@dimen/margin_content</item>
+	</style>
+			
+    
 	<style name="BasicLayout">
 	    <item name="android:layout_width">match_parent</item>
 	    <item name="android:layout_height">match_parent</item>
