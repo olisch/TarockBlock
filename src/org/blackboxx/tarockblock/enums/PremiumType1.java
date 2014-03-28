@@ -1,22 +1,21 @@
 package org.blackboxx.tarockblock.enums;
 
-public enum Bei {
+public enum PremiumType1 {
 
-	Keine(1, "Keine Negativspiele Bei erlaubt"), NurPiccolo(2, "Nur Piccolo/Zwiccolo Bei erlaubt"), NurBettler(3, "Nur Bettler Bei erlaubt"), NurGleichwertige(
-			4, "Nur gleichwertige Spiele Bei erlaubt"), Alle(5, "Alle Negativspiele Bei möglich");
+	Tarock(1, "Tarock"), Farben(2, "Farben"), PunkteStiche(3, "Punkte/Stiche");
 
 	private Integer id;
 
 	private String label;
 
-	private Bei(Integer id, String label) {
+	private PremiumType1(Integer id, String label) {
 		this.setId(id);
 		this.setLabel(label);
 	}
 
-	public static Bei getValueById(Integer id) {
-		for (int i = 0; i < Bei.values().length; i++) {
-			Bei array_element = Bei.values()[i];
+	public static PremiumType1 getValueById(Integer id) {
+		for (int i = 0; i < PremiumType1.values().length; i++) {
+			PremiumType1 array_element = PremiumType1.values()[i];
 			if (array_element.getId().equals(id)) {
 				return array_element;
 			}

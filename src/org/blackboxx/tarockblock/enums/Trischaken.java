@@ -1,6 +1,6 @@
 package org.blackboxx.tarockblock.enums;
 
-public enum Bei {
+public enum Trischaken {
 
 	Keine(1, "Keine Negativspiele Bei erlaubt"), NurPiccolo(2, "Nur Piccolo/Zwiccolo Bei erlaubt"), NurBettler(3, "Nur Bettler Bei erlaubt"), NurGleichwertige(
 			4, "Nur gleichwertige Spiele Bei erlaubt"), Alle(5, "Alle Negativspiele Bei möglich");
@@ -9,14 +9,14 @@ public enum Bei {
 
 	private String label;
 
-	private Bei(Integer id, String label) {
+	private Trischaken(Integer id, String label) {
 		this.setId(id);
 		this.setLabel(label);
 	}
 
-	public static Bei getValueById(Integer id) {
-		for (int i = 0; i < Bei.values().length; i++) {
-			Bei array_element = Bei.values()[i];
+	public static Trischaken getValueById(Integer id) {
+		for (int i = 0; i < Trischaken.values().length; i++) {
+			Trischaken array_element = Trischaken.values()[i];
 			if (array_element.getId().equals(id)) {
 				return array_element;
 			}
