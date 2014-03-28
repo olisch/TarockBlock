@@ -1,11 +1,11 @@
 package org.blackboxx.tarockblock;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
 
 public class SettingsTariff extends Activity {
 
@@ -13,19 +13,18 @@ public class SettingsTariff extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme=0;
+		int user_theme = 0;
 		Globals g = Globals.getInstance();
-		user_theme=g.getData();
+		user_theme = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
 
 		setContentView(R.layout.settings_tariff);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
 
-
-    /**
+	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
@@ -50,9 +49,9 @@ public class SettingsTariff extends Activity {
 	}
 
 	public void goto_settings_tariff_new(View view) {
-	    // Do something in response to button
+		// Do something in response to button
 		Intent intent = new Intent(this, SettingsTariffNew.class);
-	    startActivity(intent);
-	}    
+		startActivity(intent);
+	}
 
 }

@@ -5,25 +5,23 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "player")
-public class Player {
+@DatabaseTable(tableName = "session")
+public class Session {
 
-	@DatabaseField(columnName = "pl_id", generatedId = true)
+	@DatabaseField(columnName = "se_id", generatedId = true)
 	private Integer id;
 
-	@DatabaseField(columnName = "pl_name", unique = true, canBeNull = false)
+	@DatabaseField(columnName = "se_name", canBeNull = false)
 	private String name;
+
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
 
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocPlayerSession> playerSessions;
 
 	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;
-
-	@Override
-	public String toString() {
-		return name;
-	}
+	ForeignCollection<AssocGameSession> gameSessions;
 
 	public Integer getId() {
 		return id;
@@ -41,6 +39,14 @@ public class Player {
 		this.name = name;
 	}
 
+	public Tariffset getTariffset() {
+		return tariffset;
+	}
+
+	public void setTariffset(Tariffset tariffset) {
+		this.tariffset = tariffset;
+	}
+
 	public ForeignCollection<AssocPlayerSession> getPlayerSessions() {
 		return playerSessions;
 	}
@@ -50,13 +56,12 @@ public class Player {
 		this.playerSessions = playerSessions;
 	}
 
-	public ForeignCollection<AssocGameRegularPremium> getAssocGameRegularPremiums() {
-		return assocGameRegularPremiums;
+	public ForeignCollection<AssocGameSession> getGameSessions() {
+		return gameSessions;
 	}
 
-	public void setAssocGameRegularPremiums(
-			ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums) {
-		this.assocGameRegularPremiums = assocGameRegularPremiums;
+	public void setGameSessions(ForeignCollection<AssocGameSession> gameSessions) {
+		this.gameSessions = gameSessions;
 	}
 
 }

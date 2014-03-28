@@ -2,7 +2,23 @@ package org.blackboxx.tarockblock.dao;
 
 import java.sql.SQLException;
 
+import org.blackboxx.tarockblock.persistance.AssocGameRegularPremium;
+import org.blackboxx.tarockblock.persistance.AssocGameSession;
+import org.blackboxx.tarockblock.persistance.AssocPlayerSession;
+import org.blackboxx.tarockblock.persistance.AssocPremiumTariffset;
+import org.blackboxx.tarockblock.persistance.AssocTariffTariffset;
+import org.blackboxx.tarockblock.persistance.AssocTrischakenTariffset;
+import org.blackboxx.tarockblock.persistance.Game;
+import org.blackboxx.tarockblock.persistance.GameNegative;
+import org.blackboxx.tarockblock.persistance.GameNegativeKontra;
+import org.blackboxx.tarockblock.persistance.GameRegular;
+import org.blackboxx.tarockblock.persistance.GameTrischaken;
 import org.blackboxx.tarockblock.persistance.Player;
+import org.blackboxx.tarockblock.persistance.Premium;
+import org.blackboxx.tarockblock.persistance.Session;
+import org.blackboxx.tarockblock.persistance.Tariff;
+import org.blackboxx.tarockblock.persistance.Tariffset;
+import org.blackboxx.tarockblock.persistance.Trischaken;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,8 +38,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	private Dao<Player, Integer> playerDao;
 
-	public DatabaseHelper(Context context, String databaseName,
-			CursorFactory factory, int databaseVersion, int configFileId) {
+	public DatabaseHelper(Context context, String databaseName, CursorFactory factory, int databaseVersion, int configFileId) {
 		super(context, databaseName, factory, databaseVersion, configFileId);
 	}
 
@@ -35,6 +50,22 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onCreate(SQLiteDatabase arg0, ConnectionSource arg1) {
 		try {
 			TableUtils.createTable(connectionSource, Player.class);
+			TableUtils.createTable(connectionSource, Tariffset.class);
+			TableUtils.createTable(connectionSource, Tariff.class);
+			TableUtils.createTable(connectionSource, Trischaken.class);
+			TableUtils.createTable(connectionSource, Premium.class);
+			TableUtils.createTable(connectionSource, AssocTariffTariffset.class);
+			TableUtils.createTable(connectionSource, AssocPremiumTariffset.class);
+			TableUtils.createTable(connectionSource, AssocTrischakenTariffset.class);
+			TableUtils.createTable(connectionSource, AssocGameRegularPremium.class);
+			TableUtils.createTable(connectionSource, AssocGameSession.class);
+			TableUtils.createTable(connectionSource, AssocPlayerSession.class);
+			TableUtils.createTable(connectionSource, Game.class);
+			TableUtils.createTable(connectionSource, GameNegative.class);
+			TableUtils.createTable(connectionSource, GameNegativeKontra.class);
+			TableUtils.createTable(connectionSource, GameRegular.class);
+			TableUtils.createTable(connectionSource, GameTrischaken.class);
+			TableUtils.createTable(connectionSource, Session.class);
 
 		} catch (SQLException e) {
 			Log.e(LOG_NAME, "Could not create tables!", e);
@@ -43,8 +74,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	}
 
 	@Override
-	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2,
-			int arg3) {
+	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2, int arg3) {
 
 	}
 
