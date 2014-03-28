@@ -67,4 +67,10 @@ public class SettingsTariffNew extends Activity {
 	    startActivity(intent);
 	}    
 
+	public void goto_settings_tariff_new_kontra(View view) {
+	    // Do something in response to button
+		Intent intent = new Intent(this, SettingsTariffNewKontra.class);
+	    startActivity(intent);
+	}    
+
 }

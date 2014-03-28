@@ -32,7 +32,7 @@
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
             <RadioGroup
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checkedButton="@+id/settings_tariff_new_bei_4"
                 android:orientation="vertical" >
