@@ -1,14 +1,14 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -17,85 +17,84 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="BasicRelativeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
-	<style name="BasicRelativeLayout">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">match_parent</item>
-	    <item name="android:orientation">vertical</item>
-	</style>
+    <style name="BasicButtonLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingRight">@dimen/padding_side</item>
+        <item name="android:paddingLeft">@dimen/padding_side</item>
+        <item name="android:paddingBottom">@dimen/padding_side</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center|bottom</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
 
-	<style name="BasicButtonLayout">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:padding">@dimen/padding_side</item>
-	    <item name="android:orientation">vertical</item>
-	    <item name="android:gravity">center|bottom</item>
-  	    <item name="android:layout_alignParentBottom">true</item>
-	</style>
+    <style name="BasicScrollViewLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding_side</item>
+        <item name="android:fillViewport">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_above">@id/buttons</item>
+    </style>
 
-	<style name="BasicScrollViewLayout">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:padding">@dimen/padding_side</item>
-	    <item name="android:fillViewport">true</item>
-	    <item name="android:layout_alignParentTop">true</item>
-  	    <item name="android:layout_above">@id/buttons</item>
-	</style>
+    <style name="BasicContentLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
-	<style name="BasicContentLinearLayout">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:orientation">vertical</item>
-	</style>
-			
-    
-	<style name="BasicLayout">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">match_parent</item>
-	    <item name="android:padding">@dimen/padding_side</item>
-	    <item name="android:orientation">vertical</item>
-	</style>
+    <style name="BasicLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/padding_side</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
-	<style name="ListLine">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:orientation">horizontal</item>
-   	    <item name="android:paddingTop">@dimen/list_padding_topbottom</item>
-	    <item name="android:paddingBottom">@dimen/list_padding_topbottom</item>
-	    <item name="android:baselineAligned">false</item>
-	    	</style>
-	
-	<style name="ButtonWonLost">
-	    <item name="android:layout_width">@dimen/button_wonlost_size</item>
-	    <item name="android:layout_height">@dimen/button_wonlost_size</item>
-	    <item name="android:layout_gravity">right</item>
-	    <item name="android:background">@drawable/btn_check</item>
-	    <item name="android:textOff"></item>
-	    <item name="android:textOn"></item>
-	    	</style>
+    <style name="ListLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">@dimen/list_padding_topbottom</item>
+        <item name="android:paddingBottom">@dimen/list_padding_topbottom</item>
+        <item name="android:baselineAligned">false</item>
+    </style>
 
-	<style name="Divider">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">@dimen/divider_height</item>
-	    <item name="android:background">?android:attr/dividerHorizontal</item>
-	</style>
+    <style name="ButtonWonLost">
+        <item name="android:layout_width">@dimen/button_wonlost_size</item>
+        <item name="android:layout_height">@dimen/button_wonlost_size</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:background">@drawable/btn_check</item>
+        <item name="android:textOff"></item>
+        <item name="android:textOn"></item>
+    </style>
 
-	<style name="Divider_Dialog">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">@dimen/divider_dialog_height</item>
-	    <item name="android:background">?android:color/holo_blue_bright</item>
-	</style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">?android:attr/dividerHorizontal</item>
+    </style>
 
-		<style name="Vertical_Spacer">
-	    <item name="android:layout_weight">1</item>
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">0dp</item>
-	</style>
+    <style name="Divider_Dialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_dialog_height</item>
+        <item name="android:background">?android:color/holo_blue_bright</item>
+    </style>
 
-	<style name="Horizontal_Spacer">
-	    <item name="android:layout_width">match_parent</item>
-	    <item name="android:layout_height">0dp</item>
-	</style>
+    <style name="Vertical_Spacer">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
 
+    <style name="Horizontal_Spacer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
 
 </resources>

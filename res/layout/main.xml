@@ -4,57 +4,180 @@
     android:id="@+id/root"
     style="@style/BasicRelativeLayout" >
 
-<!-- Buttons @Bottom -->
-    	<LinearLayout
-		android:id="@+id/buttons"
-		style="@style/BasicButtonLayout" >
-	    
-	    <View style="@style/Divider" />
+    <!-- Buttons @Bottom -->
 
-	    <Button
-	        android:id="@+id/start_button_session_select"
-	        style="?android:attr/borderlessButtonStyle"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:onClick="goto_session_select"
-	        android:text="@string/button_session_select" />
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/BasicButtonLayout" >
 
-	    <View style="@style/Divider" />
+        <View style="@style/Divider" />
 
-	    <Button
-	        android:id="@+id/start_button_session_new"
-	        style="?android:attr/borderlessButtonStyle"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:onClick="goto_session_new"
-	        android:text="@string/button_session_new" />
+        <Button
+            android:id="@+id/start_button_session_new"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goto_session_new"
+            android:text="@string/button_session_new" />
 
-	    <View style="@style/Divider" />
-    	</LinearLayout>
+        <View style="@style/Divider" />
+    </LinearLayout>
 
-    	<!-- Scrollable Content above Buttons -->
+    <!-- Scrollable Content above Buttons -->
 
-    	<ScrollView style="@style/BasicScrollViewLayout" >
+    <ScrollView style="@style/BasicScrollViewLayout" >
 
-	    <LinearLayout style="@style/BasicContentLinearLayout" >
+        <LinearLayout style="@style/BasicContentLinearLayout" >
 
-	        <TextView
-	            android:id="@+id/tv_1"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:paddingBottom="@dimen/activity_48_margin"
-	            android:text="start! 1111111111...."
-	            android:textAppearance="?android:attr/textAppearanceLarge"
-	            android:textStyle="bold" />
-	    </LinearLayout>
-    	</ScrollView>
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="@dimen/activity_8_margin"
+                android:text="@string/start_header"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:onClick="goto_session_old"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Partie 1"
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <View style="@style/Horizontal_Spacer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select__date_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="31.01.2014"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:onClick="goto_session_old"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Partie 2"
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <View style="@style/Horizontal_Spacer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select__date_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="15.12.2013"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:onClick="goto_session_old"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Partie 3"
+                        android:textAlignment="textEnd"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <View style="@style/Horizontal_Spacer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/session_select__date_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="11.11.2013"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
-
-
-
-
-<!-- 
+<!--
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -96,4 +219,5 @@
 
     <View style="@style/Divider" />
 
-</LinearLayout> -->
+</LinearLayout>
+-->

@@ -1,5 +1,6 @@
 package org.blackboxx.tarockblock;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -94,10 +95,21 @@ public class Settings extends Activity implements OnClickListener {
     	               	g.setData(PrefThemeId);
 //    	               	TextButton.setText(getResources().getStringArray(R.array.themes_list)[PrefThemeId]);
 
-    	   				Intent intent = getIntent();
-    	   				finish();
-    	   				startActivity(intent);            	
-    	               
+//    	   				Intent intent = getIntent();
+//    	   				finish();
+//    	   				startActivity(intent);            	
+    	               	if (Build.VERSION.SDK_INT >= 11) {
+    	               	    recreate();
+    	               	} else {
+    	               	    Intent intent = getIntent();
+    	               	    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+    	               	    finish();
+    	               	    overridePendingTransition(0, 0);
+
+    	               	    startActivity(intent);
+    	               	    overridePendingTransition(0, 0);
+    	               	}
+    	               	
     	               }
     	           });
 
