@@ -29,7 +29,6 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper>
 		implements OnClickListener {
 
 	private Button SettingsPlayerNew;
-	private EditText editTextMainScreen;
 	private List<Player> players;
 	private ListView playersList;
 	private ArrayAdapter<Player> playersAdapter;
@@ -75,8 +74,8 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper>
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
-		menu.add(Menu.NONE, 1, 1, "Edit");
-		menu.add(Menu.NONE, 2, 2, "Delete");
+		menu.add(Menu.NONE, 1, 1, R.string.menu_edit);
+		menu.add(Menu.NONE, 2, 2, R.string.menu_delete);
 		super.onCreateContextMenu(menu, v, menuInfo);
 
 	}
@@ -101,7 +100,7 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper>
 		deletePlayer = playersAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Sind sie sicher?")
+		builder.setMessage(R.string.player_menu_delete_dialog)
 				.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						try {
@@ -163,7 +162,7 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper>
 		final EditText input = (EditText) promptView
 				.findViewById(R.id.settings_player_new);
 		if (editPlayer != null) {
-			alertDialogBuilder.setTitle("Name ändern");
+			alertDialogBuilder.setTitle(R.string.player_menu_edit_dialog);
 			input.setText(editPlayer.getName());
 		}
 		// setup a dialog window

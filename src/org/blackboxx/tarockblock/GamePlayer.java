@@ -9,7 +9,6 @@ import org.blackboxx.tarockblock.persistance.Player;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
