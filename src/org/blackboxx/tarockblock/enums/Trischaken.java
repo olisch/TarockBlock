@@ -2,8 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum Trischaken {
 
-	Keine(1, "Keine Negativspiele Bei erlaubt"), NurPiccolo(2, "Nur Piccolo/Zwiccolo Bei erlaubt"), NurBettler(3, "Nur Bettler Bei erlaubt"), NurGleichwertige(
-			4, "Nur gleichwertige Spiele Bei erlaubt"), Alle(5, "Alle Negativspiele Bei möglich");
+	Punktesieger(1, "Wieviele Punktesieger zahlen?"), Bürgermeister(2, "Bürgermeister doppelt?"), Vorhand(3, "Vorhand doppelt?");
 
 	private Integer id;
 

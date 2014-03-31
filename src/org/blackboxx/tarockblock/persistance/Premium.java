@@ -10,6 +10,9 @@ public class Premium {
 	@DatabaseField(columnName = "pr_id", generatedId = true)
 	private Integer id;
 
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
+
 	@DatabaseField(columnName = "pr_name", unique = true, canBeNull = false)
 	private String name;
 
@@ -24,9 +27,6 @@ public class Premium {
 
 	@DatabaseField(columnName = "pr_value_called", canBeNull = false)
 	private String valueCalled;
-
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
 
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;

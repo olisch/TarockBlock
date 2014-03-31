@@ -1,13 +1,26 @@
 package org.blackboxx.tarockblock;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import org.blackboxx.tarockblock.dao.DatabaseHelper;
+import org.blackboxx.tarockblock.persistance.Tariffset;
+
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
+
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
-public class SettingsTariffs extends Activity {
+public class SettingsTariffs extends OrmLiteBaseActivity<DatabaseHelper> {
+
+	private List<Tariffset> tariffsets;
+	private ListView tariffsetList;
+	private ArrayAdapter<Tariffset> tariffsetAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +36,25 @@ public class SettingsTariffs extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
+		showTariffsetList();
+		
 	}
 
+	private void showTariffsetList() {
+		try {
+			tariffsets = getHelper().getTariffsetDao().queryForAll();
+		} catch (SQLException e) {
+			// TODO errorhandling
+			e.printStackTrace();
+		}
+
+		tariffsetList = (ListView) findViewById(R.id.list_tariffs);
+		tariffsetAdapter = new ArrayAdapter<Tariffset>(this,
+				R.layout.list_item_player, R.id.list_players_item, tariffsets);
+		tariffsetList.setAdapter(tariffsetAdapter);
+		registerForContextMenu(tariffsetList);
+
+	}
 
     /**
 	 * Set up the {@link android.app.ActionBar}.
@@ -62,5 +92,8 @@ public class SettingsTariffs extends Activity {
 	    startActivity(intent);
 	}    
 
+	public List<Tariffset> getTariffset() {
+		return tariffsets;
+	}
 
 }

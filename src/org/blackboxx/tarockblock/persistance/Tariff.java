@@ -9,6 +9,9 @@ public class Tariff {
 	@DatabaseField(columnName = "ta_id", generatedId = true)
 	private Integer id;
 
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
+
 	@DatabaseField(columnName = "ta_name", unique = true, canBeNull = false)
 	private String name;
 
@@ -20,9 +23,6 @@ public class Tariff {
 
 	@DatabaseField(columnName = "ts_value", canBeNull = false)
 	private Integer value;
-
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
 
 	public Integer getId() {
 		return id;

@@ -9,14 +9,14 @@ public class Trischaken {
 	@DatabaseField(columnName = "tr_id", generatedId = true)
 	private Integer id;
 
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
+
 	@DatabaseField(columnName = "tr_qid", canBeNull = false)
 	private Integer qid;
 
 	@DatabaseField(columnName = "tr_value", canBeNull = false)
 	private String value;
-
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
 
 	public Integer getId() {
 		return id;
