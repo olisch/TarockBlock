@@ -9,6 +9,9 @@ public class Trischaken {
 	@DatabaseField(columnName = "tr_id", generatedId = true)
 	private Integer id;
 
+	@DatabaseField(columnName = "tr_qid", canBeNull = false)
+	private Integer qid;
+
 	@DatabaseField(columnName = "tr_value", canBeNull = false)
 	private String value;
 
@@ -21,6 +24,14 @@ public class Trischaken {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getQid() {
+		return qid;
+	}
+
+	public void setQid(Integer qid) {
+		this.qid = qid;
 	}
 
 	public String getValue() {

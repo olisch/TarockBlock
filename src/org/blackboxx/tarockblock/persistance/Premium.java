@@ -20,10 +20,10 @@ public class Premium {
 	private Integer type2;
 
 	@DatabaseField(columnName = "pr_value_silent", canBeNull = false)
-	private Integer valueSilent;
+	private String valueSilent;
 
 	@DatabaseField(columnName = "pr_value_called", canBeNull = false)
-	private Integer valueCalled;
+	private String valueCalled;
 
 	@DatabaseField(canBeNull = false, foreign = true)
 	private Tariffset tariffset;
@@ -63,19 +63,19 @@ public class Premium {
 		this.type2 = type2;
 	}
 
-	public Integer getValueSilent() {
+	public String getValueSilent() {
 		return valueSilent;
 	}
 
-	public void setValueSilent(Integer valueSilent) {
+	public void setValueSilent(String valueSilent) {
 		this.valueSilent = valueSilent;
 	}
 
-	public Integer getValueCalled() {
+	public String getValueCalled() {
 		return valueCalled;
 	}
 
-	public void setValueCalled(Integer valueCalled) {
+	public void setValueCalled(String valueCalled) {
 		this.valueCalled = valueCalled;
 	}
 
