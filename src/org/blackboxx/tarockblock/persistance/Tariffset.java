@@ -21,13 +21,13 @@ public class Tariffset {
 	private Integer kontra;
 
 	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocTariffTariffset> assocTariffTariffset;
+	ForeignCollection<Tariff> tariffs;
 
 	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocPremiumTariffset> assocPremiumTariffsets;
+	ForeignCollection<Premium> premiums;
 
 	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocTrischakenTariffset> assocTrischakenTariffsets;
+	ForeignCollection<Trischaken> trischakens;
 
 	public Integer getId() {
 		return id;
@@ -61,31 +61,28 @@ public class Tariffset {
 		this.kontra = kontra;
 	}
 
-	public ForeignCollection<AssocTariffTariffset> getAssocTariffTariffset() {
-		return assocTariffTariffset;
+	public ForeignCollection<Tariff> getTariffs() {
+		return tariffs;
 	}
 
-	public void setAssocTariffTariffset(
-			ForeignCollection<AssocTariffTariffset> assocTariffTariffset) {
-		this.assocTariffTariffset = assocTariffTariffset;
+	public void setTariffs(ForeignCollection<Tariff> tariffs) {
+		this.tariffs = tariffs;
 	}
 
-	public ForeignCollection<AssocPremiumTariffset> getAssocPremiumTariffsets() {
-		return assocPremiumTariffsets;
+	public ForeignCollection<Premium> getPremiums() {
+		return premiums;
 	}
 
-	public void setAssocPremiumTariffsets(
-			ForeignCollection<AssocPremiumTariffset> assocPremiumTariffsets) {
-		this.assocPremiumTariffsets = assocPremiumTariffsets;
+	public void setPremiums(ForeignCollection<Premium> premiums) {
+		this.premiums = premiums;
 	}
 
-	public ForeignCollection<AssocTrischakenTariffset> getAssocTrischakenTariffsets() {
-		return assocTrischakenTariffsets;
+	public ForeignCollection<Trischaken> getTrischakens() {
+		return trischakens;
 	}
 
-	public void setAssocTrischakenTariffsets(
-			ForeignCollection<AssocTrischakenTariffset> assocTrischakenTariffsets) {
-		this.assocTrischakenTariffsets = assocTrischakenTariffsets;
+	public void setTrischakens(ForeignCollection<Trischaken> trischakens) {
+		this.trischakens = trischakens;
 	}
 
 }

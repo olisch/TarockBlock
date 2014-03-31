@@ -25,8 +25,8 @@ public class Premium {
 	@DatabaseField(columnName = "pr_value_called", canBeNull = false)
 	private Integer valueCalled;
 
-	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocPremiumTariffset> assocPremiumTariffsets;
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
 
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;
@@ -79,21 +79,19 @@ public class Premium {
 		this.valueCalled = valueCalled;
 	}
 
-	public ForeignCollection<AssocPremiumTariffset> getAssocPremiumTariffsets() {
-		return assocPremiumTariffsets;
-	}
-
-	public void setAssocPremiumTariffsets(
-			ForeignCollection<AssocPremiumTariffset> assocPremiumTariffsets) {
-		this.assocPremiumTariffsets = assocPremiumTariffsets;
-	}
-
 	public ForeignCollection<AssocGameRegularPremium> getAssocGameRegularPremiums() {
 		return assocGameRegularPremiums;
 	}
 
-	public void setAssocGameRegularPremiums(
-			ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums) {
+	public void setAssocGameRegularPremiums(ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums) {
 		this.assocGameRegularPremiums = assocGameRegularPremiums;
+	}
+
+	public Tariffset getTariffset() {
+		return tariffset;
+	}
+
+	public void setTariffset(Tariffset tariffset) {
+		this.tariffset = tariffset;
 	}
 }

@@ -1,8 +1,6 @@
 package org.blackboxx.tarockblock.persistance;
 
-import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "trischaken")
@@ -14,8 +12,8 @@ public class Trischaken {
 	@DatabaseField(columnName = "tr_value", canBeNull = false)
 	private String value;
 
-	@ForeignCollectionField(eager = false)
-	ForeignCollection<AssocTrischakenTariffset> assocTrischakenTariffsets;
+	@DatabaseField(canBeNull = false, foreign = true)
+	private Tariffset tariffset;
 
 	public Integer getId() {
 		return id;
@@ -33,13 +31,12 @@ public class Trischaken {
 		this.value = value;
 	}
 
-	public ForeignCollection<AssocTrischakenTariffset> getAssocTrischakenTariffsets() {
-		return assocTrischakenTariffsets;
+	public Tariffset getTariffset() {
+		return tariffset;
 	}
 
-	public void setAssocTrischakenTariffsets(
-			ForeignCollection<AssocTrischakenTariffset> assocTrischakenTariffsets) {
-		this.assocTrischakenTariffsets = assocTrischakenTariffsets;
+	public void setTariffset(Tariffset tariffset) {
+		this.tariffset = tariffset;
 	}
 
 }
