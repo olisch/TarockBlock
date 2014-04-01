@@ -1,5 +1,8 @@
 package org.blackboxx.tarockblock.persistance;
 
+import org.blackboxx.tarockblock.enums.PremiumType1;
+import org.blackboxx.tarockblock.enums.PremiumType2;
+
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
@@ -12,6 +15,9 @@ public class Premium {
 
 	@DatabaseField(canBeNull = false, foreign = true)
 	private Tariffset tariffset;
+
+	@DatabaseField(columnName = "pr_order", canBeNull = false)
+	private Integer order;
 
 	@DatabaseField(columnName = "pr_name", unique = true, canBeNull = false)
 	private String name;
@@ -31,12 +37,33 @@ public class Premium {
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;
 
+	public Premium() {
+	}
+	
+	public Premium(Integer tariffsetId, Integer order, String name, PremiumType1 premiumType1, PremiumType2 premiumType2, String valueSilent, String valueCalled) {
+		this.tariffset = new Tariffset(tariffsetId);
+		this.order = order;
+		this.name = name;
+		this.type1 = premiumType1.getId();
+		this.type2 = premiumType2.getId();
+		this.valueSilent = valueSilent;
+		this.valueCalled = valueCalled;
+	}
+
 	public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getOrder() {
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
 	}
 
 	public String getName() {

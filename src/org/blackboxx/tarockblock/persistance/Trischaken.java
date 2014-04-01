@@ -1,5 +1,7 @@
 package org.blackboxx.tarockblock.persistance;
 
+import org.blackboxx.tarockblock.enums.TrischakenQid;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -16,7 +18,16 @@ public class Trischaken {
 	private Integer qid;
 
 	@DatabaseField(columnName = "tr_value", canBeNull = false)
-	private String value;
+	private Integer value;
+
+	public Trischaken() {
+	}
+
+	public Trischaken(Integer tariffsetId, TrischakenQid trischakenQid, Integer value) {
+		this.tariffset = new Tariffset(tariffsetId);
+		this.qid = trischakenQid.getId();
+		this.value = value;
+	}
 
 	public Integer getId() {
 		return id;
@@ -34,11 +45,11 @@ public class Trischaken {
 		this.qid = qid;
 	}
 
-	public String getValue() {
+	public Integer getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

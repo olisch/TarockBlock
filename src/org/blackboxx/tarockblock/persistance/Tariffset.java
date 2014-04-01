@@ -1,7 +1,7 @@
 package org.blackboxx.tarockblock.persistance;
 
 import org.blackboxx.tarockblock.enums.Bei;
-import org.blackboxx.tarockblock.enums.Kontra;
+import org.blackboxx.tarockblock.enums.KontraMax;
 
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
@@ -44,7 +44,7 @@ public class Tariffset {
 		this.id = id;
 	}
 
-	public Tariffset(String name, Bei bei, Kontra kontra) {
+	public Tariffset(String name, Bei bei, KontraMax kontra) {
 		this.name = name;
 		this.bei = bei.getId();
 		this.kontra = kontra.getId();

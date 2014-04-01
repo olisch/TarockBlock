@@ -15,6 +15,9 @@ public class Tariff {
 	@DatabaseField(canBeNull = false, foreign = true)
 	private Tariffset tariffset;
 
+	@DatabaseField(columnName = "ta_order", canBeNull = false)
+	private Integer order;
+
 	@DatabaseField(columnName = "ta_name", unique = true, canBeNull = false)
 	private String name;
 
@@ -29,13 +32,14 @@ public class Tariff {
 
 	public Tariff() {
 	}
-
-	public Tariff(String name, TariffType1 tariffType1, TariffType2 tariffType2, Integer value, Integer tariffsetId) {
+	
+	public Tariff(Integer tariffsetId, Integer order, String name, TariffType1 tariffType1, TariffType2 tariffType2, Integer value) {
+		this.tariffset = new Tariffset(tariffsetId);
+		this.order = order;
 		this.name = name;
 		this.type1 = tariffType1.getId();
 		this.type2 = tariffType2.getId();
 		this.value = value;
-		this.tariffset = new Tariffset(tariffsetId);
 	}
 
 	public Integer getId() {
@@ -44,6 +48,14 @@ public class Tariff {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getOrder() {
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
 	}
 
 	public String getName() {
