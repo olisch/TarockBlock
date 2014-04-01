@@ -20,6 +20,13 @@ public class Player {
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;
 
+	public Player() {
+	}
+
+	public Player(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		return name;
@@ -45,8 +52,7 @@ public class Player {
 		return playerSessions;
 	}
 
-	public void setPlayerSessions(
-			ForeignCollection<AssocPlayerSession> playerSessions) {
+	public void setPlayerSessions(ForeignCollection<AssocPlayerSession> playerSessions) {
 		this.playerSessions = playerSessions;
 	}
 
@@ -54,8 +60,7 @@ public class Player {
 		return assocGameRegularPremiums;
 	}
 
-	public void setAssocGameRegularPremiums(
-			ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums) {
+	public void setAssocGameRegularPremiums(ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums) {
 		this.assocGameRegularPremiums = assocGameRegularPremiums;
 	}
 

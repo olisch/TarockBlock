@@ -1,5 +1,8 @@
 package org.blackboxx.tarockblock.persistance;
 
+import org.blackboxx.tarockblock.enums.TariffType1;
+import org.blackboxx.tarockblock.enums.TariffType2;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -23,6 +26,17 @@ public class Tariff {
 
 	@DatabaseField(columnName = "ts_value", canBeNull = false)
 	private Integer value;
+
+	public Tariff() {
+	}
+
+	public Tariff(String name, TariffType1 tariffType1, TariffType2 tariffType2, Integer value, Integer tariffsetId) {
+		this.name = name;
+		this.type1 = tariffType1.getId();
+		this.type2 = tariffType2.getId();
+		this.value = value;
+		this.tariffset = new Tariffset(tariffsetId);
+	}
 
 	public Integer getId() {
 		return id;

@@ -1,5 +1,8 @@
 package org.blackboxx.tarockblock.persistance;
 
+import org.blackboxx.tarockblock.enums.Bei;
+import org.blackboxx.tarockblock.enums.Kontra;
+
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
@@ -28,6 +31,24 @@ public class Tariffset {
 
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<Trischaken> trischakens;
+
+	public Tariffset() {
+	}
+
+	/**
+	 * just for init the id for foreng key assignments
+	 * 
+	 * @param id
+	 */
+	public Tariffset(Integer id) {
+		this.id = id;
+	}
+
+	public Tariffset(String name, Bei bei, Kontra kontra) {
+		this.name = name;
+		this.bei = bei.getId();
+		this.kontra = kontra.getId();
+	}
 
 	public Integer getId() {
 		return id;
