@@ -50,7 +50,7 @@ public class SettingsTariff extends Activity {
 
 	public void goto_settings_tariff_new(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNew.class);
+		Intent intent = new Intent(this, SettingsTariffsetNew.class);
 		startActivity(intent);
 	}
 

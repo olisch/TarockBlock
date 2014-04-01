@@ -93,5 +93,7 @@
     <string name="menu_delete">Löschen</string>
     <string name="player_menu_edit_dialog">Name ändern</string>
     <string name="player_menu_delete_dialog">Soll der Spieler und alle seine Partien wirklich gelöscht werden?</string>
+     <string name="tariffset_menu_edit_dialog">Name ändern</string>
+    <string name="tariffset_menu_delete_dialog">Soll der Tarif und alle seine Partien wirklich gelöscht werden?</string>
     
 </resources>

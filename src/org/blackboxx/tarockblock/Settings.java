@@ -208,7 +208,7 @@ public class Settings extends Activity implements OnClickListener {
 	
 	public void goto_settings_tariffs(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffs.class);
+		Intent intent = new Intent(this, SettingsTariffset.class);
 	    startActivity(intent);
 	}    
 	

@@ -89,7 +89,7 @@
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffs"
+            android:name="org.blackboxx.tarockblock.SettingsTariffset"
             android:label="@string/title_settings_tariffs"
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
@@ -99,29 +99,29 @@
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffNew"
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNew"
             android:label="@string/title_settings_tariff_new"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffs" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffset" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffNewEntry"
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewEntry"
             android:label="@string/title_settings_tariff_new_entry"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffNewBei"
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewBei"
             android:label="@string/title_settings_tariff_new_bei"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffNewTrischaken"
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewTrischaken"
             android:label="@string/title_settings_tariff_new_trischaken"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffNewKontra"
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewKontra"
             android:label="@string/title_settings_tariff_new_kontra"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffNew" >
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SettingsImExport"

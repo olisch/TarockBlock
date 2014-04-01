@@ -4,10 +4,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
-import org.blackboxx.tarockblock.persistance.Player;
+import org.blackboxx.tarockblock.persistance.Tariffset;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
@@ -25,15 +26,15 @@ import android.widget.ListView;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
 
-	private Button SettingsPlayerNew;
-	private List<Player> players;
-	private ListView playersList;
-	private ArrayAdapter<Player> playersAdapter;
+	private Button SettingsTariffsetNew;
+	private List<Tariffset> tariffsets;
+	private ListView tariffsetList;
+	private ArrayAdapter<Tariffset> tariffsetAdapter;
 
-	private Player editPlayer;
-	private Player deletePlayer;
+	private Tariffset editTariffset;
+	private Tariffset deleteTariffset;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,27 +46,27 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
 
-		setContentView(R.layout.settings_player);
-		SettingsPlayerNew = (Button) findViewById(R.id.settings_button_player_new);
-		SettingsPlayerNew.setOnClickListener(this);
+		setContentView(R.layout.settings_tariffset);
+		SettingsTariffsetNew = (Button) findViewById(R.id.settings_button_tariffset_new);
+		SettingsTariffsetNew.setOnClickListener(this);
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		showPlayersList();
+		showTariffsetList();
 	}
 
-	private void showPlayersList() {
+	private void showTariffsetList() {
 		try {
-			players = getHelper().getPlayerDao().queryForAll();
+			tariffsets = getHelper().getTariffsetDao().queryForAll();
 		} catch (SQLException e) {
 			// TODO errorhandling
 			e.printStackTrace();
 		}
 
-		playersList = (ListView) findViewById(R.id.list_player);
-		playersAdapter = new ArrayAdapter<Player>(this, R.layout.list_item_player, R.id.list_players_item, players);
-		playersList.setAdapter(playersAdapter);
-		registerForContextMenu(playersList);
+		tariffsetList = (ListView) findViewById(R.id.list_tariffset);
+		tariffsetAdapter = new ArrayAdapter<Tariffset>(this, R.layout.list_item_tariffset, R.id.list_tariffset_item, tariffsets);
+		tariffsetList.setAdapter(tariffsetAdapter);
+		registerForContextMenu(tariffsetList);
 
 	}
 
@@ -82,30 +83,30 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch (item.getItemId()) {
 		case 1:
-			editPlayer(info.id);
+			editTariffset(info.id);
 			return true;
 		case 2:
-			deletePlayer(info.id);
+			deleteTariffset(info.id);
 			return true;
 		default:
 			return super.onContextItemSelected(item);
 		}
 	}
 
-	private void deletePlayer(long id) {
-		deletePlayer = playersAdapter.getItem((int) id);
+	private void deleteTariffset(long id) {
+		deleteTariffset = tariffsetAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.player_menu_delete_dialog).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+		builder.setMessage(R.string.tariffset_menu_delete_dialog).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
-					getHelper().getPlayerDao().delete(deletePlayer);
+					getHelper().getTariffsetDao().delete(deleteTariffset);
 
 				} catch (SQLException e) {
 					// TODO errorhandling
 					e.printStackTrace();
 				}
-				showPlayersList();
+				showTariffsetList();
 			}
 		}).setNegativeButton("Nein", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -114,68 +115,48 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		builder.show();
 	}
 
-	private void editPlayer(long id) {
-		editPlayer = playersAdapter.getItem((int) id);
-		openDialogPlayerName();
+	private void editTariffset(long id) {
+		editTariffset = tariffsetAdapter.getItem((int) id);
+		openDialogTariffsetName();
 	}
 
 	@Override
 	public void onClick(View v) {
-
-		// Context context = getApplicationContext();
-		// int duration = Toast.LENGTH_LONG;
-		// CharSequence text = String.valueOf(v.getId());
-		// Toast.makeText(context, text, duration).show();
-
-		openDialogPlayerName();
-
-		//
-		// AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		// builder.setTitle(R.string.title_settings_player_new)
-		// .setItems(R.array.themes_list, new DialogInterface.OnClickListener()
-		// {
-		// public void onClick(DialogInterface dialog, int PrefThemeId) {
-		// // Do something with the selection
-		//
-		//
-		// }
-		// });
-		// AlertDialog alert = builder.create();
-		// alert.show();
+		openDialogTariffsetName();
 	}
 
-	private void openDialogPlayerName() {
+	private void openDialogTariffsetName() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.settings_player_new, null);
+		View promptView = layoutInflater.inflate(R.layout.settings_tariffset_new, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
 
-		final EditText input = (EditText) promptView.findViewById(R.id.settings_player_new);
-		if (editPlayer != null) {
-			alertDialogBuilder.setTitle(R.string.player_menu_edit_dialog);
-			input.setText(editPlayer.getName());
+		final EditText input = (EditText) promptView.findViewById(R.id.settings_tariffset_rename);
+		if (editTariffset != null) {
+			alertDialogBuilder.setTitle(R.string.tariffset_menu_edit_dialog);
+			input.setText(editTariffset.getName());
 		}
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				// get user input and set it to result
 				// editTextMainScreen.setText(input.getText());
-				Player savePlayer;
-				if (editPlayer == null) {
-					savePlayer = new Player();
+				Tariffset saveTariffset;
+				if (editTariffset == null) {
+					saveTariffset = new Tariffset();
 				} else {
-					savePlayer = editPlayer;
+					saveTariffset = editTariffset;
 				}
-				savePlayer.setName(input.getEditableText().toString());
+				saveTariffset.setName(input.getEditableText().toString());
 				try {
-					getHelper().getPlayerDao().createOrUpdate(savePlayer);
-					editPlayer = null;
+					getHelper().getTariffsetDao().createOrUpdate(saveTariffset);
+					editTariffset = null;
 				} catch (SQLException e) {
 					// TODO errorhandling
 					e.printStackTrace();
 				}
-				showPlayersList();
+				showTariffsetList();
 			}
 		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -211,8 +192,20 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		return super.onOptionsItemSelected(item);
 	}
 
-	public List<Player> getPlayers() {
-		return players;
+	public void goto_settings_tariff(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, SettingsTariff.class);
+		startActivity(intent);
+	}
+
+	public void goto_settings_tariffset_new(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, SettingsTariffsetNew.class);
+		startActivity(intent);
+	}
+
+	public List<Tariffset> getTariffset() {
+		return tariffsets;
 	}
 
 }

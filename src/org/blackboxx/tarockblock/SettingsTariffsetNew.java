@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.app.NavUtils;
 
-public class SettingsTariffNew extends Activity {
+public class SettingsTariffsetNew extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class SettingsTariffNew extends Activity {
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
 
-		setContentView(R.layout.settings_tariff_new);
+		setContentView(R.layout.settings_tariffset_new);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -67,49 +67,49 @@ public class SettingsTariffNew extends Activity {
 
 	public void goto_trischaken(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewTrischaken.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewTrischaken.class);
 	    startActivity(intent);
 	}
 
 	public void goto_bei(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewBei.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewBei.class);
 	    startActivity(intent);
 	}
 
 	public void goto_kontra(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewKontra.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewKontra.class);
 	    startActivity(intent);
 	}
 
 	public void goto_settings_tariffs(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffs.class);
+		Intent intent = new Intent(this, SettingsTariffset.class);
 	    startActivity(intent);
 	}    
 	
 	public void goto_settings_tariff_new_entry(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewEntry.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewEntry.class);
 	    startActivity(intent);
 	}    
 
 	public void goto_settings_tariff_new_trischaken(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewTrischaken.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewTrischaken.class);
 	    startActivity(intent);
 	}    
 
 	public void goto_settings_tariff_new_bei(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewBei.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewBei.class);
 	    startActivity(intent);
 	}    
 
 	public void goto_settings_tariff_new_kontra(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNewKontra.class);
+		Intent intent = new Intent(this, SettingsTariffsetNewKontra.class);
 	    startActivity(intent);
 	}    
 

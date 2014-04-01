@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.app.NavUtils;
 
-public class SettingsTariffNewBei extends Activity {
+public class SettingsTariffsetNewKontra extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SettingsTariffNewBei extends Activity {
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
 
-		setContentView(R.layout.settings_tariff_new_bei);
+		setContentView(R.layout.settings_tariffset_new_kontra);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -51,7 +51,7 @@ public class SettingsTariffNewBei extends Activity {
 
 	public void goto_settings_tariff_new(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNew.class);
+		Intent intent = new Intent(this, SettingsTariffsetNew.class);
 	    startActivity(intent);
 	}    
 

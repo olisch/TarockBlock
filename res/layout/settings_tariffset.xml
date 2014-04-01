@@ -13,12 +13,12 @@
         <View style="@style/Divider" />
 
         <Button
-            android:id="@+id/start_button_tariff_new"
+            android:id="@+id/settings_button_tariffset_new"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:onClick="goto_settings_tariff_new"
+            android:onClick="goto_settings_tariffset_new"
             android:text="@string/button_tariff_new" />
 
         <View style="@style/Divider" />
@@ -30,7 +30,7 @@
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
             <ListView
-                android:id="@+id/list_tariffs"
+                android:id="@+id/list_tariffset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dividerHeight="0dp"

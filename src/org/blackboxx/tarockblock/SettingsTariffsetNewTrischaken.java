@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.app.NavUtils;
 
-public class SettingsTariffNewTrischaken extends Activity {
+public class SettingsTariffsetNewTrischaken extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class SettingsTariffNewTrischaken extends Activity {
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
 
-		setContentView(R.layout.settings_tariff_new_trischaken);
+		setContentView(R.layout.settings_tariffset_new_trischaken);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -51,7 +51,7 @@ public class SettingsTariffNewTrischaken extends Activity {
 
 	public void goto_settings_tariff_new(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffNew.class);
+		Intent intent = new Intent(this, SettingsTariffsetNew.class);
 	    startActivity(intent);
 	}    
 
