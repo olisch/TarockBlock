@@ -12,13 +12,10 @@ public class Tariff {
 	@DatabaseField(columnName = "ta_id", generatedId = true)
 	private Integer id;
 
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
-
 	@DatabaseField(columnName = "ta_order", canBeNull = false)
 	private Integer order;
 
-	@DatabaseField(columnName = "ta_name", unique = true, canBeNull = false)
+	@DatabaseField(columnName = "ta_name", canBeNull = false)
 	private String name;
 
 	@DatabaseField(columnName = "ta_type1", canBeNull = false)
@@ -30,11 +27,23 @@ public class Tariff {
 	@DatabaseField(columnName = "ts_value", canBeNull = false)
 	private Integer value;
 
+	@DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
+	private Tariffset tariffset;
+
 	public Tariff() {
 	}
-	
+
 	public Tariff(Integer tariffsetId, Integer order, String name, TariffType1 tariffType1, TariffType2 tariffType2, Integer value) {
 		this.tariffset = new Tariffset(tariffsetId);
+		this.order = order;
+		this.name = name;
+		this.type1 = tariffType1.getId();
+		this.type2 = tariffType2.getId();
+		this.value = value;
+	}
+
+	public Tariff(Tariffset tariffset, Integer order, String name, TariffType1 tariffType1, TariffType2 tariffType2, Integer value) {
+		this.tariffset = tariffset;
 		this.order = order;
 		this.name = name;
 		this.type1 = tariffType1.getId();

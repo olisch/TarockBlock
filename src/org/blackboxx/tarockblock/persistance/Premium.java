@@ -13,13 +13,10 @@ public class Premium {
 	@DatabaseField(columnName = "pr_id", generatedId = true)
 	private Integer id;
 
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
-
 	@DatabaseField(columnName = "pr_order", canBeNull = false)
 	private Integer order;
 
-	@DatabaseField(columnName = "pr_name", unique = true, canBeNull = false)
+	@DatabaseField(columnName = "pr_name", canBeNull = false)
 	private String name;
 
 	@DatabaseField(columnName = "pr_type1", canBeNull = false)
@@ -34,14 +31,27 @@ public class Premium {
 	@DatabaseField(columnName = "pr_value_called", canBeNull = false)
 	private String valueCalled;
 
+	@DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
+	private Tariffset tariffset;
+
 	@ForeignCollectionField(eager = false)
 	ForeignCollection<AssocGameRegularPremium> assocGameRegularPremiums;
 
 	public Premium() {
 	}
-	
+
 	public Premium(Integer tariffsetId, Integer order, String name, PremiumType1 premiumType1, PremiumType2 premiumType2, String valueSilent, String valueCalled) {
 		this.tariffset = new Tariffset(tariffsetId);
+		this.order = order;
+		this.name = name;
+		this.type1 = premiumType1.getId();
+		this.type2 = premiumType2.getId();
+		this.valueSilent = valueSilent;
+		this.valueCalled = valueCalled;
+	}
+
+	public Premium(Tariffset tariffset, Integer order, String name, PremiumType1 premiumType1, PremiumType2 premiumType2, String valueSilent, String valueCalled) {
+		this.tariffset = tariffset;
 		this.order = order;
 		this.name = name;
 		this.type1 = premiumType1.getId();

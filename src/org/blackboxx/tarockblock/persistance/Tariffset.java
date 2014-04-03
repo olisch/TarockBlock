@@ -23,13 +23,13 @@ public class Tariffset {
 	@DatabaseField(columnName = "ts_kontra", canBeNull = false, defaultValue = "8")
 	private Integer kontra;
 
-	@ForeignCollectionField(eager = false)
+	@ForeignCollectionField(eager = true, columnName = "tariffs")
 	ForeignCollection<Tariff> tariffs;
 
-	@ForeignCollectionField(eager = false)
+	@ForeignCollectionField(eager = true)
 	ForeignCollection<Premium> premiums;
 
-	@ForeignCollectionField(eager = false)
+	@ForeignCollectionField(eager = true)
 	ForeignCollection<Trischaken> trischakens;
 
 	public Tariffset() {

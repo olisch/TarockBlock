@@ -11,20 +11,26 @@ public class Trischaken {
 	@DatabaseField(columnName = "tr_id", generatedId = true)
 	private Integer id;
 
-	@DatabaseField(canBeNull = false, foreign = true)
-	private Tariffset tariffset;
-
 	@DatabaseField(columnName = "tr_qid", canBeNull = false)
 	private Integer qid;
 
 	@DatabaseField(columnName = "tr_value", canBeNull = false)
 	private Integer value;
 
+	@DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
+	private Tariffset tariffset;
+
 	public Trischaken() {
 	}
 
 	public Trischaken(Integer tariffsetId, TrischakenQid trischakenQid, Integer value) {
 		this.tariffset = new Tariffset(tariffsetId);
+		this.qid = trischakenQid.getId();
+		this.value = value;
+	}
+
+	public Trischaken(Tariffset tariffset, TrischakenQid trischakenQid, Integer value) {
+		this.tariffset = tariffset;
 		this.qid = trischakenQid.getId();
 		this.value = value;
 	}
