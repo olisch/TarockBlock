@@ -2,8 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum TypeTariff {
 
-	Nothing(0, "-"), Vorhand(1, "Vorhand"), PiccoloZwiccolo(2, "Piccolo/Zwiccolo"), Bettler(3, "Bettler"), Solo(4, "Solo"), Besserrufer(5, "Besserrufer"), Pagatrufer(
-			6, "Pagatrufer"), Uhurufer(7, "Uhurufer"), Kakadurufer(8, "Kakadurufer"), Quapilrufer(9, "Quapilrufer");
+	Tariff(1, "Spielansage"), Premium(2, "Prämie");
 
 	private Integer id;
 

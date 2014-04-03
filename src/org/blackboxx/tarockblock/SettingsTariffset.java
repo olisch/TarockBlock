@@ -64,7 +64,7 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 		}
 
 		tariffsetList = (ListView) findViewById(R.id.list_tariffset);
-		tariffsetAdapter = new ArrayAdapter<Tariffset>(this, R.layout.list_item_tariffset, R.id.list_tariffset_item, tariffsets);
+		tariffsetAdapter = new ArrayAdapter<Tariffset>(this, R.layout.item_tariffset, R.id.item_tariffset, tariffsets);
 		tariffsetList.setAdapter(tariffsetAdapter);
 		registerForContextMenu(tariffsetList);
 
@@ -72,8 +72,9 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		menu.add(Menu.NONE, 1, 1, R.string.menu_edit);
-		menu.add(Menu.NONE, 2, 2, R.string.menu_delete);
+		menu.add(Menu.NONE, 1, 1, R.string.menu_default);
+		menu.add(Menu.NONE, 2, 2, R.string.menu_edit);
+		menu.add(Menu.NONE, 3, 3, R.string.menu_delete);
 		super.onCreateContextMenu(menu, v, menuInfo);
 
 	}
@@ -83,9 +84,12 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch (item.getItemId()) {
 		case 1:
-			editTariffset(info.id);
+			defaultTariffset(info.id);
 			return true;
 		case 2:
+			editTariffset(info.id);
+			return true;
+		case 3:
 			deleteTariffset(info.id);
 			return true;
 		default:
@@ -93,11 +97,16 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 		}
 	}
 
+	private void defaultTariffset(long id) {
+		// TODO save default in preferences
+
+	}
+
 	private void deleteTariffset(long id) {
 		deleteTariffset = tariffsetAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.tariffset_menu_delete_dialog).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+		builder.setMessage(R.string.menu_delete_dialog_tariffset).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
 					getHelper().getTariffsetDao().delete(deleteTariffset);
@@ -134,7 +143,7 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 
 		final EditText input = (EditText) promptView.findViewById(R.id.settings_tariffset_rename);
 		if (editTariffset != null) {
-			alertDialogBuilder.setTitle(R.string.tariffset_menu_edit_dialog);
+			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
 			input.setText(editTariffset.getName());
 		}
 		// setup a dialog window

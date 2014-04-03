@@ -6,13 +6,13 @@ import java.util.List;
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
 import org.blackboxx.tarockblock.persistance.Player;
 
-import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
-
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.support.v4.app.NavUtils;
+
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 
@@ -24,16 +24,16 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme=0;
+		int user_theme = 0;
 		Globals g = Globals.getInstance();
-		user_theme=g.getData();
+		user_theme = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
 
 		setContentView(R.layout.game_player);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
+
 		showPlayersList();
 	}
 
@@ -46,8 +46,7 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 		}
 
 		playersList = (ListView) findViewById(R.id.list_gameplayers);
-		playersAdapter = new ArrayAdapter<Player>(this,
-				R.layout.list_item_player, R.id.list_players_item, players);
+		playersAdapter = new ArrayAdapter<Player>(this, R.layout.item_player, R.id.item_player, players);
 		playersList.setAdapter(playersAdapter);
 		registerForContextMenu(playersList);
 
@@ -78,6 +77,5 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 
 }

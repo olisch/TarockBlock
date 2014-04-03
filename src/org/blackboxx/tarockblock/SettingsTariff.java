@@ -64,7 +64,7 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		}
 
 		tariffList = (ListView) findViewById(R.id.list_tariff);
-		tariffAdapter = new ArrayAdapter<Tariff>(this, R.layout.list_item_tariff, R.id.list_tariff_item, tariffs);
+		tariffAdapter = new ArrayAdapter<Tariff>(this, R.layout.item_tariff, R.id.item_tariff, tariffs);
 		tariffList.setAdapter(tariffAdapter);
 		registerForContextMenu(tariffList);
 
@@ -97,7 +97,7 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		deleteTariff = tariffAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.tariff_menu_delete_dialog).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+		builder.setMessage(R.string.menu_delete_dialog_tariff).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
 					getHelper().getTariffDao().delete(deleteTariff);
@@ -134,7 +134,7 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 
 		final EditText input = (EditText) promptView.findViewById(R.id.settings_tariff_rename);
 		if (editTariff != null) {
-			alertDialogBuilder.setTitle(R.string.tariff_menu_edit_dialog);
+			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
 			input.setText(editTariff.getName());
 		}
 		// setup a dialog window

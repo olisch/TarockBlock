@@ -63,7 +63,7 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		}
 
 		playersList = (ListView) findViewById(R.id.list_player);
-		playersAdapter = new ArrayAdapter<Player>(this, R.layout.list_item_player, R.id.list_players_item, players);
+		playersAdapter = new ArrayAdapter<Player>(this, R.layout.item_player, R.id.item_player, players);
 		playersList.setAdapter(playersAdapter);
 		registerForContextMenu(playersList);
 
@@ -96,7 +96,7 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 		deletePlayer = playersAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.player_menu_delete_dialog).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+		builder.setMessage(R.string.menu_delete_dialog_player).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
 					getHelper().getPlayerDao().delete(deletePlayer);
@@ -153,7 +153,7 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 
 		final EditText input = (EditText) promptView.findViewById(R.id.settings_player_new);
 		if (editPlayer != null) {
-			alertDialogBuilder.setTitle(R.string.player_menu_edit_dialog);
+			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
 			input.setText(editPlayer.getName());
 		}
 		// setup a dialog window
