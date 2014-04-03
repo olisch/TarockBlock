@@ -22,6 +22,16 @@
         <View style="@style/Divider" />
 
         <Button
+            android:id="@+id/session_old_games_sofar"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goto_games_sofar"
+            android:text="@string/button_games_sofar" />
+
+        <View style="@style/Divider" />
+
+        <Button
             android:id="@+id/session_old_continue"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
@@ -31,16 +41,7 @@
 
         <View style="@style/Divider" />
 
-        <Button
-            android:id="@+id/session_old_games_sofar"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="goto_games_sofar"
-            android:text="@string/button_games_sofar" />
-
-        <View style="@style/Divider" />
-    </LinearLayout>
+        </LinearLayout>
 
     <!-- Scrollable Content above Buttons -->
 
