@@ -7,8 +7,10 @@ import org.blackboxx.tarockblock.dao.DatabaseHelper;
 import org.blackboxx.tarockblock.persistance.Tariffset;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
@@ -20,19 +22,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
 
-	private Button SettingsTariffsetNew;
+	// private Button SettingsTariffsetNew;
 	private List<Tariffset> tariffsets;
 	private ListView tariffsetList;
 	private ArrayAdapter<Tariffset> tariffsetAdapter;
 
+	private Tariffset defaultTariffset;
 	private Tariffset editTariffset;
 	private Tariffset deleteTariffset;
 
@@ -40,15 +43,17 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme = 0;
+		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		user_theme = g.getData();
+		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId);
 
 		setContentView(R.layout.settings_tariffset);
-		SettingsTariffsetNew = (Button) findViewById(R.id.settings_button_tariffset_new);
-		SettingsTariffsetNew.setOnClickListener(this);
+		// SettingsTariffsetNew = (Button)
+		// findViewById(R.id.settings_button_tariffset_new);
+		// SettingsTariffsetNew.setOnClickListener(this);
+
 		// Show the Up button in the action bar.
 		setupActionBar();
 
@@ -56,12 +61,23 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 	}
 
 	private void showTariffsetList() {
+		int TariffsetId = 0;
+		Globals ts = Globals.getInstance();
+		TariffsetId = ts.getData();
+
+		Context context = getApplicationContext();
+		int duration = Toast.LENGTH_LONG;
+		CharSequence text = String.valueOf(ts);
+		Toast.makeText(context, text, duration).show();
+
 		try {
 			tariffsets = getHelper().getTariffsetDao().queryForAll();
 		} catch (SQLException e) {
 			// TODO errorhandling
 			e.printStackTrace();
 		}
+
+		// TODO if tariffsetId = TariffsetId then make this listrow bold
 
 		tariffsetList = (ListView) findViewById(R.id.list_tariffset);
 		tariffsetAdapter = new ArrayAdapter<Tariffset>(this, R.layout.item_tariffset, R.id.item_tariffset, tariffsets);
@@ -98,8 +114,16 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 	}
 
 	private void defaultTariffset(long id) {
-		// TODO save default in preferences
-
+		// TODO save selected tariffsetId into defaultTariffset
+		defaultTariffset = tariffsetAdapter.getItem((int) id);
+		int PrefTariffsetId = defaultTariffset.getId();
+		SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file), Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putInt("pref_tariffset", PrefTariffsetId);
+		editor.commit();
+		Globals ts = Globals.getInstance();
+		ts.setData(PrefTariffsetId);
+		showTariffsetList();
 	}
 
 	private void deleteTariffset(long id) {
@@ -136,7 +160,7 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 
 	private void openDialogTariffsetName() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.settings_tariffset_new, null);
+		View promptView = layoutInflater.inflate(R.layout.settings_tariffset_rename, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
