@@ -30,7 +30,7 @@
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
             <ListView
-                android:id="@+id/list_tariff"
+                android:id="@+id/settings_tariff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dividerHeight="0dp"

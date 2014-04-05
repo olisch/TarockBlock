@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:onClick="goto_settings_tariffset_new"
+            android:onClick="goto_settings_tariffset_new_base"
             android:text="@string/button_tariff_new" />
 
         <View style="@style/Divider" />

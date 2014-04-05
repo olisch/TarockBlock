@@ -93,6 +93,7 @@
     <string name="menu_edit">Name ändern</string>
     <string name="menu_delete">Löschen</string>
     <string name="menu_edit_dialog">Name ändern</string>
+    <string name="menu_tariffset_new_dialog">Neues Tarifset basierend auf</string>
     <string name="menu_delete_dialog_session">Soll die Partie und alle damit verbundenen Spiele wirklich gelöscht werden?</string>
     <string name="menu_delete_dialog_player">Soll der Spieler und alle damit verbundenen Partien und Spiele wirklich gelöscht werden?</string>
      <string name="menu_delete_dialog_tariffset">Soll das Tarifset und alle damit verbundenen Partien und Spiele wirklich gelöscht werden?</string>

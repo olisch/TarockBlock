@@ -63,8 +63,8 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 			e.printStackTrace();
 		}
 
-		tariffList = (ListView) findViewById(R.id.list_tariff);
-		tariffAdapter = new ArrayAdapter<Tariff>(this, R.layout.item_tariff, R.id.item_tariff, tariffs);
+		tariffList = (ListView) findViewById(R.id.settings_tariff);
+		tariffAdapter = new ArrayAdapter<Tariff>(this, R.layout.item_tariff, R.id.settings_tariffset_tariff, tariffs);
 		tariffList.setAdapter(tariffAdapter);
 		registerForContextMenu(tariffList);
 

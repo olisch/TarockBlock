@@ -30,6 +30,9 @@
     <ScrollView style="@style/BasicScrollViewLayout" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
+            
+<!-- 		TODO Listview aus entsprechenden enums erstellen -->
+            
         </LinearLayout>
     </ScrollView>
 

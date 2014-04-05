@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_tariff"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/activity_4_margin"
-    android:paddingBottom="@dimen/activity_4_margin"
-    android:text="Tarif"
-    android:textAppearance="?android:attr/textAppearanceLarge" />
+    android:baselineAligned="false"
+    android:onClick=""
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/settings_tariffset_tariff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spielansage"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <View style="@style/Horizontal_Spacer" />
+
+    <TextView
+        android:id="@+id/settings_tariffset_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Punkte"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

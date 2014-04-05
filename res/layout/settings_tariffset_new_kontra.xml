@@ -37,6 +37,7 @@
                 android:checkedButton="@+id/settings_tariff_new_kontra_3"
                 android:orientation="vertical" >
 
+<!-- 		TODO Listview aus entsprechenden enums erstellen -->
                 <RadioButton
                     android:id="@+id/settings_tariff_new_kontra_1"
                     android:layout_width="wrap_content"

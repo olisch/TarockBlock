@@ -35,7 +35,7 @@
         <activity
             android:name="org.blackboxx.tarockblock.SessionOld"
             android:label="@string/title_session_old"
-            android:parentActivityName="org.blackboxx.tarockblock.SessionSelect" >
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SessionActive"

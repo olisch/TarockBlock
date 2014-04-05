@@ -30,13 +30,13 @@
     <ScrollView style="@style/BasicScrollViewLayout" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
-
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checkedButton="@+id/settings_tariff_new_bei_4"
                 android:orientation="vertical" >
 
+<!-- 		TODO Listview aus entsprechenden enums erstellen -->
                 <RadioButton
                     android:id="@+id/settings_tariff_new_bei_1"
                     android:layout_width="wrap_content"

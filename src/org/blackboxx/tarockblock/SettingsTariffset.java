@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
 
-	// private Button SettingsTariffsetNew;
+	private Button SettingsTariffsetNew;
 	private List<Tariffset> tariffsets;
 	private ListView tariffsetList;
 	private ArrayAdapter<Tariffset> tariffsetAdapter;
@@ -50,9 +51,9 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 		UtilsActivity.onActivitySetPrefTheme(this, ThemeId);
 
 		setContentView(R.layout.settings_tariffset);
-		// SettingsTariffsetNew = (Button)
-		// findViewById(R.id.settings_button_tariffset_new);
-		// SettingsTariffsetNew.setOnClickListener(this);
+
+		SettingsTariffsetNew = (Button) findViewById(R.id.settings_button_tariffset_new);
+		SettingsTariffsetNew.setOnClickListener(this);
 
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -155,7 +156,55 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 
 	@Override
 	public void onClick(View v) {
-		openDialogTariffsetName();
+		switch (v.getId()) {
+		case R.id.settings_button_tariffset_new:
+			openDialogTariffsetNewBase();
+			break;
+		case 2:
+			openDialogTariffsetName();
+			break;
+		}
+	}
+
+	private void openDialogTariffsetNewBase() {
+		LayoutInflater layoutInflater = LayoutInflater.from(this);
+		View promptView = layoutInflater.inflate(R.layout.settings_tariffset_new_base, null);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// set prompts.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setView(promptView);
+
+		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
+
+		// TODO ersetze zweites radiobutton item mit spinner aus tariffset
+		// namen, vielleicht ähnlich wie unten?
+
+		// String[] items = new String[] { "Karnataka", "Orissa",
+		// "Andhrapradesh" };
+		// Spinner spinner;
+		//
+		// spinner = (Spinner)
+		// this.findViewById(R.id.settings_tariffset_new_basedon);
+		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		// android.R.layout.simple_spinner_item, items);
+		// adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// spinner.setAdapter(adapter);
+
+		// setup a dialog window
+		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				// TODO beim anzeigen des neuen tarifsets sollte auch mitgegeben
+				// werden, obs leer ist, oder welches tarifset kopiert und
+				// angezeigt werden soll zum editieren
+				goto_settings_tariffset_new(null);
+			}
+		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
+			}
+		});
+		// create an alert dialog
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
 	}
 
 	private void openDialogTariffsetName() {

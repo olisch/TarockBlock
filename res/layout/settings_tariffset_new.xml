@@ -10,7 +10,7 @@
         android:id="@+id/buttons"
         style="@style/BasicButtonLayout" >
 
-<!--
+        <!--
          <View style="@style/Divider" />
 
         <Button
@@ -45,7 +45,7 @@
             android:text="@string/button_tariff_new_kontra" />
 
         <View style="@style/Divider" />
- -->
+        -->
 
         <View style="@style/Divider" />
 
@@ -85,11 +85,43 @@
     <ScrollView style="@style/BasicScrollViewLayout" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
+
+            <TextView
+                android:id="@+id/settings_tariffset_new_tariffs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SPIELANSAGEN"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <View style="@style/Divider" />
+
+            <ListView
+                android:id="@+id/settings_tariffset_new_tariffslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+
+            <TextView
+                android:id="@+id/settings_tariffset_new_premiums"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="PRÄMIEN"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <View style="@style/Divider" />
+
+            <ListView
+                android:id="@+id/settings_tariffset_new_premiumslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
-<!--
+</RelativeLayout><!--
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
