@@ -26,16 +26,36 @@
   </string-array>
  
   <string-array name="list_bei">
-   <item>Piccolo</item>
-   <item>Zwiccolo</item>
-   <item>Bettler</item>
-  </string-array>
- 
+   <item>Keine Negativspiele Bei erlaubt</item>
+   <item>Nur Piccolo/Zwiccolo Bei erlaubt</item>
+   <item>Nur Bettler Bei erlaubt</item>
+   <item>Nur gleichwertige Spiele Bei erlaubt</item>
+   <item>Alle Negativspiele Bei möglich</item>
+   </string-array>
+
   <string-array name="list_kontra">
-   <item>Kontra</item>
-   <item>Subkontra</item>
-   <item>Rekontra</item>
-  </string-array>
- 
+   <item>Kontra (2x)</item>
+   <item>Rekontra (4x)</item>
+   <item>Subkontra (8x)</item>
+   <item>Mortkontra (16x)</item>
+   </string-array>
   
- </resources>
+  <string-array name="list_trischaken">
+   <item>Wieviele Punktesieger zahlen?</item>
+   <item>Bürgermeister doppelt?</item>
+   <item>Vorhand doppelt?</item>
+   </string-array>
+
+  <string-array name="list_trischaken1">
+   <item>1 Punktesieger zahlt</item>
+   <item>2 Punktesieger zahlen</item>
+   </string-array>
+    <string-array name="list_trischaken2">
+   <item>Bürgermeister zahlt einfach</item>
+   <item>Bürgermeister zahlt doppelt</item>
+   </string-array>
+    <string-array name="list_trischaken3">
+   <item>Vorhand zahlt einfach</item>
+   <item>Vorhand zahlt doppelt</item>
+   </string-array>
+  </resources>

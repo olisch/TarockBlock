@@ -28,6 +28,51 @@
             android:parentActivityName="org.blackboxx.tarockblock.SessionActive" >
         </activity>
         <activity
+            android:name="org.blackboxx.tarockblock.GameDetails"
+            android:label="@string/title_game_details"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameEditLast"
+            android:label="@string/title_game_edit_last"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameNegative"
+            android:label="@string/title_game_negative"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GamePlayer"
+            android:label="@string/title_game_player"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameRegular"
+            android:label="@string/title_game_regular"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GamesSoFar"
+            android:label="@string/title_games_sofar"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.GameTrischaken"
+            android:label="@string/title_game_trischaken"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.Info"
+            android:label="@string/title_info"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SessionActive"
+            android:label="@string/title_session_active"
+            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+        </activity>
+        <activity
             android:name="org.blackboxx.tarockblock.SessionNew"
             android:label="@string/title_session_new"
             android:parentActivityName="org.blackboxx.tarockblock.Main" >
@@ -38,94 +83,18 @@
             android:parentActivityName="org.blackboxx.tarockblock.Main" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SessionActive"
-            android:label="@string/title_session_active"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GamesSoFar"
-            android:label="@string/title_games_sofar"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GameDetail"
-            android:label="@string/title_game_details"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GameEditLast"
-            android:label="@string/title_game_edit_last"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GameTrischaken"
-            android:label="@string/title_game_trischaken"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GamePlayer"
-            android:label="@string/title_game_player"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GameNegative"
-            android:label="@string/title_game_negative"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.GameRegular"
-            android:label="@string/title_game_regular"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
-        </activity>
-        
-        <activity
             android:name="org.blackboxx.tarockblock.Settings"
             android:label="@string/title_settings"
             android:parentActivityName="org.blackboxx.tarockblock.Main" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsPlayer"
-            android:label="@string/title_settings_player"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffset"
-            android:label="@string/title_settings_tariffs"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariff"
-            android:label="@string/title_settings_tariff"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNew"
-            android:label="@string/title_settings_tariff_new"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffset" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewEntry"
-            android:label="@string/title_settings_tariff_new_entry"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewBei"
-            android:label="@string/title_settings_tariff_new_bei"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewTrischaken"
-            android:label="@string/title_settings_tariff_new_trischaken"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
-        </activity>
-        <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNewKontra"
-            android:label="@string/title_settings_tariff_new_kontra"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffsetNew" >
-        </activity>
-        <activity
             android:name="org.blackboxx.tarockblock.SettingsImExport"
             android:label="@string/title_settings_imexport"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsPlayer"
+            android:label="@string/title_settings_player"
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
@@ -134,10 +103,20 @@
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.Info"
-            android:label="@string/title_info"
-            android:parentActivityName="org.blackboxx.tarockblock.Main" >
+            android:name="org.blackboxx.tarockblock.SettingsTariff"
+            android:label="@string/title_settings_tariff"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
-        </application>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffset"
+            android:label="@string/title_settings_tariffs"
+            android:parentActivityName="org.blackboxx.tarockblock.Settings" >
+        </activity>
+        <activity
+            android:name="org.blackboxx.tarockblock.SettingsTariffsetNew"
+            android:label="@string/title_settings_tariff_new"
+            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffset" >
+        </activity>
+    </application>
 
 </manifest>

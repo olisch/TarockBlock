@@ -1,39 +1,206 @@
 package org.blackboxx.tarockblock;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.view.Menu;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-public class SettingsTariffsetNew extends Activity {
+public class SettingsTariffsetNew extends Activity implements OnClickListener {
+
+	private ImageButton SettingsTariffsetNewTariff;
+	private ImageButton SettingsTariffsetNewPremium;
+	private Button SettingsTariffsetNewTrischaken;
+	private Button SettingsTariffsetNewBei;
+	private Button SettingsTariffsetNewKontra;
+	private TextView SettingsTariffsetNewTrischakenText1;
+	private TextView SettingsTariffsetNewTrischakenText2;
+	private TextView SettingsTariffsetNewTrischakenText3;
+	private TextView SettingsTariffsetNewBeiText;
+	private TextView SettingsTariffsetNewKontraText;
+	private int TrischakenId1 = 0;
+	private int TrischakenId2 = 1;
+	private int TrischakenId3 = 1;
+	private int BeiId = 3;
+	private int KontraId = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme=0;
+		int user_theme = 0;
 		Globals g = Globals.getInstance();
-		user_theme=g.getData();
+		user_theme = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
 
 		setContentView(R.layout.settings_tariffset_new);
+
+		SettingsTariffsetNewTariff = (ImageButton) findViewById(R.id.button_tariffset_new_tariff_entry);
+		SettingsTariffsetNewTariff.setOnClickListener(this);
+		SettingsTariffsetNewPremium = (ImageButton) findViewById(R.id.button_tariffset_new_premium_entry);
+		SettingsTariffsetNewPremium.setOnClickListener(this);
+		SettingsTariffsetNewTrischakenText1 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text1);
+		SettingsTariffsetNewTrischakenText2 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text2);
+		SettingsTariffsetNewTrischakenText3 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text3);
+		SettingsTariffsetNewTrischaken = (Button) findViewById(R.id.settings_button_tariff_new_trischaken);
+		SettingsTariffsetNewTrischaken.setOnClickListener(this);
+		SettingsTariffsetNewBei = (Button) findViewById(R.id.settings_button_tariff_new_bei);
+		SettingsTariffsetNewBei.setOnClickListener(this);
+		SettingsTariffsetNewBeiText = (TextView) findViewById(R.id.settings_tariff_new_bei_text);
+		SettingsTariffsetNewKontra = (Button) findViewById(R.id.settings_button_tariff_new_kontra);
+		SettingsTariffsetNewKontra.setOnClickListener(this);
+		SettingsTariffsetNewKontraText = (TextView) findViewById(R.id.settings_tariff_new_kontra_text);
+
+		// TODO text aus enums bilden und nicht aus array
+		// SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[TrischakenId1]);
+		// SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[TrischakenId2]);
+		// SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[TrischakenId3]);
+		// SettingsTariffsetNewBeiText.setText(getResources().getStringArray(R.array.list_bei)[BeiId]);
+		// SettingsTariffsetNewKontraText.setText(getResources().getStringArray(R.array.list_kontra)[KontraId]);
+
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
 
-
 	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_settings_tariff_new, menu);
-        return true;
-    }
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.button_tariffset_new_tariff_entry:
+			openDialogTariffsetNewTariffEntry();
+			break;
+		case R.id.button_tariffset_new_premium_entry:
+			openDialogTariffsetNewPremiumEntry();
+			break;
+		case R.id.settings_button_tariff_new_trischaken:
+			openDialogTariffsetNewTrischaken();
+			break;
+		case R.id.settings_button_tariff_new_bei:
+			openDialogTariffsetNewBei();
+			break;
+		case R.id.settings_button_tariff_new_kontra:
+			openDialogTariffsetNewKontra();
+			break;
+		}
+	}
 
-    /**
+	private void openDialogTariffsetNewTariffEntry() {
+		LayoutInflater layoutInflater = LayoutInflater.from(this);
+		View promptView = layoutInflater.inflate(R.layout.item_tariff, null);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// set prompts.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setView(promptView);
+
+		// setup a dialog window
+		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				// get user input and set it to result
+				// editTextMainScreen.setText(input.getText());
+			}
+		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
+			}
+		});
+		// create an alert dialog
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+	}
+
+	private void openDialogTariffsetNewPremiumEntry() {
+		LayoutInflater layoutInflater = LayoutInflater.from(this);
+		View promptView = layoutInflater.inflate(R.layout.item_premium, null);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// set prompts.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setView(promptView);
+
+		// setup a dialog window
+		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				// get user input and set it to result
+				// editTextMainScreen.setText(input.getText());
+			}
+		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
+			}
+		});
+		// create an alert dialog
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+	}
+
+	private void openDialogTariffsetNewTrischaken() {
+		// LayoutInflater layoutInflater = LayoutInflater.from(this);
+		// View promptView =
+		// layoutInflater.inflate(R.layout.settings_tariffset_new_trischaken,
+		// null);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// set prompts.xml to be the layout file of the alertdialog builder
+		// alertDialogBuilder.setView(promptView);
+
+		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_trischaken);
+		// TODO liste und antwortmöglichkeiten aus enums bilden und nicht aus
+		// array
+
+		// setup a dialog window
+		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[TrischakenId1]);
+				SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[TrischakenId2]);
+				SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[TrischakenId3]);
+				dialog.dismiss();
+			}
+		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
+			}
+		});
+		// create an alert dialog
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+
+	}
+
+	private void openDialogTariffsetNewBei() {
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// TODO liste aus enums bilden und nicht aus array
+		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_bei).setSingleChoiceItems(R.array.list_bei, BeiId,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						SettingsTariffsetNewBeiText.setText(getResources().getStringArray(R.array.list_bei)[id]);
+						dialog.dismiss();
+					}
+				});
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+	}
+
+	private void openDialogTariffsetNewKontra() {
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		// TODO liste aus enums bilden und nicht aus array
+		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_kontra).setSingleChoiceItems(R.array.list_kontra, KontraId,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						SettingsTariffsetNewKontraText.setText(getResources().getStringArray(R.array.list_kontra)[id]);
+						dialog.dismiss();
+					}
+				});
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+	}
+
+	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
@@ -53,64 +220,14 @@ public class SettingsTariffsetNew extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
-        case R.id.action_trischaken:
-        	goto_trischaken(null);
-            return true;
-        case R.id.action_bei:
-        	goto_bei(null);
-            return true;
-        case R.id.action_kontra:
-        	goto_kontra(null);
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void goto_trischaken(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewTrischaken.class);
-	    startActivity(intent);
-	}
-
-	public void goto_bei(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewBei.class);
-	    startActivity(intent);
-	}
-
-	public void goto_kontra(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewKontra.class);
-	    startActivity(intent);
-	}
-
 	public void goto_settings_tariffs(View view) {
-	    // Do something in response to button
+		// Do something in response to button
 		Intent intent = new Intent(this, SettingsTariffset.class);
-	    startActivity(intent);
-	}    
-	
-	public void goto_settings_tariff_new_entry(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewEntry.class);
-	    startActivity(intent);
-	}    
-
-	public void goto_settings_tariff_new_trischaken(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewTrischaken.class);
-	    startActivity(intent);
-	}    
-
-	public void goto_settings_tariff_new_bei(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewBei.class);
-	    startActivity(intent);
-	}    
-
-	public void goto_settings_tariff_new_kontra(View view) {
-	    // Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewKontra.class);
-	    startActivity(intent);
-	}    
+		startActivity(intent);
+	}
 
 }

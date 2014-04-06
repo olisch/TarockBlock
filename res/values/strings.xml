@@ -98,5 +98,12 @@
     <string name="menu_delete_dialog_player">Soll der Spieler und alle damit verbundenen Partien und Spiele wirklich gelöscht werden?</string>
      <string name="menu_delete_dialog_tariffset">Soll das Tarifset und alle damit verbundenen Partien und Spiele wirklich gelöscht werden?</string>
      <string name="menu_delete_dialog_tariff">Soll der Tarif wirklich gelöscht werden?</string>
-    
+    <string name="settings_tariff_new_bei_default">Nur gleichwertige Spiele Bei erlaubt</string>
+    <string name="settings_tariff_new_kontra_default">Subkontra (8x)</string>
+    <string name="settings_tariff_new_trischaken_default1">2 Punktesieger zahlen</string>
+    <string name="settings_tariff_new_trischaken_default2">Bürgermeister zahlt doppelt</string>
+    <string name="settings_tariff_new_trischaken_default3">Vorhand zahlt doppelt</string>
+
+
+
 </resources>

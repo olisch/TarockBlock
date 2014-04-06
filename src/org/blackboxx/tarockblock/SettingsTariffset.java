@@ -78,7 +78,7 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 			e.printStackTrace();
 		}
 
-		// TODO if tariffsetId = TariffsetId then make this listrow bold
+		// TODO if tariffsetId = TariffsetId then make this listitem bold
 
 		tariffsetList = (ListView) findViewById(R.id.list_tariffset);
 		tariffsetAdapter = new ArrayAdapter<Tariffset>(this, R.layout.item_tariffset, R.id.item_tariffset, tariffsets);
@@ -160,6 +160,7 @@ public class SettingsTariffset extends OrmLiteBaseActivity<DatabaseHelper> imple
 		case R.id.settings_button_tariffset_new:
 			openDialogTariffsetNewBase();
 			break;
+		// TODO richtige id?
 		case 2:
 			openDialogTariffsetName();
 			break;

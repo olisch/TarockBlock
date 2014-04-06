@@ -8,7 +8,6 @@ import org.blackboxx.tarockblock.persistance.Tariff;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
@@ -127,7 +126,7 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 
 	private void openDialogTariffName() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.settings_tariffset_new_entry, null);
+		View promptView = layoutInflater.inflate(R.layout.settings_tariff_rename, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
@@ -190,12 +189,6 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	public void goto_settings_tariffset_new_entry(View view) {
-		// Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffsetNewEntry.class);
-		startActivity(intent);
 	}
 
 	public List<Tariff> getTariff() {
