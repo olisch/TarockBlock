@@ -1,23 +1,24 @@
 package org.blackboxx.tarockblock;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
 
 public class SessionNew extends Activity {
+	private int ActivityId = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme=0;
+		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		user_theme=g.getData();
+		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this,user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		setContentView(R.layout.session_new);
 		// Show the Up button in the action bar.
@@ -50,10 +51,10 @@ public class SessionNew extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-    public void goto_session_active(View view) {
-        // Do something in response to button
-    	Intent intent = new Intent(this, SessionActive.class);
-        startActivity(intent);
-    }    
+	public void goto_session_active(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, SessionActive.class);
+		startActivity(intent);
+	}
 
 }

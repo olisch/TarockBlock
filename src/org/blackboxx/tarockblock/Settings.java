@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
 //import android.widget.Toast;
 
 public class Settings extends Activity implements OnClickListener {
@@ -26,6 +27,7 @@ public class Settings extends Activity implements OnClickListener {
 	private Button SettingsTheme;
 	private TextView ThemeText;
 	private int ThemeId;
+	private int ActivityId = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class Settings extends Activity implements OnClickListener {
 		Globals g = Globals.getInstance();
 		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		setContentView(R.layout.settings);
 

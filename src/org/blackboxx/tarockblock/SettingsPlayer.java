@@ -34,16 +34,17 @@ public class SettingsPlayer extends OrmLiteBaseActivity<DatabaseHelper> implemen
 
 	private Player editPlayer;
 	private Player deletePlayer;
+	private int ActivityId = 3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme = 0;
+		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		user_theme = g.getData();
+		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		setContentView(R.layout.settings_player);
 		SettingsPlayerNew = (Button) findViewById(R.id.settings_button_player_new);

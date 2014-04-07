@@ -26,6 +26,7 @@ import android.widget.ListView;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+	private int ActivityId = 4;
 
 	private Button SettingsTariffNew;
 	private List<Tariff> tariffs;
@@ -39,11 +40,11 @@ public class SettingsTariff extends OrmLiteBaseActivity<DatabaseHelper> implemen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme = 0;
+		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		user_theme = g.getData();
+		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		setContentView(R.layout.settings_tariff);
 		SettingsTariffNew = (Button) findViewById(R.id.settings_button_tariff_new);

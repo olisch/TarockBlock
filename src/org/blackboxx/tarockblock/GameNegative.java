@@ -14,16 +14,17 @@ public class GameNegative extends Activity implements OnClickListener {
 
 	private Button Button_Bei;
 	private Button Button_Kontra;
+	private int ActivityId = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int user_theme = 0;
+		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		user_theme = g.getData();
+		ThemeId = g.getData();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, user_theme);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.title_settings_player);

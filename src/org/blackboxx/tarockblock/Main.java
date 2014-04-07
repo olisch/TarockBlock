@@ -15,21 +15,21 @@ import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 public class Main extends OrmLiteBaseActivity<DatabaseHelper> {
 
 	boolean schduledRestart;
+	private int ActivityId = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get Theme-ID from Preference-File
 		int ThemeId;
-		SharedPreferences sharedPref = getSharedPreferences(
-				getString(R.string.preference_file), Context.MODE_PRIVATE);
+		SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file), Context.MODE_PRIVATE);
 		ThemeId = sharedPref.getInt("pref_theme", 0);
 		// ThemeId = UtilsActivity.getTheme(this);
 		// Save Theme-ID in global Variable
 		Globals g = Globals.getInstance();
 		g.setData(ThemeId);
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId);
+		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
 		setContentView(R.layout.main);
 		if (getIntent().getBooleanExtra("EXIT", false)) {
@@ -80,11 +80,11 @@ public class Main extends OrmLiteBaseActivity<DatabaseHelper> {
 	}
 
 	/** Called when user clicks a button */
-    public void goto_session_old(View view) {
-        // Do something in response to button
-    	Intent intent = new Intent(this, SessionOld.class);
-        startActivity(intent);
-    }    
+	public void goto_session_old(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, SessionOld.class);
+		startActivity(intent);
+	}
 
 	public void goto_session_new(View view) {
 		// Do something in response to button

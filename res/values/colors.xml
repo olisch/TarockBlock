@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="bar_default">#444444</color>
+    <color name="session">#4285f4</color>
+    <color name="game">#0f9d58</color>
+    <color name="player">#f4b400</color>
+    <color name="tariffset">#db4437</color>
+    <color name="info">#f69113</color>
+    <color name="background">#dad9d9</color>
+    
     <color name="grey_light">#eee</color>
     <color name="grey_middle">#ccc</color>
     <color name="grey_dark">#666</color>
@@ -9,5 +17,40 @@
     <color name="brown">#b0876b</color>
     <color name="green">#94af79</color>
     <color name="activebar_green">#008800</color>
+    
+    <color name="gblue">#4285f4</color>
+    <color name="gred">#db4437</color>
+    <color name="gyellow">#f4b400</color>
+    <color name="ggreen">#0f9d58</color>
+    <color name="gorange">#f69113</color>
+    <color name="ggrey">#e7e6dd</color>
+    
+    <color name="msred">#f65314</color>
+    <color name="msgreen">#7cbb00</color>
+    <color name="msblue">#00a1f1</color>
+    <color name="msyellow">#ffbb00</color>
+    
+    <color name="dellblue">#0085c3</color>
+    <color name="dellgreen">#7ab800</color>
+    <color name="dellyellow">#f2af00</color>
+    <color name="dellred">#dc5034</color>
+    <color name="dellreddark">#ce1126</color>
+    <color name="dellpink">#b7295a</color>
+    <color name="dellpurple">#6e2585</color>
+    <color name="dellturquoise">#71c6c1</color>
+    <color name="dellbluedark">#5482ab</color>
+    <color name="dellbluelight">#009bbb</color>
+    <color name="dellgreydark">#444444</color>
+    <color name="dellgreylight">#eeeeee</color>
+    
+    <color name="gturquoise">#71aea7</color>
+    <color name="gbrown">#621919</color>
+    <color name="ggreendark">#18462f</color>
+    <color name="ggold">#bf8e52</color>
+    <color name="gbluedark">#001f79</color>
+    <color name="gbluelight">#a8afc2</color>
+    <color name="g">#6b64c4</color>
+    <color name="golive">#738359</color>
+    <color name="gpurple">#9d50a4</color>
 
 </resources>
