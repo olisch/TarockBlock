@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
-import org.blackboxx.tarockblock.persistance.Player;
+import org.blackboxx.tarockblock.persistance.TablePlayer;
 
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -16,9 +16,9 @@ import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 
-	private List<Player> players;
+	private List<TablePlayer> players;
 	private ListView playersList;
-	private ArrayAdapter<Player> playersAdapter;
+	private ArrayAdapter<TablePlayer> playersAdapter;
 	private int ActivityId = 2;
 
 	@Override
@@ -47,7 +47,7 @@ public class GamePlayer extends OrmLiteBaseActivity<DatabaseHelper> {
 		}
 
 		playersList = (ListView) findViewById(R.id.list_gameplayers);
-		playersAdapter = new ArrayAdapter<Player>(this, R.layout.item_player, R.id.item_player, players);
+		playersAdapter = new ArrayAdapter<TablePlayer>(this, R.layout.item_player, R.id.item_player, players);
 		playersList.setAdapter(playersAdapter);
 		registerForContextMenu(playersList);
 

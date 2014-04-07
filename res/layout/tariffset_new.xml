@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    style="@style/BasicRelativeLayout" >
+
+    <!-- Buttons @Bottom -->
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        style="@style/BasicButtonLayout" >
+
+        <View style="@style/Divider" />
+
+        <Button
+            android:id="@+id/settings_tariffs_new_button_save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:onClick="goto_settings_tariffs"
+            android:text="@string/button_save"
+            android:textStyle="bold" />
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <!-- Scrollable Content above Buttons -->
+
+    <ScrollView style="@style/BasicScrollViewLayout" >
+
+        <LinearLayout style="@style/BasicContentLinearLayout" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/settings_tariffset_new_tariffs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:text="SPIELANSAGEN" />
+
+                <View style="@style/Vertical_Spacer" />
+
+                <ImageButton
+                    android:id="@+id/button_tariffset_new_tariff_entry"
+            style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="right|bottom"
+                    android:contentDescription=""
+                    android:src="@android:drawable/ic_input_add" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <ListView
+                android:id="@+id/settings_tariffset_new_tariffslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/settings_tariffset_new_premiums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:text="PRÄMIEN" />
+
+                <View style="@style/Vertical_Spacer" />
+
+                <ImageButton
+                    android:id="@+id/button_tariffset_new_premium_entry"
+            style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="right|bottom"
+                    android:contentDescription=""
+                    android:src="@android:drawable/ic_input_add" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <ListView
+                android:id="@+id/settings_tariffset_new_premiumslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+
+            <TextView
+                android:id="@+id/settings_tariffset_new_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="OPTIONEN" />
+
+            <View style="@style/Divider" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/settings_button_tariff_new_trischaken"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:gravity="left|top"
+                    android:paddingTop="10dp"
+                    android:text="@string/button_tariff_new_trischaken" />
+
+                <TextView
+                    android:id="@+id/settings_tariff_new_trischaken_text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="0dp"
+                    android:text="@string/settings_tariff_new_trischaken_default1"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/settings_tariff_new_trischaken_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="36dp"
+                    android:text="@string/settings_tariff_new_trischaken_default2"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/settings_tariff_new_trischaken_text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="72dp"
+                    android:text="@string/settings_tariff_new_trischaken_default3"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/settings_button_tariff_new_bei"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="left|top"
+                    android:paddingTop="10dp"
+                    android:text="@string/button_tariff_new_bei" />
+
+                <TextView
+                    android:id="@+id/settings_tariff_new_bei_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="24dp"
+                    android:text="@string/settings_tariff_new_bei_default"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/settings_button_tariff_new_kontra"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="left|top"
+                    android:paddingTop="10dp"
+                    android:text="@string/button_tariff_new_kontra" />
+
+                <TextView
+                    android:id="@+id/settings_tariff_new_kontra_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="24dp"
+                    android:text="@string/settings_tariff_new_kontra_default"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BasicLayout" >
+    
+
+    <View style="@style/Vertical_Spacer" />
+    
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_tariff_new_trischaken"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_tariff_new_trischaken"
+        android:onClick="goto_settings_tariff_new_trischaken" />
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/start_button_tariff_new_bei"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_tariff_new_bei"
+        android:onClick="goto_settings_tariff_new_bei" />
+
+    <View style="@style/Divider" />
+
+    Row Spacer <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
+    
+
+
+
+    <View style="@style/Divider" />
+
+    <Button
+        android:id="@+id/settings_tariffs_new_button_save"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/button_save"
+        android:onClick="goto_settings_tariffs"
+        android:textStyle="bold" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>-->

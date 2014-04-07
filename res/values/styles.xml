@@ -56,7 +56,7 @@
         <item name="android:background">@color/game</item>
     </style>
 
-    <style name="PlayerActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="PlayerActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@color/player</item>
     </style>
 

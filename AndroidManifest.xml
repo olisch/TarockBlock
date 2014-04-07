@@ -93,7 +93,7 @@
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsPlayer"
+            android:name="org.blackboxx.tarockblock.Player"
             android:label="@string/title_settings_player"
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
@@ -103,19 +103,19 @@
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariff"
+            android:name="org.blackboxx.tarockblock.Tariffset"
             android:label="@string/title_settings_tariff"
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffset"
+            android:name="org.blackboxx.tarockblock.Tariffsets"
             android:label="@string/title_settings_tariffs"
             android:parentActivityName="org.blackboxx.tarockblock.Settings" >
         </activity>
         <activity
-            android:name="org.blackboxx.tarockblock.SettingsTariffsetNew"
+            android:name="org.blackboxx.tarockblock.TariffsetNew"
             android:label="@string/title_settings_tariff_new"
-            android:parentActivityName="org.blackboxx.tarockblock.SettingsTariffset" >
+            android:parentActivityName="org.blackboxx.tarockblock.Tariffsets" >
         </activity>
     </application>
 

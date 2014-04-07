@@ -1,13 +1,13 @@
 package app.adapter;
 
-import org.blackboxx.tarockblock.persistance.Tariffset;
+import org.blackboxx.tarockblock.persistance.TableTariffset;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
-public class TariffsetListAdapter extends ArrayAdapter<Tariffset> {
+public class TariffsetListAdapter extends ArrayAdapter<TableTariffset> {
 
-	public TariffsetListAdapter(Context context, int resource, int textViewResourceId, Tariffset[] objects) {
+	public TariffsetListAdapter(Context context, int resource, int textViewResourceId, TableTariffset[] objects) {
 		super(context, resource, textViewResourceId, objects);
 	}
 

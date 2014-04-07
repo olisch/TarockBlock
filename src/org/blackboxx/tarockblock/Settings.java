@@ -209,13 +209,13 @@ public class Settings extends Activity implements OnClickListener {
 
 	public void goto_settings_player(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SettingsPlayer.class);
+		Intent intent = new Intent(this, Player.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings_tariffs(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SettingsTariffset.class);
+		Intent intent = new Intent(this, Tariffsets.class);
 		startActivity(intent);
 	}
 
