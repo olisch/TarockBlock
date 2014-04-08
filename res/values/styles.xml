@@ -2,28 +2,28 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
     <!-- the theme applied to the application or activity -->
-    <style name="DefaultActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="DefaultActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/DefaultActionBar</item>
-         <item name="android:windowBackground">@color/background</item>
-        </style>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
 
-    <style name="SessionActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="SessionActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/SessionActionBar</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="GameActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="GameActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/GameActionBar</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
@@ -33,12 +33,12 @@
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="TariffsetActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="TariffsetActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/TariffsetActionBar</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="InfoActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="InfoActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/InfoActionBar</item>
         <item name="android:windowBackground">@color/background</item>
     </style>

@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.LayoutInflater;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +21,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
@@ -97,6 +98,7 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		deletePlayer = playersAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.menu_delete_dialog);
 		builder.setMessage(R.string.menu_delete_dialog_player).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
@@ -122,40 +124,29 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 
 	@Override
 	public void onClick(View v) {
-
-		// Context context = getApplicationContext();
-		// int duration = Toast.LENGTH_LONG;
-		// CharSequence text = String.valueOf(v.getId());
-		// Toast.makeText(context, text, duration).show();
-
 		openDialogPlayerName();
-
-		//
-		// AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		// builder.setTitle(R.string.title_settings_player_new)
-		// .setItems(R.array.themes_list, new DialogInterface.OnClickListener()
-		// {
-		// public void onClick(DialogInterface dialog, int PrefThemeId) {
-		// // Do something with the selection
-		//
-		//
-		// }
-		// });
-		// AlertDialog alert = builder.create();
-		// alert.show();
 	}
 
 	private void openDialogPlayerName() {
-		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.player_new, null);
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		// set prompts.xml to be the layout file of the alertdialog builder
-		alertDialogBuilder.setView(promptView);
+		LinearLayout layout = new LinearLayout(this);
+		layout.setOrientation(LinearLayout.VERTICAL);
+		layout.setGravity(Gravity.CENTER_HORIZONTAL);
+		final EditText input = new EditText(this);
+		layout.setPadding(32, 16, 32, 16);
+		input.setHint("Spielername");
+		layout.addView(input);
 
-		final EditText input = (EditText) promptView.findViewById(R.id.settings_player_new);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setView(layout);
+
+		int settings_player_new = 0;
+		input.setId(settings_player_new);
+
 		if (editPlayer != null) {
 			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
 			input.setText(editPlayer.getName());
+		} else {
+			alertDialogBuilder.setTitle(R.string.player_new_dialog);
 		}
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -186,6 +177,7 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		// create an alert dialog
 		AlertDialog alertD = alertDialogBuilder.create();
 		alertD.show();
+		editPlayer = null;
 	}
 
 	/**
