@@ -2,7 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum TariffType1 {
 
-	Rufer(1, "Rufer"), Dreier(2, "Dreier"), Farben(3, "Farben"), Negativ(4, "Negativ");
+	Rufer(1, "Ruferspiel"), Dreier(2, "Dreierspiel"), Farben(3, "Farbenspiel"), Negativ(4, "Negativspiel");
 
 	private Integer id;
 

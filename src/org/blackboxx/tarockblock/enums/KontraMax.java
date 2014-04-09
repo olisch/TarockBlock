@@ -2,7 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum KontraMax {
 
-	Kontra(2, "Kontra (2x)"), Rekontra(4, "Rekontra (4x)"), Subkontra(8, "Subkontra (8x)"), Mortkontra(16, "Mortkontra (16x)");
+	Kontra(2, "Kontra (x2)"), Rekontra(4, "Rekontra (x4)"), Subkontra(8, "Subkontra (x8)"), Mortkontra(16, "Mortkontra (x16)");
 
 	private Integer id;
 

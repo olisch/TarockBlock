@@ -2,7 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum GameTrischaken {
 
-	Jungfrau(1, "Jungfrau"), Bürgermeister(2, "Bürgermeister"), Valat(3, "Valat"), Punktesieger(4, "Punktesieger");
+	Nothing(0, "-"), Jungfrau(1, "Jungfrau"), Bürgermeister(2, "Bürgermeister"), Valat(3, "Valat"), Punktesieger(4, "Punktesieger");
 
 	private Integer id;
 

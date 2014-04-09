@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BasicLayout" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:onClick=""
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/tariffset_new_tariff_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Spielansage"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/tariffset_new_tariff_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:hint="Punkte"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tariffset_new_tariff_type1_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:paddingTop="@dimen/row_spacer_height"
+        android:text="SPIELANSAGE TYP1" />
+
+    <View style="@style/Divider" />
+
+    <Spinner
+        android:id="@+id/tariffset_new_tariff_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tariffset_new_tariff_type1_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:paddingTop="@dimen/row_spacer_height"
+        android:text="SPIELANSAGE TYP2" />
+
+    <View style="@style/Divider" />
+
+    <Spinner
+        android:id="@+id/tariffset_new_tariff_type2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:layout_weight="1" />
+
+</LinearLayout>

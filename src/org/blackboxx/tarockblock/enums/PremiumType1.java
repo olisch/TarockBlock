@@ -2,7 +2,7 @@ package org.blackboxx.tarockblock.enums;
 
 public enum PremiumType1 {
 
-	Tarock(1, "Tarock"), Farben(2, "Farben"), PunkteStiche(3, "Punkte/Stiche");
+	Tarock(1, "Tarock"), Farbe(2, "Farbe"), PunkteStiche(3, "Punkte/Stiche");
 
 	private Integer id;
 

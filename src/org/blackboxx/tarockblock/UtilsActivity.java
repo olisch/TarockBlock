@@ -12,17 +12,17 @@ public class UtilsActivity {
 		default:
 		case 0:
 			if (activityId == 1)
-				activity.setTheme(R.style.SessionActionBarTheme);
+				activity.setTheme(R.style.SessionTheme);
 			else if (activityId == 2)
-				activity.setTheme(R.style.GameActionBarTheme);
+				activity.setTheme(R.style.GameTheme);
 			else if (activityId == 3)
-				activity.setTheme(R.style.PlayerActionBarTheme);
+				activity.setTheme(R.style.PlayerTheme);
 			else if (activityId == 4)
-				activity.setTheme(R.style.TariffsetActionBarTheme);
+				activity.setTheme(R.style.TariffsetTheme);
 			else if (activityId == 5)
-				activity.setTheme(R.style.InfoActionBarTheme);
+				activity.setTheme(R.style.InfoTheme);
 			else
-				activity.setTheme(R.style.DefaultActionBarTheme);
+				activity.setTheme(R.style.DefaultTheme);
 			break;
 		case 1:
 			activity.setTheme(android.R.style.Theme_Holo_Light);

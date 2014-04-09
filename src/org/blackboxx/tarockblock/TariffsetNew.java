@@ -95,7 +95,7 @@ public class TariffsetNew extends Activity implements OnClickListener {
 
 	private void openDialogTariffsetNewTariffEntry() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.item_tariff, null);
+		View promptView = layoutInflater.inflate(R.layout.tariffset_new_tariff, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
@@ -118,7 +118,7 @@ public class TariffsetNew extends Activity implements OnClickListener {
 
 	private void openDialogTariffsetNewPremiumEntry() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View promptView = layoutInflater.inflate(R.layout.item_premium, null);
+		View promptView = layoutInflater.inflate(R.layout.tariffset_new_premium, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);

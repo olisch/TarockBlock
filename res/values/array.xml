@@ -20,6 +20,12 @@
 
 
 
+  <string-array name="list_tariffset_new_base">
+   <item>Leeres Tarifset</item>
+      <item>Tarifset</item>
+   </string-array>
+ 
+  
 
 
   <string-array name="list_user">
@@ -37,10 +43,10 @@
    </string-array>
 
   <string-array name="list_kontra">
-   <item>Kontra (2x)</item>
-   <item>Rekontra (4x)</item>
-   <item>Subkontra (8x)</item>
-   <item>Mortkontra (16x)</item>
+   <item>Kontra (x2)</item>
+   <item>Rekontra (x4)</item>
+   <item>Subkontra (x8)</item>
+   <item>Mortkontra (x16)</item>
    </string-array>
   
   <string-array name="list_trischaken">

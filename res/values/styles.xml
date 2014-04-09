@@ -13,34 +13,62 @@
     </style>
 
     <!-- the theme applied to the application or activity -->
-    <style name="DefaultActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="DefaultTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/DefaultActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="SessionActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="SessionTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/SessionActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="GameActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="GameTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/GameActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="PlayerActionBarTheme" parent="android:Theme.Holo.Light">
+    <style name="PlayerTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/PlayerActionBar</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="TariffsetActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="TariffsetTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/TariffsetActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="InfoActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="InfoTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/InfoActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    
+    <!-- Menu styles -->
+			<style name="PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
+<!--         <item name="android:popupBackground">@color/background</item> -->
+        </style>
+
+    <!-- Dialog styles -->
+    <style name="MyDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:background">@color/background</item>
     </style>
 
     <!-- ActionBar styles -->
@@ -68,9 +96,10 @@
         <item name="android:background">@color/info</item>
     </style>
 
+    
+    
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowBackground">@color/background</item>
     </style>

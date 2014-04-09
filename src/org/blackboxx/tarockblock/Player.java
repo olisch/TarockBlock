@@ -132,7 +132,7 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		layout.setOrientation(LinearLayout.VERTICAL);
 		layout.setGravity(Gravity.CENTER_HORIZONTAL);
 		final EditText input = new EditText(this);
-		layout.setPadding(32, 16, 32, 16);
+		layout.setPadding(32, 32, 32, 32);
 		input.setHint("Spielername");
 		layout.addView(input);
 

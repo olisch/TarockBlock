@@ -25,7 +25,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
@@ -67,10 +66,10 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		Globals ts = Globals.getInstance();
 		TariffsetId = ts.getData();
 
-		Context context = getApplicationContext();
-		int duration = Toast.LENGTH_LONG;
-		CharSequence text = String.valueOf(ts);
-		Toast.makeText(context, text, duration).show();
+		// Context context = getApplicationContext();
+		// int duration = Toast.LENGTH_LONG;
+		// CharSequence text = String.valueOf(ts);
+		// Toast.makeText(context, text, duration).show();
 
 		try {
 			tariffsets = getHelper().getTariffsetDao().queryForAll();
@@ -176,6 +175,17 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		alertDialogBuilder.setView(promptView);
 
 		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
+
+		// AlertDialog.Builder alertDialogBuilder = new
+		// AlertDialog.Builder(this);
+		// // TODO liste aus enums bilden und nicht aus array
+		// alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog).setSingleChoiceItems(R.array.list_tariffset_new_base,
+		// BaseId,
+		// new DialogInterface.OnClickListener() {
+		// @Override
+		// public void onClick(DialogInterface dialog, int id) {
+		// }
+		// });
 
 		// TODO ersetze zweites radiobutton item mit spinner aus tariffset
 		// namen, vielleicht ähnlich wie unten?

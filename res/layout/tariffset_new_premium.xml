@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BasicLayout" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:onClick=""
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/tariffset_new_premium_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Prämie"
+            android:inputType="text" />
+
+
+        <EditText
+            android:id="@+id/tariffset_new_premium_value_silent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:hint="still"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/tariffset_new_premium_value_called"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="8dp"
+            android:hint="ang."
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tariffset_new_premium_type1_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_side"
+        android:layout_gravity="left|bottom"
+        android:text="PRÄMIENTYP" />
+
+    <View style="@style/Divider" />
+
+    <Spinner
+        android:id="@+id/tariffset_new_premium_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:layout_weight="1"
+        android:hint="Bitte auswählen" />
+
+    <TextView
+        android:id="@+id/tariffset_new_premium_type2_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_side"
+        android:layout_gravity="left|bottom"
+        android:text="MONDFANG" />
+
+    <View style="@style/Divider" />
+
+    <Spinner
+        android:id="@+id/tariffset_new_premium_type2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:layout_weight="1"
+        android:hint="Mondfang" />
+
+</LinearLayout>
