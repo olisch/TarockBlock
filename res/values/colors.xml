@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="bar_default">#444444</color>
-    <color name="session">#4285f4</color>
-    <color name="game">#0f9d58</color>
-    <color name="player">#f4b400</color>
-    <color name="tariffset">#db4437</color>
-    <color name="info">#f69113</color>
-    <color name="background">#dad9d9</color>
+    <color name="bar_default">#444444</color><!-- dunkelgrau -->
+    <color name="session">#0f9d58</color><!-- grün -->
+    <color name="game">#0f9d58</color><!-- grün -->
+    <color name="player">#4285f4</color><!-- blau -->
+    <color name="tariffset">#db4437</color><!-- rot -->
+    <color name="info">#f69113</color><!-- orange -->
+    <color name="imexport">#f4b400</color><!-- gelb -->
+    <color name="background">#dad9d9</color><!-- hellgrau -->
     
     <color name="grey_light">#eee</color>
     <color name="grey_middle">#ccc</color>

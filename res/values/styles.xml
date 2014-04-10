@@ -39,6 +39,7 @@
 
     <style name="PlayerTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/PlayerActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
         <item name="android:popupMenuStyle">@style/PopupMenu</item>
         <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
@@ -55,6 +56,13 @@
     <style name="InfoTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/InfoActionBar</item>
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:alertDialogStyle">@style/MyDialog</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <style name="ImExportTheme" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/ImEsportActionBar</item>
         <item name="android:popupMenuStyle">@style/PopupMenu</item>
         <item name="android:alertDialogStyle">@style/MyDialog</item>
         <item name="android:windowBackground">@color/background</item>
@@ -84,7 +92,7 @@
         <item name="android:background">@color/game</item>
     </style>
 
-    <style name="PlayerActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">
+    <style name="PlayerActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/player</item>
     </style>
 
@@ -94,6 +102,10 @@
 
     <style name="InfoActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/info</item>
+    </style>
+
+    <style name="ImEsportActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">@color/imexport</item>
     </style>
 
     
@@ -124,7 +136,9 @@
     <style name="BasicScrollViewLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/padding_side</item>
+        <item name="android:paddingRight">@dimen/padding_side</item>
+        <item name="android:paddingLeft">@dimen/padding_side</item>
+<!--         <item name="android:padding">@dimen/padding_side</item> -->
         <item name="android:fillViewport">true</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_above">@id/buttons</item>
@@ -133,6 +147,7 @@
     <style name="BasicContentLinearLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/padding_side</item>
         <item name="android:orientation">vertical</item>
     </style>
 
@@ -153,8 +168,8 @@
     </style>
 
     <style name="ButtonWonLost">
-        <item name="android:layout_width">@dimen/button_wonlost_size</item>
-        <item name="android:layout_height">@dimen/button_wonlost_size</item>
+        <item name="android:layout_width">@dimen/button_wonlost_width</item>
+        <item name="android:layout_height">@dimen/button_wonlost_height</item>
         <item name="android:layout_gravity">right</item>
         <item name="android:background">@drawable/btn_check</item>
         <item name="android:textOff"></item>

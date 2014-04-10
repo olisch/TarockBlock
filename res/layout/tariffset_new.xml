@@ -115,9 +115,9 @@
                     android:id="@+id/settings_button_tariff_new_trischaken"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="98dp"
                     android:gravity="left|top"
-                    android:paddingTop="10dp"
+                    android:paddingTop="9dp"
                     android:text="@string/button_tariff_new_trischaken" />
 
                 <TextView
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="8dp"
-                    android:paddingTop="0dp"
+                    android:paddingBottom="10dp"
                     android:text="@string/settings_tariff_new_trischaken_default1"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -137,6 +137,7 @@
                     android:layout_centerVertical="true"
                     android:paddingLeft="8dp"
                     android:paddingTop="36dp"
+                    android:paddingBottom="10dp"
                     android:text="@string/settings_tariff_new_trischaken_default2"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -147,6 +148,7 @@
                     android:layout_centerVertical="true"
                     android:paddingLeft="8dp"
                     android:paddingTop="72dp"
+                    android:paddingBottom="10dp"
                     android:text="@string/settings_tariff_new_trischaken_default3"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>

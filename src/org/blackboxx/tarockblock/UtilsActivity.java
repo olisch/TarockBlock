@@ -21,6 +21,8 @@ public class UtilsActivity {
 				activity.setTheme(R.style.TariffsetTheme);
 			else if (activityId == 5)
 				activity.setTheme(R.style.InfoTheme);
+			else if (activityId == 6)
+				activity.setTheme(R.style.ImExportTheme);
 			else
 				activity.setTheme(R.style.DefaultTheme);
 			break;

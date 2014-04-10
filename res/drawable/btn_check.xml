@@ -17,23 +17,23 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="true" android:state_pressed="true"
-        android:drawable="@drawable/btn_green_pressed_holo_light" />
+        android:drawable="@drawable/btn_on_pressed_holo" />
     <item android:state_checked="false" android:state_pressed="true"
-        android:drawable="@drawable/btn_red_pressed_holo_light" />
+        android:drawable="@drawable/btn_off_pressed_holo" />
 <!--     
     <item state_checked="true" android:state_pressed="true"
-        android:drawable="@drawable/btn_green_pressed_holo_dark" />
+        android:drawable="@drawable/btn_on_pressed_holo_dark" />
     <item state_checked="false" android:state_pressed="true"
-        android:drawable="@drawable/btn_red_pressed_holo_dark" />
+        android:drawable="@drawable/btn_off_pressed_holo_dark" />
  -->
     <item android:state_checked="true" android:state_focused="true"
-        android:drawable="@drawable/btn_green_focused_holo" />
+        android:drawable="@drawable/btn_on_focused_holo" />
     <item android:state_checked="false" android:state_focused="true"
-        android:drawable="@drawable/btn_red_focused_holo" />
+        android:drawable="@drawable/btn_off_focused_holo" />
     <item android:state_checked="true"
-        android:drawable="@drawable/btn_green_normal_holo" />
+        android:drawable="@drawable/btn_on_normal_holo" />
     <item android:state_checked="false"
-        android:drawable="@drawable/btn_red_normal_holo" />
+        android:drawable="@drawable/btn_off_normal_holo" />
     
 
     

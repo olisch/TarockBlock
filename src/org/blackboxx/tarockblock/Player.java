@@ -162,11 +162,11 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 				savePlayer.setName(input.getEditableText().toString());
 				try {
 					getHelper().getPlayerDao().createOrUpdate(savePlayer);
-					editPlayer = null;
 				} catch (SQLException e) {
 					// TODO errorhandling
 					e.printStackTrace();
 				}
+				editPlayer = null;
 				showPlayersList();
 			}
 		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -177,7 +177,6 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		// create an alert dialog
 		AlertDialog alertD = alertDialogBuilder.create();
 		alertD.show();
-		editPlayer = null;
 	}
 
 	/**

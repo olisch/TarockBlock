@@ -6,7 +6,7 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 public class SettingsImExport extends Activity {
-	private int ActivityId = 0;
+	private int ActivityId = 6;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
