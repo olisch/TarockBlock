@@ -23,16 +23,27 @@ public class TableTariffset {
 	@DatabaseField(columnName = "ts_kontra", canBeNull = false, defaultValue = "8")
 	private Integer kontra;
 
+	@DatabaseField(columnName = "ts_tri1", canBeNull = false, defaultValue = "1")
+	private Integer tri1;
+
+	@DatabaseField(columnName = "ts_tri2", canBeNull = false, defaultValue = "2")
+	private Integer tri2;
+
+	@DatabaseField(columnName = "ts_tri3", canBeNull = false, defaultValue = "2")
+	private Integer tri3;
+
 	@ForeignCollectionField(eager = true, columnName = "tariffs")
 	ForeignCollection<TableTariff> tariffs;
 
 	@ForeignCollectionField(eager = true)
 	ForeignCollection<TablePremium> premiums;
 
-	@ForeignCollectionField(eager = true)
-	ForeignCollection<TableTrischaken> trischakens;
-
 	public TableTariffset() {
+		this.tri1 = 1;
+		this.tri2 = 2;
+		this.tri3 = 2;
+		this.bei = 2;
+		this.kontra = 8;
 	}
 
 	/**
@@ -45,9 +56,17 @@ public class TableTariffset {
 	}
 
 	public TableTariffset(String name, Bei bei, KontraMax kontra) {
+		this();
 		this.name = name;
 		this.bei = bei.getId();
 		this.kontra = kontra.getId();
+	}
+
+	public TableTariffset(String name, Bei bei, KontraMax kontra, Integer tri1, Integer tri2, Integer tri3) {
+		this(name, bei, kontra);
+		this.tri1 = tri1;
+		this.tri2 = tri2;
+		this.tri3 = tri3;
 	}
 
 	public Integer getId() {
@@ -82,6 +101,30 @@ public class TableTariffset {
 		this.kontra = kontra;
 	}
 
+	public Integer getTri1() {
+		return tri1;
+	}
+
+	public void setTri1(Integer tri1) {
+		this.tri1 = tri1;
+	}
+
+	public Integer getTri2() {
+		return tri2;
+	}
+
+	public void setTri2(Integer tri2) {
+		this.tri2 = tri2;
+	}
+
+	public Integer getTri3() {
+		return tri3;
+	}
+
+	public void setTri3(Integer tri3) {
+		this.tri3 = tri3;
+	}
+
 	public ForeignCollection<TableTariff> getTariffs() {
 		return tariffs;
 	}
@@ -96,14 +139,6 @@ public class TableTariffset {
 
 	public void setPremiums(ForeignCollection<TablePremium> premiums) {
 		this.premiums = premiums;
-	}
-
-	public ForeignCollection<TableTrischaken> getTrischakens() {
-		return trischakens;
-	}
-
-	public void setTrischakens(ForeignCollection<TableTrischaken> trischakens) {
-		this.trischakens = trischakens;
 	}
 
 }

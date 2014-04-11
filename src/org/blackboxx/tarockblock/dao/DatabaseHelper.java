@@ -8,7 +8,6 @@ import org.blackboxx.tarockblock.enums.PremiumType1;
 import org.blackboxx.tarockblock.enums.PremiumType2;
 import org.blackboxx.tarockblock.enums.TariffType1;
 import org.blackboxx.tarockblock.enums.TariffType2;
-import org.blackboxx.tarockblock.enums.TrischakenQid;
 import org.blackboxx.tarockblock.persistance.TableAssocGameRegularPremium;
 import org.blackboxx.tarockblock.persistance.TableAssocGameSession;
 import org.blackboxx.tarockblock.persistance.TableAssocPlayerSession;
@@ -22,7 +21,6 @@ import org.blackboxx.tarockblock.persistance.TablePremium;
 import org.blackboxx.tarockblock.persistance.TableSession;
 import org.blackboxx.tarockblock.persistance.TableTariff;
 import org.blackboxx.tarockblock.persistance.TableTariffset;
-import org.blackboxx.tarockblock.persistance.TableTrischaken;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -53,7 +51,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private Dao<TableSession, Integer> sessionDao;
 	private Dao<TableTariff, Integer> tariffDao;
 	private Dao<TableTariffset, Integer> tariffsetDao;
-	private Dao<TableTrischaken, Integer> trischakenDao;
 
 	public DatabaseHelper(Context context, String databaseName, CursorFactory factory, int databaseVersion, int configFileId) {
 		super(context, databaseName, factory, databaseVersion, configFileId);
@@ -69,7 +66,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, TablePlayer.class);
 			TableUtils.createTable(connectionSource, TableTariffset.class);
 			TableUtils.createTable(connectionSource, TableTariff.class);
-			TableUtils.createTable(connectionSource, TableTrischaken.class);
 			TableUtils.createTable(connectionSource, TablePremium.class);
 			TableUtils.createTable(connectionSource, TableAssocGameRegularPremium.class);
 			TableUtils.createTable(connectionSource, TableAssocGameSession.class);
@@ -97,7 +93,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPlayerDao().create(new TablePlayer("Dani"));
 		getPlayerDao().create(new TablePlayer("Jürgen"));
 
-		TableTariffset tariffset = new TableTariffset("TarockBlock", Bei.NurPiccolo, KontraMax.Subkontra);
+		TableTariffset tariffset = new TableTariffset("TarockBlock", Bei.NurPiccolo, KontraMax.Subkontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		// getTariffsetDao().refresh(tariffset);
 		getTariffDao().create(new TableTariff(tariffset, 1, "Trischaken", TariffType1.Negativ, TariffType2.Vorhand, 10));
@@ -125,11 +121,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPremiumDao().create(new TablePremium(tariffset, 8, "1. Sack (≥45/2)", PremiumType1.PunkteStiche, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 9, "2. Sack (≥55/2)", PremiumType1.PunkteStiche, PremiumType2.Nothing, "20", "40"));
 		getPremiumDao().create(new TablePremium(tariffset, 10, "Valat", PremiumType1.PunkteStiche, PremiumType2.Nothing, "x4", "x8"));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Punktesieger, 1));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Bürgermeister, 2));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Vorhand, 2));
 
-		tariffset = new TableTariffset("Wiener Zeitung Cup", Bei.Keine, KontraMax.Subkontra);
+		tariffset = new TableTariffset("Wiener Zeitung Cup", Bei.Keine, KontraMax.Subkontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		getTariffDao().create(new TableTariff(tariffset, 1, "Trischaken", TariffType1.Negativ, TariffType2.Vorhand, 10));
 		getTariffDao().create(new TableTariff(tariffset, 2, "Rufer", TariffType1.Rufer, TariffType2.Vorhand, 10));
@@ -157,11 +150,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPremiumDao().create(new TablePremium(tariffset, 6, "Trull", PremiumType1.Tarock, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 7, "4 Könige", PremiumType1.Farbe, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 8, "Valat", PremiumType1.PunkteStiche, PremiumType2.Nothing, "x4", "x8"));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Punktesieger, 1));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Bürgermeister, 2));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Vorhand, 2));
 
-		tariffset = new TableTariffset("Raiffeisencup/Hausruckcup", Bei.Keine, KontraMax.Subkontra);
+		tariffset = new TableTariffset("Raiffeisencup/Hausruckcup", Bei.Keine, KontraMax.Subkontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		getTariffDao().create(new TableTariff(tariffset, 1, "Trischaken", TariffType1.Negativ, TariffType2.Vorhand, 10));
 		getTariffDao().create(new TableTariff(tariffset, 2, "Rufer", TariffType1.Rufer, TariffType2.Vorhand, 10));
@@ -183,11 +173,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPremiumDao().create(new TablePremium(tariffset, 6, "Trull", PremiumType1.Tarock, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 7, "4 Könige", PremiumType1.Farbe, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 8, "Valat", PremiumType1.PunkteStiche, PremiumType2.Nothing, "x4", "x8"));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Punktesieger, 1));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Bürgermeister, 2));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Vorhand, 2));
 
-		tariffset = new TableTariffset("Tiroler Tarockcup", Bei.NurGleichwertige, KontraMax.Subkontra);
+		tariffset = new TableTariffset("Tiroler Tarockcup", Bei.NurGleichwertige, KontraMax.Subkontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		getTariffDao().create(new TableTariff(tariffset, 1, "Rufer", TariffType1.Rufer, TariffType2.Vorhand, 10));
 		getTariffDao().create(new TableTariff(tariffset, 2, "Trischaken", TariffType1.Negativ, TariffType2.Vorhand, 20));
@@ -214,11 +201,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPremiumDao().create(new TablePremium(tariffset, 9, "1. Sack (≥45/2)", PremiumType1.PunkteStiche, PremiumType2.Nothing, "0", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 10, "2. Sack (≥55/2)", PremiumType1.PunkteStiche, PremiumType2.Nothing, "0", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 11, "Valat", PremiumType1.PunkteStiche, PremiumType2.Nothing, "150", "300"));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Punktesieger, 1));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Bürgermeister, 2));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Vorhand, 2));
 
-		tariffset = new TableTariffset("Steirischer Tarockcup", Bei.NurPiccolo, KontraMax.Rekontra);
+		tariffset = new TableTariffset("Steirischer Tarockcup", Bei.NurPiccolo, KontraMax.Rekontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		getTariffDao().create(new TableTariff(tariffset, 1, "Trischaken", TariffType1.Negativ, TariffType2.Vorhand, 50));
 		getTariffDao().create(new TableTariff(tariffset, 2, "Rufer", TariffType1.Rufer, TariffType2.Vorhand, 10));
@@ -246,9 +230,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPremiumDao().create(new TablePremium(tariffset, 6, "Trull", PremiumType1.Tarock, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 7, "4 Könige", PremiumType1.Farbe, PremiumType2.Nothing, "10", "20"));
 		getPremiumDao().create(new TablePremium(tariffset, 8, "Valat", PremiumType1.PunkteStiche, PremiumType2.Nothing, "x4", "x8"));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Punktesieger, 1));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Bürgermeister, 2));
-		getTrischakenDao().create(new TableTrischaken(tariffset, TrischakenQid.Vorhand, 2));
 
 	}
 
@@ -346,13 +327,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			tariffsetDao = getDao(TableTariffset.class);
 		}
 		return tariffsetDao;
-	}
-
-	public Dao<TableTrischaken, Integer> getTrischakenDao() throws SQLException {
-		if (trischakenDao == null) {
-			trischakenDao = getDao(TableTrischaken.class);
-		}
-		return trischakenDao;
 	}
 
 }
