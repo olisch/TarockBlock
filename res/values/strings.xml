@@ -106,6 +106,9 @@
     <string name="settings_tariff_new_trischaken_default2">Bürgermeister zahlt doppelt</string>
     <string name="settings_tariff_new_trischaken_default3">Vorhand zahlt doppelt</string>
 
-
+    <string name="tariffset_tri1">Wieviele Punktesieger zahlen?</string>
+        <string name="tariffset_tri2">Bürgermeister doppelt?</string>
+        <string name="tariffset_tri3">Vorhand doppelt?</string>
+        
 
 </resources>
