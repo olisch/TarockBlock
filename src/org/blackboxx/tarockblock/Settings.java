@@ -34,7 +34,7 @@ public class Settings extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
 		Globals g = Globals.getInstance();
-		ThemeId = g.getData();
+		ThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
@@ -99,7 +99,7 @@ public class Settings extends Activity implements OnClickListener {
 							editor.commit();
 							// Save the new global Theme-ID
 							Globals g = Globals.getInstance();
-							g.setData(PrefThemeId);
+							g.setThemeId(PrefThemeId);
 							// TextButton.setText(getResources().getStringArray(R.array.themes_list)[PrefThemeId]);
 
 							// Intent intent = getIntent();

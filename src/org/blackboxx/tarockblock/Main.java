@@ -27,7 +27,7 @@ public class Main extends OrmLiteBaseActivity<DatabaseHelper> {
 		// ThemeId = UtilsActivity.getTheme(this);
 		// Save Theme-ID in global Variable
 		Globals g = Globals.getInstance();
-		g.setData(ThemeId);
+		g.setThemeId(ThemeId);
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 

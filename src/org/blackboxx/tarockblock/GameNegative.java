@@ -22,7 +22,7 @@ public class GameNegative extends Activity implements OnClickListener {
 		// Get the global Theme-ID
 		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getData();
+		ThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 

@@ -21,10 +21,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.Spinner;
+import app.adapter.TariffsetListAdapter;
+import app.adapter.TariffsetNewBasedonListAdapter;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
@@ -34,11 +37,14 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 	private Button SettingsTariffsetNew;
 	private List<TableTariffset> tariffsets;
 	private ListView tariffsetList;
-	private ArrayAdapter<TableTariffset> tariffsetAdapter;
-
+	private TariffsetListAdapter tariffsetAdapter;
+	private TariffsetNewBasedonListAdapter selectForNewTariffsetAdapter;
 	private TableTariffset defaultTariffset;
 	private TableTariffset editTariffset;
 	private TableTariffset deleteTariffset;
+
+	private RadioButton radioButtonNewEmptyTariffset;
+	private Spinner spinnerNewTariffsetBasedon;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,7 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		// Get the global Theme-ID
 		int ThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getData();
+		ThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
 		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
 
@@ -62,9 +68,8 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 	}
 
 	private void showTariffsetList() {
-		int TariffsetId = 0;
 		Globals ts = Globals.getInstance();
-		TariffsetId = ts.getData();
+		int tariffsetId = ts.getDefaultTariffsetId();
 
 		// Context context = getApplicationContext();
 		// int duration = Toast.LENGTH_LONG;
@@ -78,10 +83,9 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 			e.printStackTrace();
 		}
 
-		// TODO if tariffsetId = TariffsetId then make this listitem bold
-
 		tariffsetList = (ListView) findViewById(R.id.list_tariffset);
-		tariffsetAdapter = new ArrayAdapter<TableTariffset>(this, R.layout.item_tariffset, R.id.item_tariffset, tariffsets);
+		tariffsetAdapter = new TariffsetListAdapter(this, R.layout.item_tariffset, R.id.item_tariffset,
+				tariffsets.toArray(new TableTariffset[tariffsets.size()]), tariffsetId);
 		tariffsetList.setAdapter(tariffsetAdapter);
 		registerForContextMenu(tariffsetList);
 
@@ -115,15 +119,14 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 	}
 
 	private void defaultTariffset(long id) {
-		// TODO save selected tariffsetId into defaultTariffset
 		defaultTariffset = tariffsetAdapter.getItem((int) id);
-		int PrefTariffsetId = defaultTariffset.getId();
+		int prefTariffsetId = defaultTariffset.getId();
 		SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file), Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putInt("pref_tariffset", PrefTariffsetId);
+		editor.putInt("pref_tariffset", prefTariffsetId);
 		editor.commit();
 		Globals ts = Globals.getInstance();
-		ts.setData(PrefTariffsetId);
+		ts.setDefaultTariffsetId(prefTariffsetId);
 		showTariffsetList();
 	}
 
@@ -160,10 +163,6 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		case R.id.settings_button_tariffset_new:
 			openDialogTariffsetNewBase();
 			break;
-		// TODO richtige id?
-		case 2:
-			openDialogTariffsetName();
-			break;
 		}
 	}
 
@@ -173,6 +172,11 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
+		spinnerNewTariffsetBasedon = (Spinner) promptView.findViewById(R.id.tariffset_new_basedon_spinner);
+		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.item_tariffset, R.id.item_tariffset,
+				tariffsets.toArray(new TableTariffset[tariffsets.size()]));
+		spinnerNewTariffsetBasedon.setAdapter(selectForNewTariffsetAdapter);
+		radioButtonNewEmptyTariffset = (RadioButton) promptView.findViewById(R.id.settings_tariffset_new_empty);
 
 		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
 
@@ -207,7 +211,11 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 				// TODO beim anzeigen des neuen tarifsets sollte auch mitgegeben
 				// werden, obs leer ist, oder welches tarifset kopiert und
 				// angezeigt werden soll zum editieren
-				goto_settings_tariffset_new(null);
+				Integer tariffsetId = null;
+				if (!radioButtonNewEmptyTariffset.isChecked()) {
+					tariffsetId = selectForNewTariffsetAdapter.getItem(spinnerNewTariffsetBasedon.getSelectedItemPosition()).getId();
+				}
+				goto_settings_tariffset_new(tariffsetId);
 			}
 		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -292,9 +300,12 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		startActivity(intent);
 	}
 
-	public void goto_settings_tariffset_new(View view) {
+	public void goto_settings_tariffset_new(Integer tariffsetId) {
 		// Do something in response to button
 		Intent intent = new Intent(this, TariffsetNew.class);
+		if (tariffsetId != null) {
+			intent.putExtra("editTariffsetId", tariffsetId);
+		}
 		startActivity(intent);
 	}
 
