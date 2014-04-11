@@ -4,7 +4,18 @@
     android:id="@+id/root"
     style="@style/BasicRelativeLayout" >
 
-    <!-- Buttons @Bottom -->
+    <EditText
+        android:id="@+id/tariffset_new_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+ <!-- Buttons @Bottom -->
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -18,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:onClick="goto_settings_tariffs"
             android:text="@string/button_save"
             android:textStyle="bold" />
 
@@ -47,7 +57,7 @@
 
                 <ImageButton
                     android:id="@+id/button_tariffset_new_tariff_entry"
-            style="?android:attr/borderlessButtonStyle"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:layout_gravity="right|bottom"
@@ -81,7 +91,7 @@
 
                 <ImageButton
                     android:id="@+id/button_tariffset_new_premium_entry"
-            style="?android:attr/borderlessButtonStyle"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:layout_gravity="right|bottom"
@@ -125,8 +135,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:paddingLeft="8dp"
                     android:paddingBottom="10dp"
+                    android:paddingLeft="8dp"
                     android:text="@string/settings_tariff_new_trischaken_default1"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -135,9 +145,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:paddingBottom="10dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="36dp"
-                    android:paddingBottom="10dp"
                     android:text="@string/settings_tariff_new_trischaken_default2"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -146,9 +156,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:paddingBottom="10dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="72dp"
-                    android:paddingBottom="10dp"
                     android:text="@string/settings_tariff_new_trischaken_default3"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
@@ -173,7 +183,7 @@
                     android:layout_centerVertical="true"
                     android:paddingLeft="8dp"
                     android:paddingTop="24dp"
-                    android:text="@string/settings_tariff_new_bei_default"
+                    android:text=""
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
 
@@ -197,14 +207,13 @@
                     android:layout_centerVertical="true"
                     android:paddingLeft="8dp"
                     android:paddingTop="24dp"
-                    android:text="@string/settings_tariff_new_kontra_default"
+                    android:text=""
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
-<!--
+</RelativeLayout><!--
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -256,4 +265,5 @@
 
     <View style="@style/Divider" />
 
-</LinearLayout>-->
+</LinearLayout>
+-->
