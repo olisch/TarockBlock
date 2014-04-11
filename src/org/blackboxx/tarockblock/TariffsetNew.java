@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
 import org.blackboxx.tarockblock.enums.ArrayConverter;
+import org.blackboxx.tarockblock.persistance.TablePremium;
 import org.blackboxx.tarockblock.persistance.TableTariff;
 import org.blackboxx.tarockblock.persistance.TableTariffset;
 
@@ -22,6 +23,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import app.adapter.PremiumListAdapter;
 import app.adapter.TariffListAdapter;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
@@ -46,7 +48,9 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 	private ToggleButton toggleButtonTrischaken2;
 	private ToggleButton toggleButtonTrischaken3;
 	private TariffListAdapter tariffListAdapter;
+	private PremiumListAdapter premiumListAdapter;
 	private ListView tariffListView;
+	private ListView premiumListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -106,12 +110,12 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 			tariffListView.setAdapter(tariffListAdapter);
 		}
 
-		// TODO text aus enums bilden und nicht aus array
-		// SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[TrischakenId1]);
-		// SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[TrischakenId2]);
-		// SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[TrischakenId3]);
-		// SettingsTariffsetNewBeiText.setText(getResources().getStringArray(R.array.list_bei)[BeiId]);
-		// SettingsTariffsetNewKontraText.setText(getResources().getStringArray(R.array.list_kontra)[KontraId]);
+		premiumListView = (ListView) findViewById(R.id.settings_tariffset_new_premiumslist);
+		if (actualTariffset.getId() != null) {
+			premiumListAdapter = new PremiumListAdapter(this, R.layout.item_premium, R.id.settings_tariffset_premium, actualTariffset.getPremiums().toArray(
+					new TablePremium[actualTariffset.getPremiums().size()]));
+			premiumListView.setAdapter(premiumListAdapter);
+		}
 
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -159,7 +163,6 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_tariff, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window

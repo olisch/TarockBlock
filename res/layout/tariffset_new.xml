@@ -4,17 +4,6 @@
     android:id="@+id/root"
     style="@style/BasicRelativeLayout" >
 
-    <EditText
-        android:id="@+id/tariffset_new_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
  <!-- Buttons @Bottom -->
 
     <LinearLayout
@@ -41,9 +30,18 @@
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
+      <EditText
+        android:id="@+id/tariffset_new_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Tarifset Name"
+        android:ems="10"  />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal" >
 
                 <TextView
@@ -211,6 +209,10 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
         </LinearLayout>
+        
+        
+        
+        
     </ScrollView>
 
 </RelativeLayout><!--
