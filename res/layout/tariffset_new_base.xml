@@ -2,25 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/BasicLayout" >
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checkedButton="@+id/settings_tariffset_new_empty"
-                android:orientation="vertical" >
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/settings_tariffset_new_empty"
+        android:orientation="vertical" >
 
-                <RadioButton
-                    android:id="@+id/settings_tariffset_new_empty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Leeres Tarifset" />
+        <RadioButton
+            android:id="@+id/settings_tariffset_new_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leeres Tarifset" />
 
-                <RadioButton
-                    android:id="@+id/settings_tariffset_new_basedon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tarifset" />
+        <RadioButton
+            android:id="@+id/settings_tariffset_new_basedon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarifset" />
+    </RadioGroup>
 
-            </RadioGroup>
-
+    <Spinner
+        android:id="@+id/tariffset_new_basedon_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
 </LinearLayout>
