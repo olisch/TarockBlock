@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import app.adapter.PremiumListAdapter;
@@ -28,25 +29,25 @@ import app.adapter.TariffListAdapter;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
 
 	private TableTariffset actualTariffset;
-	private ImageButton SettingsTariffsetNewTariff;
-	private ImageButton SettingsTariffsetNewPremium;
-	private Button SettingsTariffsetNewTrischaken;
-	private Button SettingsTariffsetNewBei;
-	private Button SettingsTariffsetNewKontra;
-	private TextView SettingsTariffsetNewTrischakenText1;
-	private TextView SettingsTariffsetNewTrischakenText2;
-	private TextView SettingsTariffsetNewTrischakenText3;
-	private TextView SettingsTariffsetNewBeiText;
-	private TextView SettingsTariffsetNewKontraText;
+	private ImageButton tariffNew;
+	private ImageButton premiumNew;
+	private Button trischaken;
+	private Button bei;
+	private Button kontra;
+	private TextView trischakenText1;
+	private TextView trischakenText2;
+	private TextView trischakenText3;
+	private TextView beiText;
+	private TextView kontraText;
 	private EditText tariffsetNameEditText;
-	private int ActivityId = 4;
+	private int activityId = 4;
 
-	private ToggleButton toggleButtonTrischaken1;
-	private ToggleButton toggleButtonTrischaken2;
-	private ToggleButton toggleButtonTrischaken3;
+	private ToggleButton toggleTrischaken1;
+	private ToggleButton toggleTrischaken2;
+	private ToggleButton toggleTrischaken3;
 	private TariffListAdapter tariffListAdapter;
 	private PremiumListAdapter premiumListAdapter;
 	private ListView tariffListView;
@@ -70,51 +71,61 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 		}
 
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
 		setContentView(R.layout.tariffset_new);
 
-		SettingsTariffsetNewTariff = (ImageButton) findViewById(R.id.button_tariffset_new_tariff_entry);
-		SettingsTariffsetNewTariff.setOnClickListener(this);
-		SettingsTariffsetNewPremium = (ImageButton) findViewById(R.id.button_tariffset_new_premium_entry);
-		SettingsTariffsetNewPremium.setOnClickListener(this);
-		SettingsTariffsetNewTrischakenText1 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text1);
-		SettingsTariffsetNewTrischakenText2 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text2);
-		SettingsTariffsetNewTrischakenText3 = (TextView) findViewById(R.id.settings_tariff_new_trischaken_text3);
-		SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
-		SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
-		SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
-		SettingsTariffsetNewTrischaken = (Button) findViewById(R.id.settings_button_tariff_new_trischaken);
-		SettingsTariffsetNewTrischaken.setOnClickListener(this);
-		SettingsTariffsetNewBei = (Button) findViewById(R.id.settings_button_tariff_new_bei);
-		SettingsTariffsetNewBei.setOnClickListener(this);
-		SettingsTariffsetNewBeiText = (TextView) findViewById(R.id.settings_tariff_new_bei_text);
-		SettingsTariffsetNewBeiText.setText(ArrayConverter.getBeiText(actualTariffset.getBei(), getResources()));
-		SettingsTariffsetNewKontra = (Button) findViewById(R.id.settings_button_tariff_new_kontra);
-		SettingsTariffsetNewKontra.setOnClickListener(this);
-		SettingsTariffsetNewKontraText = (TextView) findViewById(R.id.settings_tariff_new_kontra_text);
-		SettingsTariffsetNewKontraText.setText(ArrayConverter.getKontraText(actualTariffset.getKontra(), getResources()));
+		tariffNew = (ImageButton) findViewById(R.id.button_tariffset_new_tariff_entry);
+		tariffNew.setOnClickListener(this);
+		premiumNew = (ImageButton) findViewById(R.id.button_tariffset_new_premium_entry);
+		premiumNew.setOnClickListener(this);
+		trischakenText1 = (TextView) findViewById(R.id.tariff_new_trischaken_text1);
+		trischakenText2 = (TextView) findViewById(R.id.tariff_new_trischaken_text2);
+		trischakenText3 = (TextView) findViewById(R.id.tariff_new_trischaken_text3);
+		trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
+		trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
+		trischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
+		trischaken = (Button) findViewById(R.id.button_tariff_new_trischaken);
+		trischaken.setOnClickListener(this);
+		bei = (Button) findViewById(R.id.button_tariff_new_bei);
+		bei.setOnClickListener(this);
+		beiText = (TextView) findViewById(R.id.tariff_new_bei_text);
+		beiText.setText(ArrayConverter.getBeiText(actualTariffset.getBei(), getResources()));
+		kontra = (Button) findViewById(R.id.button_tariff_new_kontra);
+		kontra.setOnClickListener(this);
+		kontraText = (TextView) findViewById(R.id.tariff_new_kontra_text);
+		kontraText.setText(ArrayConverter.getKontraText(actualTariffset.getKontra(), getResources()));
 		tariffsetNameEditText = (EditText) findViewById(R.id.tariffset_new_name);
 		tariffsetNameEditText.setText(actualTariffset.getName());
-		Button SettingsTariffsetNewSaveButton = (Button) findViewById(R.id.settings_tariffs_new_button_save);
+		Button SettingsTariffsetNewSaveButton = (Button) findViewById(R.id.button_save);
 		SettingsTariffsetNewSaveButton.setOnClickListener(this);
 
-		tariffListView = (ListView) findViewById(R.id.settings_tariffset_new_tariffslist);
+		ScrollView scrollViewScenes = (ScrollView) findViewById(R.id.scroll);
+
+		tariffListView = (ListView) findViewById(R.id.tariffset_new_tariffslist);
 		if (actualTariffset.getId() != null) {
-			tariffListAdapter = new TariffListAdapter(this, R.layout.item_tariff, R.id.settings_tariffset_tariff, actualTariffset.getTariffs().toArray(
+			tariffListAdapter = new TariffListAdapter(this, R.layout.item_tariff, R.id.tariffset_tariff, actualTariffset.getTariffs().toArray(
 					new TableTariff[actualTariffset.getTariffs().size()]));
 			tariffListView.setAdapter(tariffListAdapter);
 		}
+		if (scrollViewScenes != null) {
+			Helper.setListViewSize(tariffListView);
+			// MyUtilities.setListViewHeightBasedOnChildren(tariffListView);
+		}
 
-		premiumListView = (ListView) findViewById(R.id.settings_tariffset_new_premiumslist);
+		premiumListView = (ListView) findViewById(R.id.tariffset_new_premiumslist);
 		if (actualTariffset.getId() != null) {
-			premiumListAdapter = new PremiumListAdapter(this, R.layout.item_premium, R.id.settings_tariffset_premium, actualTariffset.getPremiums().toArray(
+			premiumListAdapter = new PremiumListAdapter(this, R.layout.item_premium, R.id.tariffset_premium, actualTariffset.getPremiums().toArray(
 					new TablePremium[actualTariffset.getPremiums().size()]));
 			premiumListView.setAdapter(premiumListAdapter);
+		}
+		if (scrollViewScenes != null) {
+			Helper.setListViewSize(premiumListView);
+			// MyUtilities.setListViewHeightBasedOnChildren(premiumListView);
 		}
 
 		// Show the Up button in the action bar.
@@ -130,16 +141,16 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 		case R.id.button_tariffset_new_premium_entry:
 			openDialogTariffsetNewPremiumEntry();
 			break;
-		case R.id.settings_button_tariff_new_trischaken:
+		case R.id.button_tariff_new_trischaken:
 			openDialogTariffsetNewTrischaken();
 			break;
-		case R.id.settings_button_tariff_new_bei:
+		case R.id.button_tariff_new_bei:
 			openDialogTariffsetNewBei();
 			break;
-		case R.id.settings_button_tariff_new_kontra:
+		case R.id.button_tariff_new_kontra:
 			openDialogTariffsetNewKontra();
 			break;
-		case R.id.settings_tariffs_new_button_save:
+		case R.id.button_save:
 			save();
 			break;
 		}
@@ -154,7 +165,7 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 			// TODO errorhandling
 			e.printStackTrace();
 		}
-		Intent intent = new Intent(this, Tariffsets.class);
+		Intent intent = new Intent(this, Tariffsets_Activity.class);
 		startActivity(intent);
 
 	}
@@ -217,36 +228,36 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 		trischaken1.setText(label[0]);
 		trischaken2.setText(label[1]);
 		trischaken3.setText(label[2]);
-		toggleButtonTrischaken1 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri1);
-		toggleButtonTrischaken1.setChecked(2 == actualTariffset.getTri1());
-		toggleButtonTrischaken2 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri2);
-		toggleButtonTrischaken2.setChecked(2 == actualTariffset.getTri2());
-		toggleButtonTrischaken3 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri3);
-		toggleButtonTrischaken3.setChecked(2 == actualTariffset.getTri3());
+		toggleTrischaken1 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri1);
+		toggleTrischaken1.setChecked(2 == actualTariffset.getTri1());
+		toggleTrischaken2 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri2);
+		toggleTrischaken2.setChecked(2 == actualTariffset.getTri2());
+		toggleTrischaken3 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri3);
+		toggleTrischaken3.setChecked(2 == actualTariffset.getTri3());
 		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_trischaken);
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				actualTariffset.setTri1((toggleButtonTrischaken1.isChecked() ? 2 : 1));
-				actualTariffset.setTri2((toggleButtonTrischaken2.isChecked() ? 2 : 1));
-				actualTariffset.setTri3((toggleButtonTrischaken3.isChecked() ? 2 : 1));
+				actualTariffset.setTri1((toggleTrischaken1.isChecked() ? 2 : 1));
+				actualTariffset.setTri2((toggleTrischaken2.isChecked() ? 2 : 1));
+				actualTariffset.setTri3((toggleTrischaken3.isChecked() ? 2 : 1));
 
-				SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
-				SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
-				SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
+				trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
+				trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
+				trischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
 				dialog.dismiss();
 			}
 		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				actualTariffset.setTri1((toggleButtonTrischaken1.isChecked() ? 2 : 1));
-				actualTariffset.setTri2((toggleButtonTrischaken2.isChecked() ? 2 : 1));
-				actualTariffset.setTri3((toggleButtonTrischaken3.isChecked() ? 2 : 1));
+				actualTariffset.setTri1((toggleTrischaken1.isChecked() ? 2 : 1));
+				actualTariffset.setTri2((toggleTrischaken2.isChecked() ? 2 : 1));
+				actualTariffset.setTri3((toggleTrischaken3.isChecked() ? 2 : 1));
 
-				SettingsTariffsetNewTrischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
-				SettingsTariffsetNewTrischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
-				SettingsTariffsetNewTrischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
+				trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
+				trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
+				trischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
 				dialog.cancel();
 			}
 		});
@@ -263,7 +274,7 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 					@Override
 					public void onClick(DialogInterface dialog, int id) {
 						actualTariffset.setBei(Integer.valueOf(getResources().getStringArray(R.array.list_bei_values)[id]));
-						SettingsTariffsetNewBeiText.setText(getResources().getStringArray(R.array.list_bei)[id]);
+						beiText.setText(getResources().getStringArray(R.array.list_bei)[id]);
 						dialog.dismiss();
 					}
 				});
@@ -278,7 +289,7 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 					@Override
 					public void onClick(DialogInterface dialog, int id) {
 						actualTariffset.setKontra(Integer.valueOf(getResources().getStringArray(R.array.list_kontra_values)[id]));
-						SettingsTariffsetNewKontraText.setText(getResources().getStringArray(R.array.list_kontra)[id]);
+						kontraText.setText(getResources().getStringArray(R.array.list_kontra)[id]);
 						dialog.dismiss();
 					}
 				});
@@ -312,7 +323,7 @@ public class TariffsetNew extends OrmLiteBaseActivity<DatabaseHelper> implements
 
 	public void goto_settings_tariffs(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Tariffsets.class);
+		Intent intent = new Intent(this, Tariffsets_Activity.class);
 		startActivity(intent);
 	}
 

@@ -7,7 +7,7 @@
     android:orientation="horizontal" >
 
     <TextView
-        android:id="@+id/settings_tariffset_tariff"
+        android:id="@+id/tariffset_tariff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Spielansage"
@@ -17,7 +17,7 @@
     <View style="@style/Horizontal_Spacer" />
 
     <TextView
-        android:id="@+id/settings_tariffset_value"
+        android:id="@+id/tariffset_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"

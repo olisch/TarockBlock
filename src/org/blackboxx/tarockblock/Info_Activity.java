@@ -4,25 +4,33 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class GamesSoFar extends Activity {
-	private int ActivityId = 2;
+public class Info_Activity extends Activity {
+	private int activityId = 5;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
-		setContentView(R.layout.games_sofar);
+		setContentView(R.layout.info);
 		// Show the Up button in the action bar.
 		setupActionBar();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.action_overflow, menu);
+		return true;
 	}
 
 	/**
@@ -47,13 +55,35 @@ public class GamesSoFar extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
+			/*
+			 * case R.id.action_sync: goto_sync(null); return true; case
+			 * R.id.action_rules: goto_rules(null); return true;
+			 */
+		case R.id.action_settings:
+			goto_settings(null);
+			return true;
+		case R.id.action_info:
+			goto_info(null);
+			return true;
+		case R.id.action_exit:
+			Intent intent = new Intent(getApplicationContext(), Main_Activity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("EXIT", true);
+			startActivity(intent);
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void goto_game_detail(View view) {
+	public void goto_info(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, GameDetails.class);
+		Intent intent = new Intent(this, Info_Activity.class);
+		startActivity(intent);
+	}
+
+	public void goto_settings(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, Settings_Activity.class);
 		startActivity(intent);
 	}
 

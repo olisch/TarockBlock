@@ -13,12 +13,11 @@
         <View style="@style/Divider" />
 
         <Button
-            android:id="@+id/settings_button_tariffset_new"
+            android:id="@+id/tariffset_new"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:onClick="goto_settings_tariffset_new_base"
             android:text="@string/button_tariff_new" />
 
         <View style="@style/Divider" />
@@ -26,43 +25,21 @@
 
     <!-- Scrollable Content above Buttons -->
 
-    <ScrollView style="@style/BasicScrollViewLayout" >
+    <ScrollView
+        android:id="@+id/scroll"
+        style="@style/BasicScrollViewLayout" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
+
             <ListView
                 android:id="@+id/list_tariffset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:dividerHeight="0dp"
+                android:layout_weight="1"
                 android:divider="@null"
-                android:layout_weight="1" >
+                android:dividerHeight="0dp" >
             </ListView>
         </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>
-
-
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/BasicLayout" >
-
-    <View style="@style/Vertical_Spacer" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_tariff_new"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:onClick="goto_settings_tariff_new"
-        android:text="@string/button_tariff_new" />
-
-    <View style="@style/Divider" />
-
-</LinearLayout>
--->

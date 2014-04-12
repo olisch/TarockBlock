@@ -12,24 +12,24 @@ import android.view.View;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class Main extends OrmLiteBaseActivity<DatabaseHelper> {
+public class Main_Activity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 	boolean schduledRestart;
-	private int ActivityId = 1;
+	private int activityId = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get Theme-ID from Preference-File
-		int ThemeId;
+		int defaultThemeId;
 		SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file), Context.MODE_PRIVATE);
-		ThemeId = sharedPref.getInt("pref_theme", 0);
+		defaultThemeId = sharedPref.getInt("pref_theme", 0);
 		// ThemeId = UtilsActivity.getTheme(this);
 		// Save Theme-ID in global Variable
 		Globals g = Globals.getInstance();
-		g.setThemeId(ThemeId);
+		g.setThemeId(defaultThemeId);
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
 		setContentView(R.layout.main);
 		if (getIntent().getBooleanExtra("EXIT", false)) {
@@ -69,26 +69,26 @@ public class Main extends OrmLiteBaseActivity<DatabaseHelper> {
 
 	public void goto_info(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Info.class);
+		Intent intent = new Intent(this, Info_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Settings.class);
+		Intent intent = new Intent(this, Settings_Activity.class);
 		startActivity(intent);
 	}
 
 	/** Called when user clicks a button */
 	public void goto_session_old(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SessionOld.class);
+		Intent intent = new Intent(this, SessionOld_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_session_new(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SessionNew.class);
+		Intent intent = new Intent(this, SessionNew_Activity.class);
 		startActivity(intent);
 	}
 

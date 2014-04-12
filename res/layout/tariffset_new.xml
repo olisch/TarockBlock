@@ -4,7 +4,7 @@
     android:id="@+id/root"
     style="@style/BasicRelativeLayout" >
 
- <!-- Buttons @Bottom -->
+    <!-- Buttons @Bottom -->
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -13,11 +13,10 @@
         <View style="@style/Divider" />
 
         <Button
-            android:id="@+id/settings_tariffs_new_button_save"
+            android:id="@+id/button_save"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
             android:text="@string/button_save"
             android:textStyle="bold" />
 
@@ -26,17 +25,18 @@
 
     <!-- Scrollable Content above Buttons -->
 
-    <ScrollView style="@style/BasicScrollViewLayout" >
+    <ScrollView style="@style/BasicScrollViewLayout" 
+                android:id="@+id/scroll" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
-      <EditText
-        android:id="@+id/tariffset_new_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Tarifset Name"
-        android:ems="10"  />
+            <EditText
+                android:id="@+id/tariffset_new_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Tarifset Name"
+                android:inputType="text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/settings_tariffset_new_tariffs"
+                    android:id="@+id/tariffset_new_tariffs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|bottom"
@@ -66,10 +66,11 @@
             <View style="@style/Divider" />
 
             <ListView
-                android:id="@+id/settings_tariffset_new_tariffslist"
+                android:id="@+id/tariffset_new_tariffslist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" >
+                android:divider="@null"
+                android:dividerHeight="0dp" >
             </ListView>
 
             <LinearLayout
@@ -79,7 +80,7 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/settings_tariffset_new_premiums"
+                    android:id="@+id/tariffset_new_premiums"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|bottom"
@@ -100,14 +101,15 @@
             <View style="@style/Divider" />
 
             <ListView
-                android:id="@+id/settings_tariffset_new_premiumslist"
+                android:id="@+id/tariffset_new_premiumslist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" >
+                android:divider="@null"
+                android:dividerHeight="0dp" >
             </ListView>
 
             <TextView
-                android:id="@+id/settings_tariffset_new_options"
+                android:id="@+id/tariffset_new_options"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -120,7 +122,7 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/settings_button_tariff_new_trischaken"
+                    android:id="@+id/button_tariff_new_trischaken"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="98dp"
@@ -129,7 +131,7 @@
                     android:text="@string/button_tariff_new_trischaken" />
 
                 <TextView
-                    android:id="@+id/settings_tariff_new_trischaken_text1"
+                    android:id="@+id/tariff_new_trischaken_text1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -139,7 +141,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <TextView
-                    android:id="@+id/settings_tariff_new_trischaken_text2"
+                    android:id="@+id/tariff_new_trischaken_text2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -150,7 +152,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <TextView
-                    android:id="@+id/settings_tariff_new_trischaken_text3"
+                    android:id="@+id/tariff_new_trischaken_text3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -166,7 +168,7 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/settings_button_tariff_new_bei"
+                    android:id="@+id/button_tariff_new_bei"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
@@ -175,7 +177,7 @@
                     android:text="@string/button_tariff_new_bei" />
 
                 <TextView
-                    android:id="@+id/settings_tariff_new_bei_text"
+                    android:id="@+id/tariff_new_bei_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -190,7 +192,7 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/settings_button_tariff_new_kontra"
+                    android:id="@+id/button_tariff_new_kontra"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
@@ -199,7 +201,7 @@
                     android:text="@string/button_tariff_new_kontra" />
 
                 <TextView
-                    android:id="@+id/settings_tariff_new_kontra_text"
+                    android:id="@+id/tariff_new_kontra_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -209,63 +211,6 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
         </LinearLayout>
-        
-        
-        
-        
     </ScrollView>
 
-</RelativeLayout><!--
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/BasicLayout" >
-    
-
-    <View style="@style/Vertical_Spacer" />
-    
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_tariff_new_trischaken"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/button_tariff_new_trischaken"
-        android:onClick="goto_settings_tariff_new_trischaken" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_tariff_new_bei"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/button_tariff_new_bei"
-        android:onClick="goto_settings_tariff_new_bei" />
-
-    <View style="@style/Divider" />
-
-    Row Spacer <View android:layout_width="match_parent" android:layout_height="@dimen/row_spacer_height" />
-    
-
-
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/settings_tariffs_new_button_save"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/button_save"
-        android:onClick="goto_settings_tariffs"
-        android:textStyle="bold" />
-
-    <View style="@style/Divider" />
-
-</LinearLayout>
--->
+</RelativeLayout>

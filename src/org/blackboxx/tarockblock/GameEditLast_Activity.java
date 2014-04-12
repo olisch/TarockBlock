@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
-public class GameRegular extends Activity {
-	private int ActivityId = 2;
+public class GameEditLast_Activity extends Activity {
+	private int activityId = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
-		setContentView(R.layout.game_regular);
+		setContentView(R.layout.game_edit_last);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}

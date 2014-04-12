@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
-import org.blackboxx.tarockblock.persistance.TablePlayer;
+import org.blackboxx.tarockblock.persistance.TableTariff;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,53 +21,52 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+public class Tariffset_Activity extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+	private int activityId = 4;
 
-	private Button SettingsPlayerNew;
-	private List<TablePlayer> players;
-	private ListView playersList;
-	private ArrayAdapter<TablePlayer> playersAdapter;
+	private Button tariffNew;
+	private List<TableTariff> tariffs;
+	private ListView tariffList;
+	private ArrayAdapter<TableTariff> tariffAdapter;
 
-	private TablePlayer editPlayer;
-	private TablePlayer deletePlayer;
-	private int ActivityId = 3;
+	private TableTariff editTariff;
+	private TableTariff deleteTariff;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
-		setContentView(R.layout.player);
-		SettingsPlayerNew = (Button) findViewById(R.id.settings_button_player_new);
-		SettingsPlayerNew.setOnClickListener(this);
+		setContentView(R.layout.tariffset);
+		tariffNew = (Button) findViewById(R.id.tariff_new);
+		tariffNew.setOnClickListener(this);
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		showPlayersList();
+		showTariffList();
 	}
 
-	private void showPlayersList() {
+	private void showTariffList() {
 		try {
-			players = getHelper().getPlayerDao().queryForAll();
+			tariffs = getHelper().getTariffDao().queryForAll();
 		} catch (SQLException e) {
 			// TODO errorhandling
 			e.printStackTrace();
 		}
 
-		playersList = (ListView) findViewById(R.id.list_player);
-		playersAdapter = new ArrayAdapter<TablePlayer>(this, R.layout.item_player, R.id.item_player, players);
-		playersList.setAdapter(playersAdapter);
-		registerForContextMenu(playersList);
+		tariffList = (ListView) findViewById(R.id.tariff);
+		tariffAdapter = new ArrayAdapter<TableTariff>(this, R.layout.item_tariff, R.id.tariffset_tariff, tariffs);
+		tariffList.setAdapter(tariffAdapter);
+		registerForContextMenu(tariffList);
 
 	}
 
@@ -84,31 +83,30 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 		switch (item.getItemId()) {
 		case 1:
-			editPlayer(info.id);
+			editTariff(info.id);
 			return true;
 		case 2:
-			deletePlayer(info.id);
+			deleteTariff(info.id);
 			return true;
 		default:
 			return super.onContextItemSelected(item);
 		}
 	}
 
-	private void deletePlayer(long id) {
-		deletePlayer = playersAdapter.getItem((int) id);
+	private void deleteTariff(long id) {
+		deleteTariff = tariffAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.menu_delete_dialog);
-		builder.setMessage(R.string.menu_delete_dialog_player).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+		builder.setMessage(R.string.menu_delete_dialog_tariff).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
-					getHelper().getPlayerDao().delete(deletePlayer);
+					getHelper().getTariffDao().delete(deleteTariff);
 
 				} catch (SQLException e) {
 					// TODO errorhandling
 					e.printStackTrace();
 				}
-				showPlayersList();
+				showTariffList();
 			}
 		}).setNegativeButton("Nein", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -117,57 +115,48 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		builder.show();
 	}
 
-	private void editPlayer(long id) {
-		editPlayer = playersAdapter.getItem((int) id);
-		openDialogPlayerName();
+	private void editTariff(long id) {
+		editTariff = tariffAdapter.getItem((int) id);
+		openDialogTariffName();
 	}
 
 	@Override
 	public void onClick(View v) {
-		openDialogPlayerName();
+		openDialogTariffName();
 	}
 
-	private void openDialogPlayerName() {
-		LinearLayout layout = new LinearLayout(this);
-		layout.setOrientation(LinearLayout.VERTICAL);
-		layout.setGravity(Gravity.CENTER_HORIZONTAL);
-		final EditText input = new EditText(this);
-		layout.setPadding(32, 32, 32, 32);
-		input.setHint("Spielername");
-		layout.addView(input);
-
+	private void openDialogTariffName() {
+		LayoutInflater layoutInflater = LayoutInflater.from(this);
+		View promptView = layoutInflater.inflate(R.layout.tariff_rename, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setView(layout);
+		// set prompts.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setView(promptView);
 
-		int settings_player_new = 0;
-		input.setId(settings_player_new);
-
-		if (editPlayer != null) {
+		final EditText input = (EditText) promptView.findViewById(R.id.tariff_rename);
+		if (editTariff != null) {
 			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
-			input.setText(editPlayer.getName());
-		} else {
-			alertDialogBuilder.setTitle(R.string.player_new_dialog);
+			input.setText(editTariff.getName());
 		}
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				// get user input and set it to result
 				// editTextMainScreen.setText(input.getText());
-				TablePlayer savePlayer;
-				if (editPlayer == null) {
-					savePlayer = new TablePlayer();
+				TableTariff saveTariff;
+				if (editTariff == null) {
+					saveTariff = new TableTariff();
 				} else {
-					savePlayer = editPlayer;
+					saveTariff = editTariff;
 				}
-				savePlayer.setName(input.getEditableText().toString());
+				saveTariff.setName(input.getEditableText().toString());
 				try {
-					getHelper().getPlayerDao().createOrUpdate(savePlayer);
+					getHelper().getTariffDao().createOrUpdate(saveTariff);
+					editTariff = null;
 				} catch (SQLException e) {
 					// TODO errorhandling
 					e.printStackTrace();
 				}
-				editPlayer = null;
-				showPlayersList();
+				showTariffList();
 			}
 		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -203,8 +192,8 @@ public class Player extends OrmLiteBaseActivity<DatabaseHelper> implements OnCli
 		return super.onOptionsItemSelected(item);
 	}
 
-	public List<TablePlayer> getPlayers() {
-		return players;
+	public List<TableTariff> getTariff() {
+		return tariffs;
 	}
 
 }

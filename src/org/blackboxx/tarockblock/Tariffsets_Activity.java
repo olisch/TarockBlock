@@ -25,16 +25,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import app.adapter.TariffsetListAdapter;
 import app.adapter.TariffsetNewBasedonListAdapter;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
-	private int ActivityId = 4;
+public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+	private int activityId = 4;
 
-	private Button SettingsTariffsetNew;
+	private Button tariffsetNew;
 	private List<TableTariffset> tariffsets;
 	private ListView tariffsetList;
 	private TariffsetListAdapter tariffsetAdapter;
@@ -50,16 +51,16 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
 		setContentView(R.layout.tariffsets);
 
-		SettingsTariffsetNew = (Button) findViewById(R.id.settings_button_tariffset_new);
-		SettingsTariffsetNew.setOnClickListener(this);
+		tariffsetNew = (Button) findViewById(R.id.tariffset_new);
+		tariffsetNew.setOnClickListener(this);
 
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -88,6 +89,10 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 				tariffsets.toArray(new TableTariffset[tariffsets.size()]), tariffsetId);
 		tariffsetList.setAdapter(tariffsetAdapter);
 		registerForContextMenu(tariffsetList);
+		ScrollView scrollViewScenes = (ScrollView) findViewById(R.id.scroll);
+		if (scrollViewScenes != null) {
+			Helper.setListViewSize(tariffsetList);
+		}
 
 	}
 
@@ -160,7 +165,7 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.settings_button_tariffset_new:
+		case R.id.tariffset_new:
 			openDialogTariffsetNewBase();
 			break;
 		}
@@ -171,51 +176,24 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_base, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
+		// TODO if spinner selected autoselect the radio button
 		alertDialogBuilder.setView(promptView);
 		spinnerNewTariffsetBasedon = (Spinner) promptView.findViewById(R.id.tariffset_new_basedon_spinner);
-		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.item_tariffset, R.id.item_tariffset,
+		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.spinner_tariffset_basedon, R.id.spinner_tariffset_basedon,
 				tariffsets.toArray(new TableTariffset[tariffsets.size()]));
 		spinnerNewTariffsetBasedon.setAdapter(selectForNewTariffsetAdapter);
-		radioButtonNewEmptyTariffset = (RadioButton) promptView.findViewById(R.id.settings_tariffset_new_empty);
+		radioButtonNewEmptyTariffset = (RadioButton) promptView.findViewById(R.id.tariffset_new_empty);
 
 		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
-
-		// AlertDialog.Builder alertDialogBuilder = new
-		// AlertDialog.Builder(this);
-		// // TODO liste aus enums bilden und nicht aus array
-		// alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog).setSingleChoiceItems(R.array.list_tariffset_new_base,
-		// BaseId,
-		// new DialogInterface.OnClickListener() {
-		// @Override
-		// public void onClick(DialogInterface dialog, int id) {
-		// }
-		// });
-
-		// TODO ersetze zweites radiobutton item mit spinner aus tariffset
-		// namen, vielleicht ähnlich wie unten?
-
-		// String[] items = new String[] { "Karnataka", "Orissa",
-		// "Andhrapradesh" };
-		// Spinner spinner;
-		//
-		// spinner = (Spinner)
-		// this.findViewById(R.id.settings_tariffset_new_basedon);
-		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-		// android.R.layout.simple_spinner_item, items);
-		// adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// spinner.setAdapter(adapter);
 
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				// TODO beim anzeigen des neuen tarifsets sollte auch mitgegeben
-				// werden, obs leer ist, oder welches tarifset kopiert und
-				// angezeigt werden soll zum editieren
 				Integer tariffsetId = null;
 				if (!radioButtonNewEmptyTariffset.isChecked()) {
 					tariffsetId = selectForNewTariffsetAdapter.getItem(spinnerNewTariffsetBasedon.getSelectedItemPosition()).getId();
 				}
-				goto_settings_tariffset_new(tariffsetId);
+				goto_tariffset_new(tariffsetId);
 			}
 		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
@@ -234,7 +212,7 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		// set prompts.xml to be the layout file of the alertdialog builder
 		alertDialogBuilder.setView(promptView);
 
-		final EditText input = (EditText) promptView.findViewById(R.id.settings_tariffset_rename);
+		final EditText input = (EditText) promptView.findViewById(R.id.tariffset_rename);
 		if (editTariffset != null) {
 			alertDialogBuilder.setTitle(R.string.menu_edit_dialog);
 			input.setText(editTariffset.getName());
@@ -294,15 +272,15 @@ public class Tariffsets extends OrmLiteBaseActivity<DatabaseHelper> implements O
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void goto_settings_tariff(View view) {
+	public void goto_tariff(View view) {
 		// Do something in response to button
 		Intent intent = new Intent(this, TableTariffset.class);
 		startActivity(intent);
 	}
 
-	public void goto_settings_tariffset_new(Integer tariffsetId) {
+	public void goto_tariffset_new(Integer tariffsetId) {
 		// Do something in response to button
-		Intent intent = new Intent(this, TariffsetNew.class);
+		Intent intent = new Intent(this, TariffsetNew_Activity.class);
 		if (tariffsetId != null) {
 			intent.putExtra("editTariffsetId", tariffsetId);
 		}

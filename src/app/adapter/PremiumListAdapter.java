@@ -23,11 +23,11 @@ public class PremiumListAdapter extends ArrayAdapter<TablePremium> {
 		if (convertView == null) {
 			convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_premium, null);
 		}
-		TextView name = (TextView) convertView.findViewById(R.id.settings_tariffset_premium);
+		TextView name = (TextView) convertView.findViewById(R.id.tariffset_premium);
 		name.setText(premium.getName());
-		TextView value_silent = (TextView) convertView.findViewById(R.id.settings_tariffset_premium_value_silent);
+		TextView value_silent = (TextView) convertView.findViewById(R.id.tariffset_premium_value_silent);
 		value_silent.setText(premium.getValueSilent().toString());
-		TextView value_called = (TextView) convertView.findViewById(R.id.settings_tariffset_premium_value_called);
+		TextView value_called = (TextView) convertView.findViewById(R.id.tariffset_premium_value_called);
 		value_called.setText(premium.getValueCalled().toString());
 
 		return convertView;

@@ -10,21 +10,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class GameNegative extends Activity implements OnClickListener {
+public class GameNegative_Activity extends Activity implements OnClickListener {
 
-	private Button Button_Bei;
-	private Button Button_Kontra;
-	private int ActivityId = 2;
+	private Button buttonBei;
+	private Button buttonKontra;
+	private int activityId = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.title_settings_player);
@@ -52,10 +52,10 @@ public class GameNegative extends Activity implements OnClickListener {
 
 		setContentView(R.layout.game_negative);
 
-		Button_Bei = (Button) findViewById(R.id.game_negative_bei);
-		Button_Bei.setOnClickListener(this);
-		Button_Kontra = (Button) findViewById(R.id.game_kontra);
-		Button_Kontra.setOnClickListener(this);
+		buttonBei = (Button) findViewById(R.id.game_negative_bei);
+		buttonBei.setOnClickListener(this);
+		buttonKontra = (Button) findViewById(R.id.game_kontra);
+		buttonKontra.setOnClickListener(this);
 
 		// Show the Up button in the action bar.
 		setupActionBar();

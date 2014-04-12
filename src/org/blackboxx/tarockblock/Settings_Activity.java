@@ -18,25 +18,25 @@ import android.widget.TextView;
 
 //import android.widget.Toast;
 
-public class Settings extends Activity implements OnClickListener {
+public class Settings_Activity extends Activity implements OnClickListener {
 
 	// private Button SettingsPlayer;
 	// private Button SettingsTariffs;
 	// private Button SettingsImExport;
 	// private Button SettingsSynchronize;
-	private Button SettingsTheme;
-	private TextView ThemeText;
-	private int ThemeId;
-	private int ActivityId = 0;
+	private Button buttonTheme;
+	private TextView themeText;
+	private int defaultThemeId;
+	private int activityId = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
 		setContentView(R.layout.settings);
 
@@ -47,15 +47,15 @@ public class Settings extends Activity implements OnClickListener {
 		// findViewById(R.id.settings_button_imexport);
 		// SettingsSynchronize = (Button)
 		// findViewById(R.id.settings_button_sync);
-		SettingsTheme = (Button) findViewById(R.id.settings_button_theme);
-		ThemeText = (TextView) findViewById(R.id.settings_text_theme);
-		ThemeText.setText(getResources().getStringArray(R.array.themes_list)[ThemeId]);
+		buttonTheme = (Button) findViewById(R.id.settings_button_theme);
+		themeText = (TextView) findViewById(R.id.settings_text_theme);
+		themeText.setText(getResources().getStringArray(R.array.themes_list)[defaultThemeId]);
 
 		// SettingsPlayer.setOnClickListener(this);
 		// SettingsTariffs.setOnClickListener(this);
 		// SettingsImExport.setOnClickListener(this);
 		// SettingsSynchronize.setOnClickListener(this);
-		SettingsTheme.setOnClickListener(this);
+		buttonTheme.setOnClickListener(this);
 
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -85,7 +85,7 @@ public class Settings extends Activity implements OnClickListener {
 			// for none),
 			// and the listener through which to receive callbacks when items
 			// are selected
-					.setSingleChoiceItems(R.array.themes_list, ThemeId, new DialogInterface.OnClickListener() {
+					.setSingleChoiceItems(R.array.themes_list, defaultThemeId, new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int PrefThemeId) {
 							// Do something with the selection
@@ -186,7 +186,7 @@ public class Settings extends Activity implements OnClickListener {
 			goto_info(null);
 			return true;
 		case R.id.action_exit:
-			Intent intent = new Intent(getApplicationContext(), Main.class);
+			Intent intent = new Intent(getApplicationContext(), Main_Activity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			intent.putExtra("EXIT", true);
 			startActivity(intent);
@@ -197,37 +197,37 @@ public class Settings extends Activity implements OnClickListener {
 
 	public void goto_settings(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Settings.class);
+		Intent intent = new Intent(this, Settings_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_info(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Info.class);
+		Intent intent = new Intent(this, Info_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings_player(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Player.class);
+		Intent intent = new Intent(this, Player_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings_tariffs(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, Tariffsets.class);
+		Intent intent = new Intent(this, Tariffsets_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings_imexport(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SettingsImExport.class);
+		Intent intent = new Intent(this, SettingsImExport_Activity.class);
 		startActivity(intent);
 	}
 
 	public void goto_settings_sync(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SettingsSync.class);
+		Intent intent = new Intent(this, SettingsSync_Activity.class);
 		startActivity(intent);
 	}
 

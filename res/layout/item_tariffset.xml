@@ -6,5 +6,5 @@
     android:paddingTop="@dimen/activity_4_margin"
     android:paddingBottom="@dimen/activity_4_margin"
     android:text="Tarifset"
-    android:onClick="goto_settings_tariff"
+    android:onClick="goto_tariff"
     android:textAppearance="?android:attr/textAppearanceLarge" />

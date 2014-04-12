@@ -1,24 +1,26 @@
 package org.blackboxx.tarockblock;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
 
-public class SettingsImExport extends Activity {
-	private int ActivityId = 6;
+public class SessionOld_Activity extends Activity {
+	private int activityId = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Get the global Theme-ID
-		int ThemeId = 0;
+		int defaultThemeId = 0;
 		Globals g = Globals.getInstance();
-		ThemeId = g.getThemeId();
+		defaultThemeId = g.getThemeId();
 		// Apply the Theme saved global Variable
-		UtilsActivity.onActivitySetPrefTheme(this, ThemeId, ActivityId);
+		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
-		setContentView(R.layout.settings_imexport);
+		setContentView(R.layout.session_old);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -45,6 +47,18 @@ public class SettingsImExport extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void goto_game_call(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, GameCall_Activity.class);
+		startActivity(intent);
+	}
+
+	public void goto_games_sofar(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, GamesSoFar_Activity.class);
+		startActivity(intent);
 	}
 
 }

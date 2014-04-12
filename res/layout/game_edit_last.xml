@@ -27,7 +27,8 @@
 
     <!-- Scrollable Content above Buttons -->
 
-    <ScrollView style="@style/BasicScrollViewLayout" >
+    <ScrollView style="@style/BasicScrollViewLayout" 
+                android:id="@+id/scroll" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
         </LinearLayout>

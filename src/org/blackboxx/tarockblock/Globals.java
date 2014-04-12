@@ -5,11 +5,17 @@ public class Globals {
 
 	// Global variable
 	private int themeId;
-
 	private int defaultTariffsetId = 1;
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
+	}
+
+	public static synchronized Globals getInstance() {
+		if (instance == null) {
+			instance = new Globals();
+		}
+		return instance;
 	}
 
 	public void setThemeId(int d) {
@@ -18,13 +24,6 @@ public class Globals {
 
 	public int getThemeId() {
 		return this.themeId;
-	}
-
-	public static synchronized Globals getInstance() {
-		if (instance == null) {
-			instance = new Globals();
-		}
-		return instance;
 	}
 
 	public int getDefaultTariffsetId() {

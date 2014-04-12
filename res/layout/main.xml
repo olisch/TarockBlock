@@ -25,7 +25,8 @@
 
     <!-- Scrollable Content above Buttons -->
 
-    <ScrollView style="@style/BasicScrollViewLayout" >
+    <ScrollView style="@style/BasicScrollViewLayout" 
+                android:id="@+id/scroll" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
@@ -119,47 +120,4 @@
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout><!--
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/BasicLayout" >
-    
-    <View style="@style/Vertical_Spacer" />
-
-
-	<View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_last_session_continue"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_last_session_continue"
-        android:onClick="goto_game_call" />
-
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_session_select"
-    	style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_session_select"
-        android:onClick="goto_session_select" />
-
-    <View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/start_button_session_new"
-    	style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_session_new"
-        android:onClick="goto_session_new" />
-
-    <View style="@style/Divider" />
-
-</LinearLayout>
--->
+</RelativeLayout>

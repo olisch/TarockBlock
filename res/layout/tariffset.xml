@@ -13,7 +13,7 @@
         <View style="@style/Divider" />
 
         <Button
-            android:id="@+id/settings_button_tariff_new"
+            android:id="@+id/tariff_new"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
             <ListView
-                android:id="@+id/settings_tariff"
+                android:id="@+id/tariff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dividerHeight="0dp"

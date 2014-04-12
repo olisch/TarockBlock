@@ -23,9 +23,9 @@ public class TariffListAdapter extends ArrayAdapter<TableTariff> {
 		if (convertView == null) {
 			convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_tariff, null);
 		}
-		TextView name = (TextView) convertView.findViewById(R.id.settings_tariffset_tariff);
+		TextView name = (TextView) convertView.findViewById(R.id.tariffset_tariff);
 		name.setText(tariff.getName());
-		TextView value = (TextView) convertView.findViewById(R.id.settings_tariffset_value);
+		TextView value = (TextView) convertView.findViewById(R.id.tariffset_value);
 		value.setText(tariff.getValue().toString());
 
 		return convertView;

@@ -2,14 +2,12 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.    -->
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+            backward-compatibility can go here.        -->
     </style>
 
     <!-- the theme applied to the application or activity -->
@@ -119,7 +117,6 @@
     <style name="BasicRelativeLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:orientation">vertical</item>
     </style>
 
     <style name="BasicButtonLayout">
@@ -136,8 +133,6 @@
     <style name="BasicScrollViewLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingRight">@dimen/padding_side</item>
-        <item name="android:paddingLeft">@dimen/padding_side</item>
 <!--         <item name="android:padding">@dimen/padding_side</item> -->
         <item name="android:fillViewport">true</item>
         <item name="android:layout_alignParentTop">true</item>
@@ -148,6 +143,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingTop">@dimen/padding_side</item>
+        <item name="android:paddingRight">@dimen/padding_side</item>
+        <item name="android:paddingLeft">@dimen/padding_side</item>
         <item name="android:orientation">vertical</item>
     </style>
 

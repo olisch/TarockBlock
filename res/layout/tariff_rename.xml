@@ -3,7 +3,7 @@
     style="@style/BasicLayout" >
 
     <EditText
-        android:id="@+id/settings_tariff_rename"
+        android:id="@+id/tariff_rename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
