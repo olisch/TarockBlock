@@ -124,7 +124,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingRight">@dimen/padding_side</item>
         <item name="android:paddingLeft">@dimen/padding_side</item>
-        <item name="android:paddingBottom">@dimen/padding_side</item>
+        <item name="android:paddingBottom">@dimen/padding_button_bottom</item>
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center|bottom</item>
         <item name="android:layout_alignParentBottom">true</item>
@@ -179,6 +179,12 @@
         <item name="android:background">?android:attr/dividerHorizontal</item>
     </style>
 
+    <style name="Divider_Option">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_dialog_height</item>
+        <item name="android:background">?android:attr/dividerHorizontal</item>
+    </style>
+
     <style name="Divider_Dialog">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/divider_dialog_height</item>
@@ -197,4 +203,19 @@
         <item name="android:layout_height">0dp</item>
     </style>
 
+    
+    
+    
+    <style name="spinnertheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+    </style>
+    <style name="SpinnerItem">
+        <item name="android:textColor">#123</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+    <style name="SpinnerDropDownItem">
+        <item name="android:textColor">#abc</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>    
 </resources>

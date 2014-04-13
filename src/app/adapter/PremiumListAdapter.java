@@ -29,6 +29,7 @@ public class PremiumListAdapter extends ArrayAdapter<TablePremium> {
 		value_silent.setText(premium.getValueSilent().toString());
 		TextView value_called = (TextView) convertView.findViewById(R.id.tariffset_premium_value_called);
 		value_called.setText(premium.getValueCalled().toString());
+		// TODO background color for every second row
 
 		return convertView;
 	}

@@ -44,7 +44,8 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 	private TableTariffset editTariffset;
 	private TableTariffset deleteTariffset;
 
-	private RadioButton radioButtonNewEmptyTariffset;
+	// private RadioButton radioButtonNewEmptyTariffset;
+	private RadioButton radioButtonNewBasedonTariffset;
 	private Spinner spinnerNewTariffsetBasedon;
 
 	@Override
@@ -139,6 +140,7 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		deleteTariffset = tariffsetAdapter.getItem((int) id);
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.menu_delete);
 		builder.setMessage(R.string.menu_delete_dialog_tariffset).setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				try {
@@ -176,21 +178,28 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_base, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
-		// TODO if spinner selected autoselect the radio button
+		// TODO howto style spinner?
 		alertDialogBuilder.setView(promptView);
 		spinnerNewTariffsetBasedon = (Spinner) promptView.findViewById(R.id.tariffset_new_basedon_spinner);
-		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.spinner_tariffset_basedon, R.id.spinner_tariffset_basedon,
+		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.item_tariffset_basedon, R.id.item_tariffset_basedon,
 				tariffsets.toArray(new TableTariffset[tariffsets.size()]));
 		spinnerNewTariffsetBasedon.setAdapter(selectForNewTariffsetAdapter);
-		radioButtonNewEmptyTariffset = (RadioButton) promptView.findViewById(R.id.tariffset_new_empty);
+		// radioButtonNewEmptyTariffset = (RadioButton)
+		// promptView.findViewById(R.id.tariffset_new_empty);
+		radioButtonNewBasedonTariffset = (RadioButton) promptView.findViewById(R.id.tariffset_new_basedon);
 
 		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
+		// TODO check if spinner is touched/selected and then check radio button
+		int temp = 1;
+		if (temp == 1) {
+			radioButtonNewBasedonTariffset.setChecked(true);
+		}
 
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				Integer tariffsetId = null;
-				if (!radioButtonNewEmptyTariffset.isChecked()) {
+				if (radioButtonNewBasedonTariffset.isChecked()) {
 					tariffsetId = selectForNewTariffsetAdapter.getItem(spinnerNewTariffsetBasedon.getSelectedItemPosition()).getId();
 				}
 				goto_tariffset_new(tariffsetId);

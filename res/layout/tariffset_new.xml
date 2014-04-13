@@ -25,8 +25,9 @@
 
     <!-- Scrollable Content above Buttons -->
 
-    <ScrollView style="@style/BasicScrollViewLayout" 
-                android:id="@+id/scroll" >
+    <ScrollView
+        android:id="@+id/scroll"
+        style="@style/BasicScrollViewLayout" >
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
@@ -36,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Tarifset Name"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,7 +65,7 @@
                     android:src="@android:drawable/ic_input_add" />
             </LinearLayout>
 
-            <View style="@style/Divider" />
+            <View style="@style/Divider_Option" />
 
             <ListView
                 android:id="@+id/tariffset_new_tariffslist"
@@ -98,7 +100,7 @@
                     android:src="@android:drawable/ic_input_add" />
             </LinearLayout>
 
-            <View style="@style/Divider" />
+            <View style="@style/Divider_Option" />
 
             <ListView
                 android:id="@+id/tariffset_new_premiumslist"
@@ -115,7 +117,7 @@
                 android:layout_marginTop="16dp"
                 android:text="OPTIONEN" />
 
-            <View style="@style/Divider" />
+            <View style="@style/Divider_Option" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"

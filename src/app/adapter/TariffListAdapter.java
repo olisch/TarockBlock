@@ -27,6 +27,7 @@ public class TariffListAdapter extends ArrayAdapter<TableTariff> {
 		name.setText(tariff.getName());
 		TextView value = (TextView) convertView.findViewById(R.id.tariffset_value);
 		value.setText(tariff.getValue().toString());
+		// TODO background color for every second row
 
 		return convertView;
 	}

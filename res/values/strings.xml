@@ -62,7 +62,8 @@
     <string name="button_tariff_new_kontra">Höchste Kontrierung</string>
     <string name="button_tariff_new_entry">Neuer Eintrag</string>
     <string name="title_settings_tariff_new_trischaken">Trischaken</string>
-    <string name="title_settings_tariff_new_entry">Neuer Tarifeintrag</string>
+    <string name="title_settings_tariff_new_tariff">Neue Spielansage</string>
+    <string name="title_settings_tariff_new_premium">Neue Prämie</string>
     <string name="title_settings_tariff_new_bei">Negativspiel Bei</string>
     <string name="text_settings_tariff_new_bei_1">Keine Negativspiele Bei erlaubt</string>
     <string name="text_settings_tariff_new_bei_2">Nur Piccolo/Zwiccolo Bei erlaubt</string>

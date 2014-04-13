@@ -38,6 +38,7 @@ public class TariffsetListAdapter extends ArrayAdapter<TableTariffset> {
 			tvName.setTypeface(null, Typeface.NORMAL);
 		}
 		// Return the completed view to render on screen
+		// TODO background color for every second row
 		return convertView;
 	}
 }

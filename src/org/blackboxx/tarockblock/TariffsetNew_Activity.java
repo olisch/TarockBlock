@@ -174,6 +174,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_tariff, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_tariff);
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window
@@ -182,7 +183,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 				// get user input and set it to result
 				// editTextMainScreen.setText(input.getText());
 			}
-		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				dialog.cancel();
 			}
@@ -197,6 +198,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_premium, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_premium);
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window
@@ -205,7 +207,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 				// get user input and set it to result
 				// editTextMainScreen.setText(input.getText());
 			}
-		}).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				dialog.cancel();
 			}
