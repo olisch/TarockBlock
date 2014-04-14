@@ -93,6 +93,268 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPlayerDao().create(new TablePlayer("Dani"));
 		getPlayerDao().create(new TablePlayer("Jürgen"));
 
+		// TODO enums nicht verwenden und gar löschen?
+		// TableTariffset tariffset = new TableTariffset("TarockBlock", 2, 8, 1,
+		// 2, 2);
+		// getTariffsetDao().create(tariffset);
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Trischaken,"4",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Königrufer,"1",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Sechserdreier,"2",1,30,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Piccolo,"4",2,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Zwiccolo,"4",2,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solorufer,"1",4,20,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Besserrufer
+		// (+Vogel),"1",5,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Bettler,"4",3,30,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbendreier,"3",0,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Dreier,"2",0,40,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Piccolo
+		// ouvert,"4",2,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Zwiccolo
+		// ouvert,"4",2,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Bettler
+		// ouvert,"4",3,70,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbensolo,"3",4,80,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solodreier,"2",4,80,));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Pagat",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Uhu",1,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Kakadu",1,0,"30","60"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"König ultimo",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Mondfang",1,1,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Trull",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"4 Könige",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"1. Sack (≥45/2)",3,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"2. Sack (≥55/2)",3,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,1,"Valat",3,0,"x4","x8"));
+		//
+		// tariffset = new TableTariffset("Wiener Zeitung Cup",1,8,1,2,2);
+		// getTariffsetDao().create(tariffset);
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Trischaken,"4",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Rufer,"1",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Sechserdreier,"2",1,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Piccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Zwiccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solorufer,"1",4,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Pagatrufer,"1",5,30,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Bettel,"4",3,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Uhurufer,"1",5,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbendreier,"3",0,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Dreier,"2",0,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Piccolo
+		// ouvert,"4",2,60,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Zwiccolo
+		// ouvert,"4",2,60,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Kakadurufer,"1",5,70,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Bettel
+		// ouvert,"4",3,80,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Quapilrufer,"1",5,90,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbensolo,"3",4,100,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solodreier,"2",4,100,));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Pagat",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Uhu",1,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Kakadu",1,0,"30","60"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Quapil",1,0,"40","80"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"König ultimo",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Trull",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"4 Könige",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,2,"Valat",3,0,"x4","x8"));
+		//
+		// tariffset = new
+		// TableTariffset("Raiffeisencup/Hausruckcup",1,8,1,2,2);
+		// getTariffsetDao().create(tariffset);
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Trischaken,"4",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Rufer,"1",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Sechserdreier,"2",1,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Piccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Bettel,"4",3,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solorufer,"1",4,20,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,A-Rufer
+		// (+Vogel),"1",5,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Dreier,"2",0,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbensolo,"3",4,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Piccolo
+		// ouvert,"4",2,60,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Bettel
+		// ouvert,"4",3,70,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solodreier,"2",4,80,));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Pagat",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Uhu",1,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Kakadu",1,0,"30","60"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Quapil",1,0,"40","80"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"König ultimo",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Trull",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"4 Könige",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,3,"Valat",3,0,"x4","x8"));
+		//
+		// tariffset = new TableTariffset("Tiroler Tarockcup",4,8,1,2,2);
+		// getTariffsetDao().create(tariffset);
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Rufer,"1",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Trischaken,"4",1,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Sechserdreier,"2",1,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Piccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solorufer,"1",4,20,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Besserrufer
+		// (+Vogel),"1",5,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Bettel,"4",3,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbendreier,"3",0,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Dreier,"2",0,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Piccolo
+		// ouvert,"4",2,70,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Zwiccolo
+		// ouvert,"4",2,70,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Bettel
+		// ouvert,"4",3,80,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbensolo,"3",4,100,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solodreier,"2",4,100,));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Pagat",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Uhu",1,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Kakadu",1,0,"30","60"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Quapil",1,0,"40","80"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"König ultimo",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Mondfang",1,1,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Trull",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"4 Könige",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"1. Sack (≥45/2)",3,0,"0","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"2. Sack (≥55/2)",3,0,"0","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,4,"Valat",3,0,"150","300"));
+		//
+		// tariffset = new TableTariffset("Steirischer Tarockcup",2,4,1,2,2);
+		// getTariffsetDao().create(tariffset);
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Trischaken,"4",1,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Rufer,"1",1,10,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Sechserdreier,"2",1,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Piccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Zwiccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Triccolo,"4",2,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solorufer,"1",4,20,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Pagatrufer,"1",5,30,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Bettel,"4",3,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Uhurufer,"1",5,50,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbendreier,"3",0,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Dreier,"2",0,50,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Piccolo
+		// ouvert,"4",2,40,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Kakadurufer,"1",5,70,));
+		// getTariffDao().create(new Tariff(tariffsetTarockBlockId,Bettel
+		// ouvert,"4",3,80,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Quapilrufer,"1",5,90,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Farbensolo,"3",4,80,));
+		// getTariffDao().create(new
+		// Tariff(tariffsetTarockBlockId,Solodreier,"2",4,100,));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Pagat",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Uhu",1,0,"20","40"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Kakadu",1,0,"30","60"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Quapil",1,0,"40","80"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"König ultimo",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Trull",1,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"4 Könige",2,0,"10","20"));
+		// getPremiumDao().create(new
+		// Premium(tariffsetTarockBlockId,5,"Valat",3,0,"x4","x8"));
+
 		TableTariffset tariffset = new TableTariffset("TarockBlock", Bei.NurPiccolo, KontraMax.Subkontra, 1, 2, 2);
 		getTariffsetDao().create(tariffset);
 		// getTariffsetDao().refresh(tariffset);

@@ -20,7 +20,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -94,8 +96,16 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		if (scrollViewScenes != null) {
 			Helper.setListViewSize(tariffsetList);
 		}
-
+		tariffsetList.setOnItemClickListener(listItemClickedHandler);
 	}
+
+	// TODO code funkt, check obs auch richtig ist!
+	private OnItemClickListener listItemClickedHandler = new OnItemClickListener() {
+		public void onItemClick(AdapterView parent, View v, int position, long id) {
+			int tariffsetId = position + 1;
+			goto_tariffset_new(tariffsetId);
+		}
+	};
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -178,7 +188,8 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_base, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		// set prompts.xml to be the layout file of the alertdialog builder
-		// TODO howto style spinner?
+		// TODO howto style spinner? styling mit dem angegebenen layout klappt
+		// nicht!
 		alertDialogBuilder.setView(promptView);
 		spinnerNewTariffsetBasedon = (Spinner) promptView.findViewById(R.id.tariffset_new_basedon_spinner);
 		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.item_tariffset_basedon, R.id.item_tariffset_basedon,
@@ -281,14 +292,12 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void goto_tariff(View view) {
-		// Do something in response to button
-		Intent intent = new Intent(this, TableTariffset.class);
-		startActivity(intent);
-	}
+	// public void goto_tariff(View view) {
+	// Intent intent = new Intent(this, TableTariffset.class);
+	// startActivity(intent);
+	// }
 
 	public void goto_tariffset_new(Integer tariffsetId) {
-		// Do something in response to button
 		Intent intent = new Intent(this, TariffsetNew_Activity.class);
 		if (tariffsetId != null) {
 			intent.putExtra("editTariffsetId", tariffsetId);

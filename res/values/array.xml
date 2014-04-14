@@ -20,37 +20,7 @@
         <item>Leeres Tarifset</item>
         <item>Tarifset</item>
     </string-array>
-    <string-array name="list_user">
-        <item>Oliver</item>
-        <item>Daniela</item>
-        <item>Miriam</item>
-    </string-array>
-    <string-array name="list_bei">
-        <item>Keine Negativspiele Bei erlaubt</item>
-        <item>Nur Piccolo/Zwiccolo Bei erlaubt</item>
-        <item>Nur Bettler Bei erlaubt</item>
-        <item>Nur gleichwertige Spiele Bei erlaubt</item>
-        <item>Alle Negativspiele Bei möglich</item>
-    </string-array>
-    <string-array name="list_bei_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-    <string-array name="list_kontra">
-        <item>Kontra (x2)</item>
-        <item>Rekontra (x4)</item>
-        <item>Subkontra (x8)</item>
-        <item>Mortkontra (x16)</item>
-    </string-array>
-      <string-array name="list_kontra_values">
-        <item>2</item>
-        <item>4</item>
-        <item>8</item>
-        <item>16</item>
-    </string-array>
+    
     <string-array name="list_trischaken">
         <item>Wieviele Punktesieger zahlen?</item>
         <item>Bürgermeister doppelt?</item>
@@ -67,6 +37,117 @@
     <string-array name="list_trischaken3">
         <item>Vorhand zahlt einfach</item>
         <item>Vorhand zahlt doppelt</item>
+    </string-array>
+
+    <string-array name="list_bei">
+        <item>Keine Negativspiele Bei erlaubt</item>
+        <item>Nur Piccolo/Zwiccolo Bei erlaubt</item>
+        <item>Nur Bettler Bei erlaubt</item>
+        <item>Nur gleichwertige Spiele Bei erlaubt</item>
+        <item>Alle Negativspiele Bei möglich</item>
+    </string-array>
+    <string-array name="list_bei_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="list_kontra">
+        <item>Kontra (x2)</item>
+        <item>Rekontra (x4)</item>
+        <item>Subkontra (x8)</item>
+        <item>Mortkontra (x16)</item>
+    </string-array>
+    <string-array name="list_kontra_values">
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="list_tarifftype1">
+        <item>Ruferspiel</item>
+        <item>Dreierspiel</item>
+        <item>Farbenspiel</item>
+        <item>Negativspiel</item>
+    </string-array>
+    <string-array name="list_tarifftype1_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="list_tarifftype2">
+        <item>-</item>
+        <item>Vorhandspiel</item>
+        <item>Piccolo/Zwiccolo</item>
+        <item>Bettler</item>
+        <item>Solospiele</item>
+        <item>Besserrufer</item>
+        <item>Pagatrufer</item>
+        <item>Uhurufer</item>
+        <item>Kakadurufer</item>
+        <item>Quapilrufer</item>
+    </string-array>
+
+    <string-array name="list_premiumtype1">
+        <item>Tarock</item>
+        <item>Farbe</item>
+        <item>Punkte/Stiche</item>
+    </string-array>
+    <string-array name="list_premiumtype1_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    
+    <string-array name="list_premiumtype2">
+        <item>-</item>
+        <item>Mondfang</item>
+    </string-array>
+    <string-array name="list_premiumtype2_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    
+    <string-array name="list_tarifftype2_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    
+    <string-array name="list_game_trischaken">
+        <item>-</item>
+        <item>Jungfrau</item>
+        <item>Bürgermeister</item>
+        <item>Valat</item>
+        <item>Punktesieger</item>
+    </string-array>
+    <string-array name="list_game_trischaken_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    
+    
+    <!-- nur für GameNegative_Activity -->
+    <string-array name="list_user">
+        <item>Oliver</item>
+        <item>Daniela</item>
+        <item>Miriam</item>
     </string-array>
 
 </resources>
