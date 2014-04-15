@@ -22,8 +22,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 import app.adapter.PremiumListAdapter;
 import app.adapter.TariffListAdapter;
 
@@ -45,9 +45,9 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 	private EditText tariffsetNameEditText;
 	private int activityId = 4;
 
-	private ToggleButton toggleTrischaken1;
-	private ToggleButton toggleTrischaken2;
-	private ToggleButton toggleTrischaken3;
+	private Switch switchTrischaken1;
+	private Switch switchTrischaken2;
+	private Switch switchTrischaken3;
 	private TariffListAdapter tariffListAdapter;
 	private PremiumListAdapter premiumListAdapter;
 	private ListView tariffListView;
@@ -230,21 +230,21 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		trischaken1.setText(label[0]);
 		trischaken2.setText(label[1]);
 		trischaken3.setText(label[2]);
-		toggleTrischaken1 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri1);
-		toggleTrischaken1.setChecked(2 == actualTariffset.getTri1());
-		toggleTrischaken2 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri2);
-		toggleTrischaken2.setChecked(2 == actualTariffset.getTri2());
-		toggleTrischaken3 = (ToggleButton) promptView.findViewById(R.id.toggleButton_tri3);
-		toggleTrischaken3.setChecked(2 == actualTariffset.getTri3());
+		switchTrischaken1 = (Switch) promptView.findViewById(R.id.toggleButton_tri1);
+		switchTrischaken1.setChecked(2 == actualTariffset.getTri1());
+		switchTrischaken2 = (Switch) promptView.findViewById(R.id.toggleButton_tri2);
+		switchTrischaken2.setChecked(2 == actualTariffset.getTri2());
+		switchTrischaken3 = (Switch) promptView.findViewById(R.id.toggleButton_tri3);
+		switchTrischaken3.setChecked(2 == actualTariffset.getTri3());
 		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_trischaken);
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				actualTariffset.setTri1((toggleTrischaken1.isChecked() ? 2 : 1));
-				actualTariffset.setTri2((toggleTrischaken2.isChecked() ? 2 : 1));
-				actualTariffset.setTri3((toggleTrischaken3.isChecked() ? 2 : 1));
+				actualTariffset.setTri1((switchTrischaken1.isChecked() ? 2 : 1));
+				actualTariffset.setTri2((switchTrischaken2.isChecked() ? 2 : 1));
+				actualTariffset.setTri3((switchTrischaken3.isChecked() ? 2 : 1));
 
 				trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
 				trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
@@ -253,13 +253,19 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 			}
 		}).setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
-				actualTariffset.setTri1((toggleTrischaken1.isChecked() ? 2 : 1));
-				actualTariffset.setTri2((toggleTrischaken2.isChecked() ? 2 : 1));
-				actualTariffset.setTri3((toggleTrischaken3.isChecked() ? 2 : 1));
-
-				trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1() - 1]);
-				trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2() - 1]);
-				trischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3() - 1]);
+				// actualTariffset.setTri1((switchTrischaken1.isChecked() ? 2 :
+				// 1));
+				// actualTariffset.setTri2((switchTrischaken2.isChecked() ? 2 :
+				// 1));
+				// actualTariffset.setTri3((switchTrischaken3.isChecked() ? 2 :
+				// 1));
+				//
+				// trischakenText1.setText(getResources().getStringArray(R.array.list_trischaken1)[actualTariffset.getTri1()
+				// - 1]);
+				// trischakenText2.setText(getResources().getStringArray(R.array.list_trischaken2)[actualTariffset.getTri2()
+				// - 1]);
+				// trischakenText3.setText(getResources().getStringArray(R.array.list_trischaken3)[actualTariffset.getTri3()
+				// - 1]);
 				dialog.cancel();
 			}
 		});

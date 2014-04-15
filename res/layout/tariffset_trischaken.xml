@@ -14,15 +14,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="" 
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton_tri1"
-                style="@style/ButtonWonLost" />
+        <Switch
+            android:id="@+id/toggleButton_tri1"
+            style="@style/SwitchYesNo"
+            android:padding="0dp"
+            android:textOff="1"
+            android:textOn="2" />
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri11" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:layout_marginRight="-8dp" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="1" -->
+        <!-- android:textOn="1" /> -->
+
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri12" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="2" -->
+        <!-- android:textOn="2" /> -->
     </LinearLayout>
 
-   <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -34,13 +55,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="" 
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton_tri2"
-                style="@style/ButtonWonLost" />
+        <Switch
+            android:id="@+id/toggleButton_tri2"
+            style="@style/SwitchYesNo"
+            android:padding="0dp"
+            android:textOff="NEIN"
+            android:textOn="JA" />
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri21" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:layout_marginRight="-8dp" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="NEIN" -->
+        <!-- android:textOn="NEIN" /> -->
+
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri22" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="JA" -->
+        <!-- android:textOn="JA" /> -->
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,11 +96,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="" 
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton_tri3"
-                style="@style/ButtonWonLost" />
+        <Switch
+            android:id="@+id/toggleButton_tri3"
+            style="@style/SwitchYesNo"
+            android:padding="0dp"
+            android:textOff="NEIN"
+            android:textOn="JA" />
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri31" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:layout_marginRight="-9dp" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="NEIN" -->
+        <!-- android:textOn="NEIN" /> -->
+
+
+        <!-- <ToggleButton -->
+        <!-- android:id="@+id/toggleButton_tri32" -->
+        <!-- style="@style/ButtonYesNo" -->
+        <!-- android:gravity="center" -->
+        <!-- android:padding="0dp" -->
+        <!-- android:textOff="JA" -->
+        <!-- android:textOn="JA" /> -->
     </LinearLayout>
+
 </LinearLayout>

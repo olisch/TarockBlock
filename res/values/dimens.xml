@@ -8,6 +8,8 @@
     <dimen name="list_padding_topbottom">4dp</dimen>
     <dimen name="button_wonlost_width">64dp</dimen>
     <dimen name="button_wonlost_height">32dp</dimen>
+     <dimen name="switch_yesno_width">120dp</dimen>
+    <dimen name="switch_yesno_height">32dp</dimen>
     <dimen name="divider_height">1dip</dimen>
     <dimen name="divider_dialog_height">2dip</dimen>
     <dimen name="row_spacer_height">24dp</dimen>

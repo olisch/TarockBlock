@@ -168,7 +168,24 @@
         <item name="android:layout_width">@dimen/button_wonlost_width</item>
         <item name="android:layout_height">@dimen/button_wonlost_height</item>
         <item name="android:layout_gravity">right</item>
-        <item name="android:background">@drawable/btn_check</item>
+        <item name="android:background">@drawable/btn_won</item>
+        <item name="android:textOff"></item>
+        <item name="android:textOn"></item>
+    </style>
+
+<!--     <style name="ButtonYesNo"> -->
+<!--         <item name="android:layout_width">@dimen/button_yesno_width</item> -->
+<!--         <item name="android:layout_height">@dimen/button_yesno_height</item> -->
+<!--         <item name="android:layout_gravity">right</item> -->
+<!--         <item name="android:background">@drawable/btn_yn</item> -->
+<!--         <item name="android:textOff"></item> -->
+<!--         <item name="android:textOn"></item> -->
+<!--     </style> -->
+
+    <style name="SwitchYesNo">
+        <item name="android:layout_width">@dimen/switch_yesno_width</item>
+        <item name="android:layout_height">@dimen/switch_yesno_height</item>
+        <item name="android:layout_gravity">right</item>
         <item name="android:textOff"></item>
         <item name="android:textOn"></item>
     </style>
