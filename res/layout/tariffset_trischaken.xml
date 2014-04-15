@@ -2,127 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/BasicLayout" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:onClick=""
-        android:orientation="horizontal" >
+    <Switch
+        android:id="@+id/switch_tri1"
+        style="@style/SwitchYesNo"
+        android:padding="0dp"
+        android:switchMinWidth="48dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textOff="1"
+        android:textOn="2"
+        android:thumb="@drawable/switch_inner"
+        android:thumbTextPadding="16dp"
+        android:track="@drawable/switch_track" />
 
-        <TextView
-            android:id="@+id/tariffset_new_trischaken1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+    <Switch
+        android:id="@+id/switch_tri2"
+        style="@style/SwitchYesNo"
+        android:padding="0dp"
+        android:switchMinWidth="48dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textOff="NEIN"
+        android:textOn="JA"
+        android:thumb="@drawable/switch_inner"
+        android:thumbTextPadding="4dp"
+        android:track="@drawable/switch_track" />
 
-        <Switch
-            android:id="@+id/toggleButton_tri1"
-            style="@style/SwitchYesNo"
-            android:padding="0dp"
-            android:textOff="1"
-            android:textOn="2" />
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri11" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:layout_marginRight="-8dp" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="1" -->
-        <!-- android:textOn="1" /> -->
-
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri12" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="2" -->
-        <!-- android:textOn="2" /> -->
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:onClick=""
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/tariffset_new_trischaken2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <Switch
-            android:id="@+id/toggleButton_tri2"
-            style="@style/SwitchYesNo"
-            android:padding="0dp"
-            android:textOff="NEIN"
-            android:textOn="JA" />
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri21" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:layout_marginRight="-8dp" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="NEIN" -->
-        <!-- android:textOn="NEIN" /> -->
-
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri22" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="JA" -->
-        <!-- android:textOn="JA" /> -->
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:onClick=""
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/tariffset_new_trischaken3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <Switch
-            android:id="@+id/toggleButton_tri3"
-            style="@style/SwitchYesNo"
-            android:padding="0dp"
-            android:textOff="NEIN"
-            android:textOn="JA" />
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri31" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:layout_marginRight="-9dp" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="NEIN" -->
-        <!-- android:textOn="NEIN" /> -->
-
-
-        <!-- <ToggleButton -->
-        <!-- android:id="@+id/toggleButton_tri32" -->
-        <!-- style="@style/ButtonYesNo" -->
-        <!-- android:gravity="center" -->
-        <!-- android:padding="0dp" -->
-        <!-- android:textOff="JA" -->
-        <!-- android:textOn="JA" /> -->
-    </LinearLayout>
+    <Switch
+        android:id="@+id/switch_tri3"
+        style="@style/SwitchYesNo"
+        android:switchMinWidth="48dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textOff="NEIN"
+        android:textOn="JA"
+        android:thumb="@drawable/switch_inner"
+        android:thumbTextPadding="4dp"
+        android:track="@drawable/switch_track" />
 
 </LinearLayout>

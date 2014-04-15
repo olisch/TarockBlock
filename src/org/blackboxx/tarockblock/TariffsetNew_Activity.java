@@ -221,21 +221,16 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
 		View promptView = layoutInflater.inflate(R.layout.tariffset_trischaken, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		// set prompts.xml to be the layout file of the alertdialog builder
-		// alertDialogBuilder.setView(promptView);
-		TextView trischaken1 = (TextView) promptView.findViewById(R.id.tariffset_new_trischaken1);
-		TextView trischaken2 = (TextView) promptView.findViewById(R.id.tariffset_new_trischaken2);
-		TextView trischaken3 = (TextView) promptView.findViewById(R.id.tariffset_new_trischaken3);
 		String[] label = getResources().getStringArray(R.array.list_trischaken);
-		trischaken1.setText(label[0]);
-		trischaken2.setText(label[1]);
-		trischaken3.setText(label[2]);
-		switchTrischaken1 = (Switch) promptView.findViewById(R.id.toggleButton_tri1);
+		switchTrischaken1 = (Switch) promptView.findViewById(R.id.switch_tri1);
 		switchTrischaken1.setChecked(2 == actualTariffset.getTri1());
-		switchTrischaken2 = (Switch) promptView.findViewById(R.id.toggleButton_tri2);
+		switchTrischaken2 = (Switch) promptView.findViewById(R.id.switch_tri2);
 		switchTrischaken2.setChecked(2 == actualTariffset.getTri2());
-		switchTrischaken3 = (Switch) promptView.findViewById(R.id.toggleButton_tri3);
+		switchTrischaken3 = (Switch) promptView.findViewById(R.id.switch_tri3);
 		switchTrischaken3.setChecked(2 == actualTariffset.getTri3());
+		switchTrischaken1.setText(label[0]);
+		switchTrischaken2.setText(label[1]);
+		switchTrischaken3.setText(label[2]);
 		alertDialogBuilder.setTitle(R.string.title_settings_tariff_new_trischaken);
 		alertDialogBuilder.setView(promptView);
 
