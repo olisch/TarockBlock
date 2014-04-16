@@ -59,9 +59,9 @@
 
         <LinearLayout style="@style/BasicContentLinearLayout" >
 
-            <ToggleButton
-                android:id="@+id/toggleButton1"
-                style="@style/ButtonWonLost" />
+    <Switch
+        android:id="@+id/switch_game_negative"
+        style="@style/SwitchWonLayout" />
         </LinearLayout>
     </ScrollView>
 

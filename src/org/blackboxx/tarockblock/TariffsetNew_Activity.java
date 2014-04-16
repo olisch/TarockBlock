@@ -13,10 +13,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -48,10 +53,10 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 	private Switch switchTrischaken1;
 	private Switch switchTrischaken2;
 	private Switch switchTrischaken3;
-	private TariffListAdapter tariffListAdapter;
+	private TariffListAdapter tariffAdapter;
 	private PremiumListAdapter premiumListAdapter;
-	private ListView tariffListView;
-	private ListView premiumListView;
+	private ListView tariffList;
+	private ListView premiumList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +84,9 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 
 		setContentView(R.layout.tariffset_new);
 
-		tariffNew = (ImageButton) findViewById(R.id.button_tariffset_new_tariff_entry);
+		tariffNew = (ImageButton) findViewById(R.id.button_tariffset_new_tariff);
 		tariffNew.setOnClickListener(this);
-		premiumNew = (ImageButton) findViewById(R.id.button_tariffset_new_premium_entry);
+		premiumNew = (ImageButton) findViewById(R.id.button_tariffset_new_premium);
 		premiumNew.setOnClickListener(this);
 		trischakenText1 = (TextView) findViewById(R.id.tariff_new_trischaken_text1);
 		trischakenText2 = (TextView) findViewById(R.id.tariff_new_trischaken_text2);
@@ -104,42 +109,74 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		Button SettingsTariffsetNewSaveButton = (Button) findViewById(R.id.button_save);
 		SettingsTariffsetNewSaveButton.setOnClickListener(this);
 
-		ScrollView scrollViewScenes = (ScrollView) findViewById(R.id.scroll);
+		// Show the Up button in the action bar.
+		setupActionBar();
+		showTariffList();
+		showPremiumList();
 
-		tariffListView = (ListView) findViewById(R.id.tariffset_new_tariffslist);
+	}
+
+	private void showTariffList() {
+		tariffList = (ListView) findViewById(R.id.tariffset_new_tariffslist);
 		if (actualTariffset.getId() != null) {
-			tariffListAdapter = new TariffListAdapter(this, R.layout.item_tariff, R.id.tariffset_tariff, actualTariffset.getTariffs().toArray(
+			tariffAdapter = new TariffListAdapter(this, R.layout.item_tariff, R.id.tariffset_tariff, actualTariffset.getTariffs().toArray(
 					new TableTariff[actualTariffset.getTariffs().size()]));
-			tariffListView.setAdapter(tariffListAdapter);
+			tariffList.setAdapter(tariffAdapter);
 		}
+		registerForContextMenu(tariffList);
+		ScrollView scrollViewScenes = (ScrollView) findViewById(R.id.scroll);
 		if (scrollViewScenes != null) {
-			Helper.setListViewSize(tariffListView);
-			// MyUtilities.setListViewHeightBasedOnChildren(tariffListView);
+			Helper.setListViewSize(tariffList);
 		}
+		tariffList.setOnItemClickListener(listItemClickedHandler);
+	}
 
-		premiumListView = (ListView) findViewById(R.id.tariffset_new_premiumslist);
+	private void showPremiumList() {
+		premiumList = (ListView) findViewById(R.id.tariffset_new_premiumslist);
 		if (actualTariffset.getId() != null) {
 			premiumListAdapter = new PremiumListAdapter(this, R.layout.item_premium, R.id.tariffset_premium, actualTariffset.getPremiums().toArray(
 					new TablePremium[actualTariffset.getPremiums().size()]));
-			premiumListView.setAdapter(premiumListAdapter);
+			premiumList.setAdapter(premiumListAdapter);
 		}
+		registerForContextMenu(premiumList);
+		ScrollView scrollViewScenes = (ScrollView) findViewById(R.id.scroll);
 		if (scrollViewScenes != null) {
-			Helper.setListViewSize(premiumListView);
+			Helper.setListViewSize(premiumList);
 			// MyUtilities.setListViewHeightBasedOnChildren(premiumListView);
 		}
+		premiumList.setOnItemClickListener(listItemClickedHandler);
+	}
 
-		// Show the Up button in the action bar.
-		setupActionBar();
+	// TODO code funkt, check obs auch richtig ist!
+	private OnItemClickListener listItemClickedHandler = new OnItemClickListener() {
+		public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+			switch (v.getId()) {
+			case R.id.tariffset_tariff:
+				openDialogTariffsetNewTariff();
+				break;
+			case R.id.tariffset_premium:
+				openDialogTariffsetNewPremium();
+				break;
+			}
+		}
+	};
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		menu.add(Menu.NONE, 1, 1, R.string.menu_edit);
+		menu.add(Menu.NONE, 2, 2, R.string.menu_delete);
+		super.onCreateContextMenu(menu, v, menuInfo);
+
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.button_tariffset_new_tariff_entry:
-			openDialogTariffsetNewTariffEntry();
+		case R.id.button_tariffset_new_tariff:
+			openDialogTariffsetNewTariff();
 			break;
-		case R.id.button_tariffset_new_premium_entry:
-			openDialogTariffsetNewPremiumEntry();
+		case R.id.button_tariffset_new_premium:
+			openDialogTariffsetNewPremium();
 			break;
 		case R.id.button_tariff_new_trischaken:
 			openDialogTariffsetNewTrischaken();
@@ -170,7 +207,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 
 	}
 
-	private void openDialogTariffsetNewTariffEntry() {
+	private void openDialogTariffsetNewTariff() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_tariff, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -193,7 +230,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		alertD.show();
 	}
 
-	private void openDialogTariffsetNewPremiumEntry() {
+	private void openDialogTariffsetNewPremium() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
 		View promptView = layoutInflater.inflate(R.layout.tariffset_new_premium, null);
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -202,7 +239,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 		alertDialogBuilder.setView(promptView);
 
 		// setup a dialog window
-		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		alertDialogBuilder.setCancelable(false).setPositiveButton("Speichern", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				// get user input and set it to result
 				// editTextMainScreen.setText(input.getText());

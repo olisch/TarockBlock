@@ -75,11 +75,6 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		Globals ts = Globals.getInstance();
 		int tariffsetId = ts.getDefaultTariffsetId();
 
-		// Context context = getApplicationContext();
-		// int duration = Toast.LENGTH_LONG;
-		// CharSequence text = String.valueOf(ts);
-		// Toast.makeText(context, text, duration).show();
-
 		try {
 			tariffsets = getHelper().getTariffsetDao().queryForAll();
 		} catch (SQLException e) {
@@ -101,7 +96,7 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 
 	// TODO code funkt, check obs auch richtig ist!
 	private OnItemClickListener listItemClickedHandler = new OnItemClickListener() {
-		public void onItemClick(AdapterView parent, View v, int position, long id) {
+		public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 			int tariffsetId = position + 1;
 			goto_tariffset_new(tariffsetId);
 		}
@@ -191,20 +186,23 @@ public class Tariffsets_Activity extends OrmLiteBaseActivity<DatabaseHelper> imp
 		// TODO howto style spinner? styling mit dem angegebenen layout klappt
 		// nicht!
 		alertDialogBuilder.setView(promptView);
+
+		// radioButtonNewEmptyTariffset = (RadioButton)
+		// promptView.findViewById(R.id.tariffset_new_empty);
+		radioButtonNewBasedonTariffset = (RadioButton) promptView.findViewById(R.id.tariffset_new_basedon);
 		spinnerNewTariffsetBasedon = (Spinner) promptView.findViewById(R.id.tariffset_new_basedon_spinner);
 		selectForNewTariffsetAdapter = new TariffsetNewBasedonListAdapter(this, R.layout.item_tariffset_basedon, R.id.item_tariffset_basedon,
 				tariffsets.toArray(new TableTariffset[tariffsets.size()]));
 		spinnerNewTariffsetBasedon.setAdapter(selectForNewTariffsetAdapter);
-		// radioButtonNewEmptyTariffset = (RadioButton)
-		// promptView.findViewById(R.id.tariffset_new_empty);
-		radioButtonNewBasedonTariffset = (RadioButton) promptView.findViewById(R.id.tariffset_new_basedon);
 
 		alertDialogBuilder.setTitle(R.string.menu_tariffset_new_dialog);
-		// TODO check if spinner is touched/selected and then check radio button
-		int temp = 1;
-		if (temp == 1) {
-			radioButtonNewBasedonTariffset.setChecked(true);
-		}
+		// TODO if spinner is touched/selected then check radio button
+		// spinnerNewTariffsetBasedon.setOnClickListener(new OnClickListener() {
+		// @Override
+		// public void OnClick(View v) {
+		// radioButtonNewBasedonTariffset.setChecked(true);
+		// }
+		// });
 
 		// setup a dialog window
 		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {

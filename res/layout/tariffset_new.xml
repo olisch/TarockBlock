@@ -56,7 +56,7 @@
                 <View style="@style/Vertical_Spacer" />
 
                 <ImageButton
-                    android:id="@+id/button_tariffset_new_tariff_entry"
+                    android:id="@+id/button_tariffset_new_tariff"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
@@ -91,7 +91,7 @@
                 <View style="@style/Vertical_Spacer" />
 
                 <ImageButton
-                    android:id="@+id/button_tariffset_new_premium_entry"
+                    android:id="@+id/button_tariffset_new_premium"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="26dp"
                     android:layout_height="26dp"

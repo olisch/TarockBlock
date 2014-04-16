@@ -110,6 +110,8 @@ public class Settings_Activity extends Activity implements OnClickListener {
 							} else {
 								Intent intent = getIntent();
 								intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 								finish();
 								overridePendingTransition(0, 0);
 
