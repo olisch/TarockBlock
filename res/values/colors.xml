@@ -2,12 +2,12 @@
 <resources>
 
     <color name="bar_default">#7b7a7a</color><!-- dunkelgrau -->
-    <color name="session">#00b086</color><!-- grün -->
-    <color name="game">#00b086</color><!-- grün -->
-    <color name="player">#3476b2</color><!-- blau -->
-    <color name="tariffset">#cf593b</color><!-- rot -->
+    <color name="session">#34b270</color><!-- grün -->
+    <color name="game">#34b270</color><!-- grün -->
+    <color name="player">#3470b2</color><!-- blau -->
+    <color name="tariffset">#cf403b</color><!-- rot -->
     <color name="info">#fbad3e</color><!-- orange -->
-    <color name="imexport">#ffca65</color><!-- gelb -->
+    <color name="imexport">#b27034</color><!-- braun -->
     <color name="background">#dad9d9</color><!-- hellgrau -->
     
 <!--     <color name="bar_default">#444444</color>dunkelgrau -->

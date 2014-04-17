@@ -1,47 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
-    style="@style/BasicLayout" >
+    style="@style/BasicLayout"
+    android:baselineAligned="false" >
 
-    <Button
-        android:id="@+id/button_sessions"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:onClick="goto_sessions"
-        android:text="@string/button_sessions" />
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/button_player"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:onClick="goto_player"
-        android:text="@string/button_player" />
+        <Button
+            android:id="@+id/button_sessions"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="goto_sessions"
+            android:text="@string/button_sessions"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/session"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button_tariffsets"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="goto_tariffsets"
-        android:text="@string/button_tariffsets" />
+        <Button
+            android:id="@+id/button_player"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="goto_player"
+            android:text="@string/button_player"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/player"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button_settings"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="goto_settings"
-        android:text="@string/button_settings" />
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/button_tariffsets"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="goto_tariffsets"
+            android:text="@string/button_tariffsets"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/tariffset"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_settings"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="goto_settings"
+            android:text="@string/button_settings"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/bar_default"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
