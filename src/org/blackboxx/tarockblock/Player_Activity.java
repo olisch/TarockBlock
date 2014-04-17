@@ -188,7 +188,7 @@ public class Player_Activity extends OrmLiteBaseActivity<DatabaseHelper> impleme
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		Helper.setActionBar(this);
 	}
 
 	@Override

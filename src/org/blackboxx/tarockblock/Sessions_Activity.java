@@ -7,8 +7,8 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
 
-public class GamesSoFar_Activity extends Activity {
-	private int activityId = 2;
+public class Sessions_Activity extends Activity {
+	private int activityId = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class GamesSoFar_Activity extends Activity {
 		// Apply the Theme saved global Variable
 		Helper.onActivitySetPrefTheme(this, defaultThemeId, activityId);
 
-		setContentView(R.layout.games_sofar);
+		setContentView(R.layout.sessions);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -49,10 +49,15 @@ public class GamesSoFar_Activity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void goto_game_detail(View view) {
+	public void goto_session_old(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, GameDetails_Activity.class);
+		Intent intent = new Intent(this, SessionOld_Activity.class);
 		startActivity(intent);
 	}
 
+	public void goto_session_new(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, SessionNew_Activity.class);
+		startActivity(intent);
+	}
 }

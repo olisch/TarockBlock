@@ -88,6 +88,11 @@
             android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
         </activity>
         <activity
+            android:name="org.blackboxx.tarockblock.Sessions_Activity"
+            android:label="@string/title_sessions"
+            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
+        </activity>
+        <activity
             android:name="org.blackboxx.tarockblock.Settings_Activity"
             android:label="@string/title_settings"
             android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >

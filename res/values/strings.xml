@@ -13,7 +13,10 @@
     <string name="action_trischaken">Regeln Trischaken</string>
     <string name="action_bei">Regeln Negativspiel Bei</string>
     <string name="action_kontra">Höchste Kontrierung</string>
+    <string name="title_sessions">Partien</string>
     <string name="title_session_old">Partie</string>
+    <string name="button_settings">Einstellungen</string>
+    <string name="button_sessions">Partien</string>
     <string name="button_session_continue">Partie fortsetzen</string>
     <string name="button_games_sofar">Bisherige Spiele</string>
     <string name="title_session_new">Neue Partie</string>
@@ -46,7 +49,7 @@
     <string name="game_kontra">Kontrierungen</string>
     <string name="title_settings">Einstellungen</string>
     <string name="button_player">Spieler</string>
-    <string name="button_tariffs">Tarifsets</string>
+    <string name="button_tariffsets">Tarifsets</string>
     <string name="button_imexport">Import/Export</string>
     <string name="button_sync">Synchronisieren</string>
     <string name="button_theme">Theme</string>

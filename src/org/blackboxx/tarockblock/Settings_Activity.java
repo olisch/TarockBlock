@@ -161,7 +161,7 @@ public class Settings_Activity extends Activity implements OnClickListener {
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		Helper.setActionBar(this);
 	}
 
 	@Override
@@ -215,7 +215,7 @@ public class Settings_Activity extends Activity implements OnClickListener {
 		startActivity(intent);
 	}
 
-	public void goto_settings_tariffs(View view) {
+	public void goto_settings_tariffsets(View view) {
 		// Do something in response to button
 		Intent intent = new Intent(this, Tariffsets_Activity.class);
 		startActivity(intent);

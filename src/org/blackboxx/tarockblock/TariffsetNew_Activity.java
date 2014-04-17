@@ -1,5 +1,10 @@
 package org.blackboxx.tarockblock;
 
+//TODO tarife und prämien bei onclick editierbar
+//TODO editieren nur nach erstellung eines neuen tarifsets (bzw später wenn sie noch nicht verwendet wurden), tarifset anzeigen nicht editierbar!
+//TODO möglichkeit listviews zu reordern
+//TODO einträge in listviews besser lesbar machen: jede 2. zeile farblich unterschiedlich
+
 import java.sql.SQLException;
 
 import org.blackboxx.tarockblock.dao.DatabaseHelper;
@@ -342,6 +347,7 @@ public class TariffsetNew_Activity extends OrmLiteBaseActivity<DatabaseHelper> i
 	 */
 	private void setupActionBar() {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayShowHomeEnabled(false);
 	}
 
 	@Override

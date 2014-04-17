@@ -17,13 +17,13 @@
    <View style="@style/Divider" />
 
    <Button
-        android:id="@+id/settings_button_tariffs"
+        android:id="@+id/settings_button_tariffsets"
     	style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left|center_vertical"
-        android:text="@string/button_tariffs"
-        android:onClick="goto_settings_tariffs" />
+        android:text="@string/button_tariffsets"
+        android:onClick="goto_settings_tariffsets" />
 
     <View style="@style/Divider" />
 

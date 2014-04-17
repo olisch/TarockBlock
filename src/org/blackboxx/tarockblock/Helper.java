@@ -44,6 +44,11 @@ public class Helper {
 		return getIntPreference(context, "pref_theme", 0);
 	}
 
+	public static void setActionBar(Activity activity) {
+		activity.getActionBar().setDisplayHomeAsUpEnabled(true);
+		activity.getActionBar().setDisplayShowHomeEnabled(false);
+	}
+
 	private static int getIntPreference(Context context, String key, int defaultValue) {
 		return PreferenceManager.getDefaultSharedPreferences(context).getInt(key, defaultValue);
 	}

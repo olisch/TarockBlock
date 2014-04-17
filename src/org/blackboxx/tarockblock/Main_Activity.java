@@ -80,15 +80,21 @@ public class Main_Activity extends OrmLiteBaseActivity<DatabaseHelper> {
 	}
 
 	/** Called when user clicks a button */
-	public void goto_session_old(View view) {
+	public void goto_player(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SessionOld_Activity.class);
+		Intent intent = new Intent(this, Player_Activity.class);
 		startActivity(intent);
 	}
 
-	public void goto_session_new(View view) {
+	public void goto_sessions(View view) {
 		// Do something in response to button
-		Intent intent = new Intent(this, SessionNew_Activity.class);
+		Intent intent = new Intent(this, Sessions_Activity.class);
+		startActivity(intent);
+	}
+
+	public void goto_tariffsets(View view) {
+		// Do something in response to button
+		Intent intent = new Intent(this, Tariffsets_Activity.class);
 		startActivity(intent);
 	}
 

@@ -123,9 +123,7 @@ public class GameNegative_Activity extends Activity implements OnClickListener {
 	 * Set up the {@link android.app.ActionBar}.
 	 */
 	private void setupActionBar() {
-
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-
+		Helper.setActionBar(this);
 	}
 
 	@Override
