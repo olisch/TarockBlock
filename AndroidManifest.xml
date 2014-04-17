@@ -70,22 +70,22 @@
         <activity
             android:name="org.blackboxx.tarockblock.Player_Activity"
             android:label="@string/title_settings_player"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SessionActive_Activity"
             android:label="@string/title_session_active"
-            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Sessions_Activity" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SessionNew_Activity"
             android:label="@string/title_session_new"
-            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Sessions_Activity" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.SessionOld_Activity"
             android:label="@string/title_session_old"
-            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Sessions_Activity" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.Sessions_Activity"
@@ -110,7 +110,7 @@
         <activity
             android:name="org.blackboxx.tarockblock.Tariffset_Activity"
             android:label="@string/title_settings_tariff"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Tariffsets_Activity" >
         </activity>
         <activity
             android:name="org.blackboxx.tarockblock.TariffsetNew_Activity"
@@ -120,7 +120,7 @@
         <activity
             android:name="org.blackboxx.tarockblock.Tariffsets_Activity"
             android:label="@string/title_settings_tariffs"
-            android:parentActivityName="org.blackboxx.tarockblock.Settings_Activity" >
+            android:parentActivityName="org.blackboxx.tarockblock.Main_Activity" >
         </activity>
     </application>
 

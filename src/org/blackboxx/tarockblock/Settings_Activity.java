@@ -209,18 +209,6 @@ public class Settings_Activity extends Activity implements OnClickListener {
 		startActivity(intent);
 	}
 
-	public void goto_settings_player(View view) {
-		// Do something in response to button
-		Intent intent = new Intent(this, Player_Activity.class);
-		startActivity(intent);
-	}
-
-	public void goto_settings_tariffsets(View view) {
-		// Do something in response to button
-		Intent intent = new Intent(this, Tariffsets_Activity.class);
-		startActivity(intent);
-	}
-
 	public void goto_settings_imexport(View view) {
 		// Do something in response to button
 		Intent intent = new Intent(this, SettingsImExport_Activity.class);

@@ -3,28 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/BasicLayout" >
 
-	<View style="@style/Divider" />
-
-    <Button
-        android:id="@+id/settings_button_player"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:onClick="goto_settings_player"
-        android:text="@string/button_player" />
-
-   <View style="@style/Divider" />
-
-   <Button
-        android:id="@+id/settings_button_tariffsets"
-    	style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left|center_vertical"
-        android:text="@string/button_tariffsets"
-        android:onClick="goto_settings_tariffsets" />
-
     <View style="@style/Divider" />
 
     <Button
