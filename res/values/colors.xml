@@ -28,12 +28,23 @@
     <color name="green">#94af79</color>
     <color name="activebar_green">#008800</color>
     
-    <color name="gblue">#4285f4</color>
-    <color name="gred">#db4437</color>
-    <color name="gyellow">#f4b400</color>
-    <color name="ggreen">#0f9d58</color>
-    <color name="gorange">#f69113</color>
-    <color name="ggrey">#e7e6dd</color>
+    <color name="ggreen">#b3c833</color>
+    <color name="gblue">#1aa1e1</color>
+    <color name="gred">#ce5043</color>
+    <color name="gorange">#fb8521</color>
+    <color name="gdarkblue">#3e5aa8</color>
+    <color name="ggrey">#658092</color>
+    <color name="ggreendocs">#b3c833</color>
+    <color name="gbluedocs">#1aa1e1</color>
+    <color name="ggreylight">#ebebeb</color>
+    <color name="ggreydark">#737373</color>
+	 
+    <color name="gblue2">#4285f4</color>
+    <color name="gred2">#db4437</color>
+    <color name="gyellow2">#f4b400</color>
+    <color name="ggreen2">#0f9d58</color>
+    <color name="gorange2">#f69113</color>
+    <color name="ggrey2">#e7e6dd</color>
     
     <color name="msred">#f65314</color>
     <color name="msgreen">#7cbb00</color>
