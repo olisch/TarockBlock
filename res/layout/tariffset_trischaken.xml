@@ -24,9 +24,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textOff="NEIN"
         android:textOn="JA"
-        android:thumb="@drawable/switch_thumb"
+        android:thumb="@drawable/switch_won_thumb"
         android:thumbTextPadding="4dp"
-        android:track="@drawable/switch_track" />
+        android:track="@drawable/switch_won_track" />
 
     <Switch
         android:id="@+id/switch_tri3"
@@ -36,8 +36,8 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textOff="NEIN"
         android:textOn="JA"
-        android:thumb="@drawable/switch_thumb"
+        android:thumb="@drawable/switch_won_thumb"
         android:thumbTextPadding="4dp"
-        android:track="@drawable/switch_track" />
+        android:track="@drawable/switch_won_track" />
 
 </LinearLayout>
