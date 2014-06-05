@@ -32,10 +32,10 @@ public class Helper {
 				activity.setTheme(R.style.DefaultTheme);
 			break;
 		case 1:
-			activity.setTheme(android.R.style.Theme_Holo_Light);
+			activity.setTheme(R.style.Theme_Holo_Light);
 			break;
 		case 2:
-			activity.setTheme(android.R.style.Theme_Holo);
+			activity.setTheme(R.style.Theme_Holo_Dark);
 			break;
 		}
 	}

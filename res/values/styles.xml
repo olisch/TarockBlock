@@ -10,7 +10,7 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
-    </style>
+		</style>
 
     <!-- the theme applied to the application or activity -->
     <style name="DefaultTheme" parent="android:Theme.Holo.Light">
@@ -108,12 +108,31 @@
     </style>
 
     <!-- Application theme. -->
+	<attr name="ic_session" format="reference"/>
+	<attr name="ic_tariffsets" format="reference"/>
+	<attr name="ic_player" format="reference"/>
+	<attr name="ic_settings" format="reference"/>
+
     <style name="AppTheme" parent="AppBaseTheme">
 
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:windowBackground">@color/background</item>
-    </style>
+			<!-- All customizations that are NOT specific to a particular API-level can go here. -->
+			<item name="android:windowBackground">@color/background</item>
+			<item name="ic_session">@drawable/ic_session</item>
+			<item name="ic_tariffsets">@drawable/ic_tariffsets</item>
+			<item name="ic_player">@drawable/ic_player</item>
+			<item name="ic_settings">@drawable/ic_settings</item>
+	</style>
 
+		<style name="Theme_Holo_Light" parent="android:Theme.Holo.Light">
+		</style>
+    
+    <style name="Theme_Holo_Dark" parent="android:Theme.Holo">
+			<item name="ic_session">@drawable/ic_session_dark</item>
+			<item name="ic_tariffsets">@drawable/ic_tariffsets_dark</item>
+			<item name="ic_player">@drawable/ic_player_dark</item>
+			<item name="ic_settings">@drawable/ic_settings_dark</item>
+    </style>
+    
     <style name="BasicRelativeLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
