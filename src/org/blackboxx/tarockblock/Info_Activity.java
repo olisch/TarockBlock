@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -26,13 +25,11 @@ public class Info_Activity extends Activity {
 		setupActionBar();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.action_overflow, menu);
-		return true;
-	}
-
+	/*
+	 * @Override public boolean onCreateOptionsMenu(Menu menu) { // Inflate the
+	 * menu; this adds items to the action bar if it is present.
+	 * getMenuInflater().inflate(R.menu.action_overflow, menu); return true; }
+	 */
 	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */
@@ -57,18 +54,19 @@ public class Info_Activity extends Activity {
 			 * case R.id.action_sync: goto_sync(null); return true; case
 			 * R.id.action_rules: goto_rules(null); return true;
 			 */
-		case R.id.action_settings:
-			goto_settings(null);
-			return true;
-		case R.id.action_info:
-			goto_info(null);
-			return true;
-		case R.id.action_exit:
-			Intent intent = new Intent(getApplicationContext(), Main_Activity.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			intent.putExtra("EXIT", true);
-			startActivity(intent);
-			return true;
+			// case R.id.action_settings:
+			// goto_settings(null);
+			// return true;
+			// case R.id.action_info:
+			// goto_info(null);
+			// return true;
+			// case R.id.action_exit:
+			// Intent intent = new Intent(getApplicationContext(),
+			// Main_Activity.class);
+			// intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			// intent.putExtra("EXIT", true);
+			// startActivity(intent);
+			// return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -53,9 +53,9 @@ public class Main_Activity extends OrmLiteBaseActivity<DatabaseHelper> {
 		 * case R.id.action_sync: goto_sync(null); return true; case
 		 * R.id.action_rules: goto_rules(null); return true;
 		 */
-		case R.id.action_settings:
-			goto_settings(null);
-			return true;
+		/*
+		 * case R.id.action_settings: goto_settings(null); return true;
+		 */
 		case R.id.action_info:
 			goto_info(null);
 			return true;
