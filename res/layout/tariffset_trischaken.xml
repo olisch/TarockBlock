@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/BasicLayout" >
+    style="@style/BasicPopupLayout" >
 
     <Switch
         android:id="@+id/switch_tri1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dp"
+        android:layout_height="48dp"
+        android:paddingLeft="@dimen/padding_side"
+        android:paddingRight="@dimen/padding_side"
         android:switchMinWidth="48dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textOff="1"
         android:textOn="2"
         android:thumb="@drawable/switch_thumb"
         android:thumbTextPadding="16dp"
         android:track="@drawable/switch_track" />
 
+    <View style="@style/Divider" />
+    
     <Switch
         android:id="@+id/switch_tri2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dp"
+        android:layout_height="48dp"
+        android:paddingLeft="@dimen/padding_side"
+        android:paddingRight="@dimen/padding_side"
         android:switchMinWidth="48dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textOff="NEIN"
         android:textOn="JA"
         android:thumb="@drawable/switch_won_thumb"
         android:thumbTextPadding="4dp"
         android:track="@drawable/switch_won_track" />
 
+    <View style="@style/Divider" />
+    
     <Switch
         android:id="@+id/switch_tri3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:switchMinWidth="48dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:paddingLeft="@dimen/padding_side"
+        android:paddingRight="@dimen/padding_side"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textOff="NEIN"
         android:textOn="JA"
         android:thumb="@drawable/switch_won_thumb"
